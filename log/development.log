@@ -4124,3 +4124,255 @@ Rendered layouts/_cms_toolbar (1.1ms)
   [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 10) AND (pages.deleted = 'f') [0m
 Rendered layouts/_page_toolbar (17.7ms)
 Completed in 34ms (View: 20, DB: 7) | 200 OK [http://localhost/cms/toolbar?mode=view&amp;page_id=10&amp;page_toolbar=1&amp;page_version=2]
+~~ Loading extensions from /Library/Ruby/Gems/1.8/gems/browsercms-3.0.0/lib/cms/extensions/action_view/base.rb
+~~ Loading extensions from /Library/Ruby/Gems/1.8/gems/browsercms-3.0.0/lib/cms/extensions/active_record/base.rb
+~~ Loading extensions from /Library/Ruby/Gems/1.8/gems/browsercms-3.0.0/lib/cms/extensions/active_record/connection_adapters/abstract/schema_statements.rb
+~~ Loading extensions from /Library/Ruby/Gems/1.8/gems/browsercms-3.0.0/lib/cms/extensions/active_record/errors.rb
+~~ Loading extensions from /Library/Ruby/Gems/1.8/gems/browsercms-3.0.0/lib/cms/extensions/active_support/cache/file_store.rb
+~~ Loading extensions from /Library/Ruby/Gems/1.8/gems/browsercms-3.0.0/lib/cms/extensions/hash.rb
+~~ Loading extensions from /Library/Ruby/Gems/1.8/gems/browsercms-3.0.0/lib/cms/extensions/integer.rb
+~~ Loading extensions from /Library/Ruby/Gems/1.8/gems/browsercms-3.0.0/lib/cms/extensions/nil.rb
+~~ Loading extensions from /Library/Ruby/Gems/1.8/gems/browsercms-3.0.0/lib/cms/extensions/string.rb
+  [4;36;1mSQL (2.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mDynamicView Load (1.0ms)[0m   [0mSELECT * FROM "dynamic_views" [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mPageRoute Load (0.7ms)[0m   [0mSELECT * FROM "page_routes" ORDER BY page_routes.name[0m
+  [4;36;1mPageRouteRequirement Load (0.5ms)[0m   [0;1mSELECT * FROM "page_route_options" WHERE ("page_route_options".page_route_id = 1) AND ( ("page_route_options"."type" = 'PageRouteRequirement' ) ) [0m
+  [4;35;1mPageRouteCondition Load (0.3ms)[0m   [0mSELECT * FROM "page_route_options" WHERE ("page_route_options".page_route_id = 1) AND ( ("page_route_options"."type" = 'PageRouteCondition' ) ) [0m
+
+
+Processing Cms::UsersController#index (for 127.0.0.1 at 2009-05-05 23:28:41) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPermission Load Including Associations (1.1ms)[0m   [0mSELECT "permissions"."id" AS t0_r0, "permissions"."name" AS t0_r1, "permissions"."full_name" AS t0_r2, "permissions"."description" AS t0_r3, "permissions"."for_module" AS t0_r4, "permissions"."created_at" AS t0_r5, "permissions"."updated_at" AS t0_r6, "groups"."id" AS t1_r0, "groups"."name" AS t1_r1, "groups"."code" AS t1_r2, "groups"."group_type_id" AS t1_r3, "groups"."created_at" AS t1_r4, "groups"."updated_at" AS t1_r5, "users"."id" AS t2_r0, "users"."login" AS t2_r1, "users"."first_name" AS t2_r2, "users"."last_name" AS t2_r3, "users"."email" AS t2_r4, "users"."crypted_password" AS t2_r5, "users"."salt" AS t2_r6, "users"."created_at" AS t2_r7, "users"."updated_at" AS t2_r8, "users"."expires_at" AS t2_r9, "users"."remember_token" AS t2_r10, "users"."remember_token_expires_at" AS t2_r11 FROM "permissions" LEFT OUTER JOIN "group_permissions" ON ("permissions"."id" = "group_permissions"."permission_id") LEFT OUTER JOIN "groups" ON ("groups"."id" = "group_permissions"."group_id") LEFT OUTER JOIN "user_group_memberships" ON ("groups"."id" = "user_group_memberships"."group_id") LEFT OUTER JOIN "users" ON ("users"."id" = "user_group_memberships"."user_id") WHERE (users.id = 1) [0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ((expires_at IS NULL OR expires_at >= '2009-05-06 03:28:41')) ORDER BY first_name, last_name, email LIMIT 10 OFFSET 0[0m
+  [4;35;1mUserGroupMembership Load (0.2ms)[0m   [0mSELECT "user_group_memberships".* FROM "user_group_memberships" WHERE ("user_group_memberships".user_id = 1) [0m
+Rendering template within layouts/cms/administration
+Rendering cms/users/index
+  [4;36;1mGroup Load (0.5ms)[0m   [0;1mSELECT * FROM "groups" [0m
+WARNING: Can't mass-assign these protected attributes: id
+Rendered cms/users/_toolbar (3.9ms)
+  [4;35;1mGroup Load (0.7ms)[0m   [0mSELECT "groups".* FROM "groups" INNER JOIN "user_group_memberships" ON "groups".id = "user_group_memberships".group_id WHERE (("user_group_memberships".user_id = 1)) ORDER BY groups.name[0m
+Rendered layouts/cms/_head (2.1ms)
+Rendered layouts/_cms_toolbar (2.6ms)
+Rendered cms/shared/_admin_sidebar (1.6ms)
+Rendered layouts/cms/_footer (0.5ms)
+Completed in 132ms (View: 90, DB: 4) | 200 OK [http://localhost/cms/administration]
+
+
+Processing Cms::TagsController#index to js (for 127.0.0.1 at 2009-05-05 23:28:41) [GET]
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPermission Load Including Associations (1.0ms)[0m   [0mSELECT "permissions"."id" AS t0_r0, "permissions"."name" AS t0_r1, "permissions"."full_name" AS t0_r2, "permissions"."description" AS t0_r3, "permissions"."for_module" AS t0_r4, "permissions"."created_at" AS t0_r5, "permissions"."updated_at" AS t0_r6, "groups"."id" AS t1_r0, "groups"."name" AS t1_r1, "groups"."code" AS t1_r2, "groups"."group_type_id" AS t1_r3, "groups"."created_at" AS t1_r4, "groups"."updated_at" AS t1_r5, "users"."id" AS t2_r0, "users"."login" AS t2_r1, "users"."first_name" AS t2_r2, "users"."last_name" AS t2_r3, "users"."email" AS t2_r4, "users"."crypted_password" AS t2_r5, "users"."salt" AS t2_r6, "users"."created_at" AS t2_r7, "users"."updated_at" AS t2_r8, "users"."expires_at" AS t2_r9, "users"."remember_token" AS t2_r10, "users"."remember_token_expires_at" AS t2_r11 FROM "permissions" LEFT OUTER JOIN "group_permissions" ON ("permissions"."id" = "group_permissions"."permission_id") LEFT OUTER JOIN "groups" ON ("groups"."id" = "group_permissions"."group_id") LEFT OUTER JOIN "user_group_memberships" ON ("groups"."id" = "user_group_memberships"."group_id") LEFT OUTER JOIN "users" ON ("users"."id" = "user_group_memberships"."user_id") WHERE (users.id = 1) [0m
+  [4;36;1mContentType Load (0.3ms)[0m   [0;1mSELECT * FROM "content_types" WHERE ("content_types"."name" = 'Tag') LIMIT 1[0m
+  [4;35;1mTag Load (0.1ms)[0m   [0mSELECT * FROM "tags" LIMIT 15 OFFSET 0[0m
+Completed in 19ms (View: 4, DB: 3) | 200 OK [http://localhost/cms/tags.js]
+
+
+Processing Cms::DynamicViewsController#index (for 127.0.0.1 at 2009-05-05 23:28:43) [GET]
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPermission Load Including Associations (1.1ms)[0m   [0mSELECT "permissions"."id" AS t0_r0, "permissions"."name" AS t0_r1, "permissions"."full_name" AS t0_r2, "permissions"."description" AS t0_r3, "permissions"."for_module" AS t0_r4, "permissions"."created_at" AS t0_r5, "permissions"."updated_at" AS t0_r6, "groups"."id" AS t1_r0, "groups"."name" AS t1_r1, "groups"."code" AS t1_r2, "groups"."group_type_id" AS t1_r3, "groups"."created_at" AS t1_r4, "groups"."updated_at" AS t1_r5, "users"."id" AS t2_r0, "users"."login" AS t2_r1, "users"."first_name" AS t2_r2, "users"."last_name" AS t2_r3, "users"."email" AS t2_r4, "users"."crypted_password" AS t2_r5, "users"."salt" AS t2_r6, "users"."created_at" AS t2_r7, "users"."updated_at" AS t2_r8, "users"."expires_at" AS t2_r9, "users"."remember_token" AS t2_r10, "users"."remember_token_expires_at" AS t2_r11 FROM "permissions" LEFT OUTER JOIN "group_permissions" ON ("permissions"."id" = "group_permissions"."permission_id") LEFT OUTER JOIN "groups" ON ("groups"."id" = "group_permissions"."group_id") LEFT OUTER JOIN "user_group_memberships" ON ("groups"."id" = "user_group_memberships"."group_id") LEFT OUTER JOIN "users" ON ("users"."id" = "user_group_memberships"."user_id") WHERE (users.id = 1) [0m
+  [4;36;1mPagePartial Load (1.0ms)[0m   [0;1mSELECT * FROM "dynamic_views" WHERE (dynamic_views.deleted = 'f') AND ( ("dynamic_views"."type" = 'PagePartial' ) ) ORDER BY name LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/cms/administration
+Rendering cms/dynamic_views/index
+Rendered layouts/cms/_head (1.2ms)
+Rendered layouts/_cms_toolbar (0.9ms)
+Rendered cms/shared/_admin_sidebar (0.2ms)
+Rendered layouts/cms/_footer (0.1ms)
+Completed in 126ms (View: 114, DB: 4) | 200 OK [http://localhost/cms/page_partials]
+
+
+Processing Cms::TagsController#index to js (for 127.0.0.1 at 2009-05-05 23:28:43) [GET]
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPermission Load Including Associations (1.0ms)[0m   [0;1mSELECT "permissions"."id" AS t0_r0, "permissions"."name" AS t0_r1, "permissions"."full_name" AS t0_r2, "permissions"."description" AS t0_r3, "permissions"."for_module" AS t0_r4, "permissions"."created_at" AS t0_r5, "permissions"."updated_at" AS t0_r6, "groups"."id" AS t1_r0, "groups"."name" AS t1_r1, "groups"."code" AS t1_r2, "groups"."group_type_id" AS t1_r3, "groups"."created_at" AS t1_r4, "groups"."updated_at" AS t1_r5, "users"."id" AS t2_r0, "users"."login" AS t2_r1, "users"."first_name" AS t2_r2, "users"."last_name" AS t2_r3, "users"."email" AS t2_r4, "users"."crypted_password" AS t2_r5, "users"."salt" AS t2_r6, "users"."created_at" AS t2_r7, "users"."updated_at" AS t2_r8, "users"."expires_at" AS t2_r9, "users"."remember_token" AS t2_r10, "users"."remember_token_expires_at" AS t2_r11 FROM "permissions" LEFT OUTER JOIN "group_permissions" ON ("permissions"."id" = "group_permissions"."permission_id") LEFT OUTER JOIN "groups" ON ("groups"."id" = "group_permissions"."group_id") LEFT OUTER JOIN "user_group_memberships" ON ("groups"."id" = "user_group_memberships"."group_id") LEFT OUTER JOIN "users" ON ("users"."id" = "user_group_memberships"."user_id") WHERE (users.id = 1) [0m
+  [4;35;1mContentType Load (0.2ms)[0m   [0mSELECT * FROM "content_types" WHERE ("content_types"."name" = 'Tag') LIMIT 1[0m
+  [4;36;1mTag Load (0.1ms)[0m   [0;1mSELECT * FROM "tags" LIMIT 15 OFFSET 0[0m
+Completed in 8ms (View: 2, DB: 3) | 200 OK [http://localhost/cms/tags.js]
+
+
+Processing Cms::DynamicViewsController#edit (for 127.0.0.1 at 2009-05-05 23:28:47) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mUser Load (1.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPermission Load Including Associations (1.1ms)[0m   [0;1mSELECT "permissions"."id" AS t0_r0, "permissions"."name" AS t0_r1, "permissions"."full_name" AS t0_r2, "permissions"."description" AS t0_r3, "permissions"."for_module" AS t0_r4, "permissions"."created_at" AS t0_r5, "permissions"."updated_at" AS t0_r6, "groups"."id" AS t1_r0, "groups"."name" AS t1_r1, "groups"."code" AS t1_r2, "groups"."group_type_id" AS t1_r3, "groups"."created_at" AS t1_r4, "groups"."updated_at" AS t1_r5, "users"."id" AS t2_r0, "users"."login" AS t2_r1, "users"."first_name" AS t2_r2, "users"."last_name" AS t2_r3, "users"."email" AS t2_r4, "users"."crypted_password" AS t2_r5, "users"."salt" AS t2_r6, "users"."created_at" AS t2_r7, "users"."updated_at" AS t2_r8, "users"."expires_at" AS t2_r9, "users"."remember_token" AS t2_r10, "users"."remember_token_expires_at" AS t2_r11 FROM "permissions" LEFT OUTER JOIN "group_permissions" ON ("permissions"."id" = "group_permissions"."permission_id") LEFT OUTER JOIN "groups" ON ("groups"."id" = "group_permissions"."group_id") LEFT OUTER JOIN "user_group_memberships" ON ("groups"."id" = "user_group_memberships"."group_id") LEFT OUTER JOIN "users" ON ("users"."id" = "user_group_memberships"."user_id") WHERE (users.id = 1) [0m
+  [4;35;1mPagePartial Load (0.4ms)[0m   [0mSELECT * FROM "dynamic_views" WHERE ("dynamic_views"."id" = 5) AND (dynamic_views.deleted = 'f') AND ( ("dynamic_views"."type" = 'PagePartial' ) ) [0m
+Rendering template within layouts/cms/administration
+Rendering cms/dynamic_views/edit
+Rendered cms/form_builder/_cms_text_field (1.1ms)
+Rendered cms/form_builder/_cms_text_field (0.2ms)
+Rendered cms/form_builder/_cms_drop_down (1.4ms)
+Rendered cms/form_builder/_cms_text_area (1.1ms)
+Rendered cms/dynamic_views/_form (13.5ms)
+Rendered layouts/cms/_head (1.1ms)
+Rendered layouts/_cms_toolbar (1.0ms)
+Rendered cms/shared/_admin_sidebar (0.2ms)
+Rendered layouts/cms/_footer (0.1ms)
+Completed in 30ms (View: 23, DB: 3) | 200 OK [http://localhost/cms/page_partials/5/edit]
+
+
+Processing Cms::TagsController#index to js (for 127.0.0.1 at 2009-05-05 23:28:47) [GET]
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPermission Load Including Associations (1.5ms)[0m   [0mSELECT "permissions"."id" AS t0_r0, "permissions"."name" AS t0_r1, "permissions"."full_name" AS t0_r2, "permissions"."description" AS t0_r3, "permissions"."for_module" AS t0_r4, "permissions"."created_at" AS t0_r5, "permissions"."updated_at" AS t0_r6, "groups"."id" AS t1_r0, "groups"."name" AS t1_r1, "groups"."code" AS t1_r2, "groups"."group_type_id" AS t1_r3, "groups"."created_at" AS t1_r4, "groups"."updated_at" AS t1_r5, "users"."id" AS t2_r0, "users"."login" AS t2_r1, "users"."first_name" AS t2_r2, "users"."last_name" AS t2_r3, "users"."email" AS t2_r4, "users"."crypted_password" AS t2_r5, "users"."salt" AS t2_r6, "users"."created_at" AS t2_r7, "users"."updated_at" AS t2_r8, "users"."expires_at" AS t2_r9, "users"."remember_token" AS t2_r10, "users"."remember_token_expires_at" AS t2_r11 FROM "permissions" LEFT OUTER JOIN "group_permissions" ON ("permissions"."id" = "group_permissions"."permission_id") LEFT OUTER JOIN "groups" ON ("groups"."id" = "group_permissions"."group_id") LEFT OUTER JOIN "user_group_memberships" ON ("groups"."id" = "user_group_memberships"."group_id") LEFT OUTER JOIN "users" ON ("users"."id" = "user_group_memberships"."user_id") WHERE (users.id = 1) [0m
+  [4;36;1mContentType Load (0.2ms)[0m   [0;1mSELECT * FROM "content_types" WHERE ("content_types"."name" = 'Tag') LIMIT 1[0m
+  [4;35;1mTag Load (0.1ms)[0m   [0mSELECT * FROM "tags" LIMIT 15 OFFSET 0[0m
+Completed in 10ms (View: 2, DB: 3) | 200 OK [http://localhost/cms/tags.js]
+
+
+Processing Cms::DynamicViewsController#index (for 127.0.0.1 at 2009-05-05 23:29:17) [GET]
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPermission Load Including Associations (1.0ms)[0m   [0mSELECT "permissions"."id" AS t0_r0, "permissions"."name" AS t0_r1, "permissions"."full_name" AS t0_r2, "permissions"."description" AS t0_r3, "permissions"."for_module" AS t0_r4, "permissions"."created_at" AS t0_r5, "permissions"."updated_at" AS t0_r6, "groups"."id" AS t1_r0, "groups"."name" AS t1_r1, "groups"."code" AS t1_r2, "groups"."group_type_id" AS t1_r3, "groups"."created_at" AS t1_r4, "groups"."updated_at" AS t1_r5, "users"."id" AS t2_r0, "users"."login" AS t2_r1, "users"."first_name" AS t2_r2, "users"."last_name" AS t2_r3, "users"."email" AS t2_r4, "users"."crypted_password" AS t2_r5, "users"."salt" AS t2_r6, "users"."created_at" AS t2_r7, "users"."updated_at" AS t2_r8, "users"."expires_at" AS t2_r9, "users"."remember_token" AS t2_r10, "users"."remember_token_expires_at" AS t2_r11 FROM "permissions" LEFT OUTER JOIN "group_permissions" ON ("permissions"."id" = "group_permissions"."permission_id") LEFT OUTER JOIN "groups" ON ("groups"."id" = "group_permissions"."group_id") LEFT OUTER JOIN "user_group_memberships" ON ("groups"."id" = "user_group_memberships"."group_id") LEFT OUTER JOIN "users" ON ("users"."id" = "user_group_memberships"."user_id") WHERE (users.id = 1) [0m
+  [4;36;1mPagePartial Load (1.0ms)[0m   [0;1mSELECT * FROM "dynamic_views" WHERE (dynamic_views.deleted = 'f') AND ( ("dynamic_views"."type" = 'PagePartial' ) ) ORDER BY name LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/cms/administration
+Rendering cms/dynamic_views/index
+Rendered layouts/cms/_head (2.1ms)
+Rendered layouts/_cms_toolbar (1.3ms)
+Rendered cms/shared/_admin_sidebar (0.2ms)
+Rendered layouts/cms/_footer (0.1ms)
+Completed in 16ms (View: 8, DB: 3) | 200 OK [http://localhost/cms/page_partials]
+
+
+Processing Cms::DynamicViewsController#index (for 127.0.0.1 at 2009-05-05 23:29:17) [GET]
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPermission Load Including Associations (1.2ms)[0m   [0;1mSELECT "permissions"."id" AS t0_r0, "permissions"."name" AS t0_r1, "permissions"."full_name" AS t0_r2, "permissions"."description" AS t0_r3, "permissions"."for_module" AS t0_r4, "permissions"."created_at" AS t0_r5, "permissions"."updated_at" AS t0_r6, "groups"."id" AS t1_r0, "groups"."name" AS t1_r1, "groups"."code" AS t1_r2, "groups"."group_type_id" AS t1_r3, "groups"."created_at" AS t1_r4, "groups"."updated_at" AS t1_r5, "users"."id" AS t2_r0, "users"."login" AS t2_r1, "users"."first_name" AS t2_r2, "users"."last_name" AS t2_r3, "users"."email" AS t2_r4, "users"."crypted_password" AS t2_r5, "users"."salt" AS t2_r6, "users"."created_at" AS t2_r7, "users"."updated_at" AS t2_r8, "users"."expires_at" AS t2_r9, "users"."remember_token" AS t2_r10, "users"."remember_token_expires_at" AS t2_r11 FROM "permissions" LEFT OUTER JOIN "group_permissions" ON ("permissions"."id" = "group_permissions"."permission_id") LEFT OUTER JOIN "groups" ON ("groups"."id" = "group_permissions"."group_id") LEFT OUTER JOIN "user_group_memberships" ON ("groups"."id" = "user_group_memberships"."group_id") LEFT OUTER JOIN "users" ON ("users"."id" = "user_group_memberships"."user_id") WHERE (users.id = 1) [0m
+  [4;35;1mPagePartial Load (1.8ms)[0m   [0mSELECT * FROM "dynamic_views" WHERE (dynamic_views.deleted = 'f') AND ( ("dynamic_views"."type" = 'PagePartial' ) ) ORDER BY name LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/cms/administration
+Rendering cms/dynamic_views/index
+Rendered layouts/cms/_head (1.2ms)
+Rendered layouts/_cms_toolbar (1.1ms)
+Rendered cms/shared/_admin_sidebar (0.2ms)
+Rendered layouts/cms/_footer (0.1ms)
+Completed in 21ms (View: 11, DB: 4) | 200 OK [http://localhost/cms/page_partials]
+
+
+Processing Cms::TagsController#index to js (for 127.0.0.1 at 2009-05-05 23:29:17) [GET]
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPermission Load Including Associations (1.1ms)[0m   [0mSELECT "permissions"."id" AS t0_r0, "permissions"."name" AS t0_r1, "permissions"."full_name" AS t0_r2, "permissions"."description" AS t0_r3, "permissions"."for_module" AS t0_r4, "permissions"."created_at" AS t0_r5, "permissions"."updated_at" AS t0_r6, "groups"."id" AS t1_r0, "groups"."name" AS t1_r1, "groups"."code" AS t1_r2, "groups"."group_type_id" AS t1_r3, "groups"."created_at" AS t1_r4, "groups"."updated_at" AS t1_r5, "users"."id" AS t2_r0, "users"."login" AS t2_r1, "users"."first_name" AS t2_r2, "users"."last_name" AS t2_r3, "users"."email" AS t2_r4, "users"."crypted_password" AS t2_r5, "users"."salt" AS t2_r6, "users"."created_at" AS t2_r7, "users"."updated_at" AS t2_r8, "users"."expires_at" AS t2_r9, "users"."remember_token" AS t2_r10, "users"."remember_token_expires_at" AS t2_r11 FROM "permissions" LEFT OUTER JOIN "group_permissions" ON ("permissions"."id" = "group_permissions"."permission_id") LEFT OUTER JOIN "groups" ON ("groups"."id" = "group_permissions"."group_id") LEFT OUTER JOIN "user_group_memberships" ON ("groups"."id" = "user_group_memberships"."group_id") LEFT OUTER JOIN "users" ON ("users"."id" = "user_group_memberships"."user_id") WHERE (users.id = 1) [0m
+  [4;36;1mContentType Load (0.2ms)[0m   [0;1mSELECT * FROM "content_types" WHERE ("content_types"."name" = 'Tag') LIMIT 1[0m
+  [4;35;1mTag Load (0.1ms)[0m   [0mSELECT * FROM "tags" LIMIT 15 OFFSET 0[0m
+Completed in 9ms (View: 2, DB: 3) | 200 OK [http://localhost/cms/tags.js]
+
+
+Processing Cms::DynamicViewsController#edit (for 127.0.0.1 at 2009-05-05 23:29:24) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPermission Load Including Associations (1.0ms)[0m   [0mSELECT "permissions"."id" AS t0_r0, "permissions"."name" AS t0_r1, "permissions"."full_name" AS t0_r2, "permissions"."description" AS t0_r3, "permissions"."for_module" AS t0_r4, "permissions"."created_at" AS t0_r5, "permissions"."updated_at" AS t0_r6, "groups"."id" AS t1_r0, "groups"."name" AS t1_r1, "groups"."code" AS t1_r2, "groups"."group_type_id" AS t1_r3, "groups"."created_at" AS t1_r4, "groups"."updated_at" AS t1_r5, "users"."id" AS t2_r0, "users"."login" AS t2_r1, "users"."first_name" AS t2_r2, "users"."last_name" AS t2_r3, "users"."email" AS t2_r4, "users"."crypted_password" AS t2_r5, "users"."salt" AS t2_r6, "users"."created_at" AS t2_r7, "users"."updated_at" AS t2_r8, "users"."expires_at" AS t2_r9, "users"."remember_token" AS t2_r10, "users"."remember_token_expires_at" AS t2_r11 FROM "permissions" LEFT OUTER JOIN "group_permissions" ON ("permissions"."id" = "group_permissions"."permission_id") LEFT OUTER JOIN "groups" ON ("groups"."id" = "group_permissions"."group_id") LEFT OUTER JOIN "user_group_memberships" ON ("groups"."id" = "user_group_memberships"."group_id") LEFT OUTER JOIN "users" ON ("users"."id" = "user_group_memberships"."user_id") WHERE (users.id = 1) [0m
+  [4;36;1mPagePartial Load (0.3ms)[0m   [0;1mSELECT * FROM "dynamic_views" WHERE ("dynamic_views"."id" = 4) AND (dynamic_views.deleted = 'f') AND ( ("dynamic_views"."type" = 'PagePartial' ) ) [0m
+Rendering template within layouts/cms/administration
+Rendering cms/dynamic_views/edit
+Rendered cms/form_builder/_cms_text_field (0.3ms)
+Rendered cms/form_builder/_cms_text_field (0.2ms)
+Rendered cms/form_builder/_cms_drop_down (0.5ms)
+Rendered cms/form_builder/_cms_text_area (0.3ms)
+Rendered cms/dynamic_views/_form (2.9ms)
+Rendered layouts/cms/_head (1.0ms)
+Rendered layouts/_cms_toolbar (0.8ms)
+Rendered cms/shared/_admin_sidebar (0.2ms)
+Rendered layouts/cms/_footer (0.1ms)
+Completed in 15ms (View: 8, DB: 3) | 200 OK [http://localhost/cms/page_partials/4/edit]
+
+
+Processing Cms::TagsController#index to js (for 127.0.0.1 at 2009-05-05 23:29:24) [GET]
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPermission Load Including Associations (1.0ms)[0m   [0;1mSELECT "permissions"."id" AS t0_r0, "permissions"."name" AS t0_r1, "permissions"."full_name" AS t0_r2, "permissions"."description" AS t0_r3, "permissions"."for_module" AS t0_r4, "permissions"."created_at" AS t0_r5, "permissions"."updated_at" AS t0_r6, "groups"."id" AS t1_r0, "groups"."name" AS t1_r1, "groups"."code" AS t1_r2, "groups"."group_type_id" AS t1_r3, "groups"."created_at" AS t1_r4, "groups"."updated_at" AS t1_r5, "users"."id" AS t2_r0, "users"."login" AS t2_r1, "users"."first_name" AS t2_r2, "users"."last_name" AS t2_r3, "users"."email" AS t2_r4, "users"."crypted_password" AS t2_r5, "users"."salt" AS t2_r6, "users"."created_at" AS t2_r7, "users"."updated_at" AS t2_r8, "users"."expires_at" AS t2_r9, "users"."remember_token" AS t2_r10, "users"."remember_token_expires_at" AS t2_r11 FROM "permissions" LEFT OUTER JOIN "group_permissions" ON ("permissions"."id" = "group_permissions"."permission_id") LEFT OUTER JOIN "groups" ON ("groups"."id" = "group_permissions"."group_id") LEFT OUTER JOIN "user_group_memberships" ON ("groups"."id" = "user_group_memberships"."group_id") LEFT OUTER JOIN "users" ON ("users"."id" = "user_group_memberships"."user_id") WHERE (users.id = 1) [0m
+  [4;35;1mContentType Load (0.2ms)[0m   [0mSELECT * FROM "content_types" WHERE ("content_types"."name" = 'Tag') LIMIT 1[0m
+  [4;36;1mTag Load (0.1ms)[0m   [0;1mSELECT * FROM "tags" LIMIT 15 OFFSET 0[0m
+Completed in 8ms (View: 2, DB: 3) | 200 OK [http://localhost/cms/tags.js]
+
+
+Processing Cms::DynamicViewsController#index (for 127.0.0.1 at 2009-05-05 23:29:49) [GET]
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPermission Load Including Associations (1.0ms)[0m   [0;1mSELECT "permissions"."id" AS t0_r0, "permissions"."name" AS t0_r1, "permissions"."full_name" AS t0_r2, "permissions"."description" AS t0_r3, "permissions"."for_module" AS t0_r4, "permissions"."created_at" AS t0_r5, "permissions"."updated_at" AS t0_r6, "groups"."id" AS t1_r0, "groups"."name" AS t1_r1, "groups"."code" AS t1_r2, "groups"."group_type_id" AS t1_r3, "groups"."created_at" AS t1_r4, "groups"."updated_at" AS t1_r5, "users"."id" AS t2_r0, "users"."login" AS t2_r1, "users"."first_name" AS t2_r2, "users"."last_name" AS t2_r3, "users"."email" AS t2_r4, "users"."crypted_password" AS t2_r5, "users"."salt" AS t2_r6, "users"."created_at" AS t2_r7, "users"."updated_at" AS t2_r8, "users"."expires_at" AS t2_r9, "users"."remember_token" AS t2_r10, "users"."remember_token_expires_at" AS t2_r11 FROM "permissions" LEFT OUTER JOIN "group_permissions" ON ("permissions"."id" = "group_permissions"."permission_id") LEFT OUTER JOIN "groups" ON ("groups"."id" = "group_permissions"."group_id") LEFT OUTER JOIN "user_group_memberships" ON ("groups"."id" = "user_group_memberships"."group_id") LEFT OUTER JOIN "users" ON ("users"."id" = "user_group_memberships"."user_id") WHERE (users.id = 1) [0m
+  [4;35;1mPageTemplate Load (1.1ms)[0m   [0mSELECT * FROM "dynamic_views" WHERE (dynamic_views.deleted = 'f') AND ( ("dynamic_views"."type" = 'PageTemplate' ) ) ORDER BY name LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/cms/administration
+Rendering cms/dynamic_views/index
+Rendered layouts/cms/_head (1.1ms)
+Rendered layouts/_cms_toolbar (0.8ms)
+Rendered cms/shared/_admin_sidebar (0.2ms)
+Rendered layouts/cms/_footer (0.1ms)
+Completed in 14ms (View: 6, DB: 4) | 200 OK [http://localhost/cms/page_templates]
+
+
+Processing Cms::TagsController#index to js (for 127.0.0.1 at 2009-05-05 23:29:49) [GET]
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPermission Load Including Associations (1.0ms)[0m   [0mSELECT "permissions"."id" AS t0_r0, "permissions"."name" AS t0_r1, "permissions"."full_name" AS t0_r2, "permissions"."description" AS t0_r3, "permissions"."for_module" AS t0_r4, "permissions"."created_at" AS t0_r5, "permissions"."updated_at" AS t0_r6, "groups"."id" AS t1_r0, "groups"."name" AS t1_r1, "groups"."code" AS t1_r2, "groups"."group_type_id" AS t1_r3, "groups"."created_at" AS t1_r4, "groups"."updated_at" AS t1_r5, "users"."id" AS t2_r0, "users"."login" AS t2_r1, "users"."first_name" AS t2_r2, "users"."last_name" AS t2_r3, "users"."email" AS t2_r4, "users"."crypted_password" AS t2_r5, "users"."salt" AS t2_r6, "users"."created_at" AS t2_r7, "users"."updated_at" AS t2_r8, "users"."expires_at" AS t2_r9, "users"."remember_token" AS t2_r10, "users"."remember_token_expires_at" AS t2_r11 FROM "permissions" LEFT OUTER JOIN "group_permissions" ON ("permissions"."id" = "group_permissions"."permission_id") LEFT OUTER JOIN "groups" ON ("groups"."id" = "group_permissions"."group_id") LEFT OUTER JOIN "user_group_memberships" ON ("groups"."id" = "user_group_memberships"."group_id") LEFT OUTER JOIN "users" ON ("users"."id" = "user_group_memberships"."user_id") WHERE (users.id = 1) [0m
+  [4;36;1mContentType Load (0.2ms)[0m   [0;1mSELECT * FROM "content_types" WHERE ("content_types"."name" = 'Tag') LIMIT 1[0m
+  [4;35;1mTag Load (0.1ms)[0m   [0mSELECT * FROM "tags" LIMIT 15 OFFSET 0[0m
+Completed in 8ms (View: 2, DB: 3) | 200 OK [http://localhost/cms/tags.js]
+
+
+Processing Cms::DynamicViewsController#edit (for 127.0.0.1 at 2009-05-05 23:29:51) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (2.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPermission Load Including Associations (1.2ms)[0m   [0mSELECT "permissions"."id" AS t0_r0, "permissions"."name" AS t0_r1, "permissions"."full_name" AS t0_r2, "permissions"."description" AS t0_r3, "permissions"."for_module" AS t0_r4, "permissions"."created_at" AS t0_r5, "permissions"."updated_at" AS t0_r6, "groups"."id" AS t1_r0, "groups"."name" AS t1_r1, "groups"."code" AS t1_r2, "groups"."group_type_id" AS t1_r3, "groups"."created_at" AS t1_r4, "groups"."updated_at" AS t1_r5, "users"."id" AS t2_r0, "users"."login" AS t2_r1, "users"."first_name" AS t2_r2, "users"."last_name" AS t2_r3, "users"."email" AS t2_r4, "users"."crypted_password" AS t2_r5, "users"."salt" AS t2_r6, "users"."created_at" AS t2_r7, "users"."updated_at" AS t2_r8, "users"."expires_at" AS t2_r9, "users"."remember_token" AS t2_r10, "users"."remember_token_expires_at" AS t2_r11 FROM "permissions" LEFT OUTER JOIN "group_permissions" ON ("permissions"."id" = "group_permissions"."permission_id") LEFT OUTER JOIN "groups" ON ("groups"."id" = "group_permissions"."group_id") LEFT OUTER JOIN "user_group_memberships" ON ("groups"."id" = "user_group_memberships"."group_id") LEFT OUTER JOIN "users" ON ("users"."id" = "user_group_memberships"."user_id") WHERE (users.id = 1) [0m
+  [4;36;1mPageTemplate Load (0.5ms)[0m   [0;1mSELECT * FROM "dynamic_views" WHERE ("dynamic_views"."id" = 2) AND (dynamic_views.deleted = 'f') AND ( ("dynamic_views"."type" = 'PageTemplate' ) ) [0m
+Rendering template within layouts/cms/administration
+Rendering cms/dynamic_views/edit
+Rendered cms/form_builder/_cms_text_field (0.3ms)
+Rendered cms/form_builder/_cms_text_field (0.3ms)
+Rendered cms/form_builder/_cms_drop_down (0.5ms)
+Rendered cms/form_builder/_cms_text_area (0.4ms)
+Rendered cms/dynamic_views/_form (3.4ms)
+Rendered layouts/cms/_head (1.0ms)
+Rendered layouts/_cms_toolbar (0.8ms)
+Rendered cms/shared/_admin_sidebar (0.2ms)
+Rendered layouts/cms/_footer (0.1ms)
+Completed in 18ms (View: 9, DB: 4) | 200 OK [http://localhost/cms/page_templates/2/edit]
+
+
+Processing Cms::TagsController#index to js (for 127.0.0.1 at 2009-05-05 23:29:51) [GET]
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPermission Load Including Associations (1.1ms)[0m   [0;1mSELECT "permissions"."id" AS t0_r0, "permissions"."name" AS t0_r1, "permissions"."full_name" AS t0_r2, "permissions"."description" AS t0_r3, "permissions"."for_module" AS t0_r4, "permissions"."created_at" AS t0_r5, "permissions"."updated_at" AS t0_r6, "groups"."id" AS t1_r0, "groups"."name" AS t1_r1, "groups"."code" AS t1_r2, "groups"."group_type_id" AS t1_r3, "groups"."created_at" AS t1_r4, "groups"."updated_at" AS t1_r5, "users"."id" AS t2_r0, "users"."login" AS t2_r1, "users"."first_name" AS t2_r2, "users"."last_name" AS t2_r3, "users"."email" AS t2_r4, "users"."crypted_password" AS t2_r5, "users"."salt" AS t2_r6, "users"."created_at" AS t2_r7, "users"."updated_at" AS t2_r8, "users"."expires_at" AS t2_r9, "users"."remember_token" AS t2_r10, "users"."remember_token_expires_at" AS t2_r11 FROM "permissions" LEFT OUTER JOIN "group_permissions" ON ("permissions"."id" = "group_permissions"."permission_id") LEFT OUTER JOIN "groups" ON ("groups"."id" = "group_permissions"."group_id") LEFT OUTER JOIN "user_group_memberships" ON ("groups"."id" = "user_group_memberships"."group_id") LEFT OUTER JOIN "users" ON ("users"."id" = "user_group_memberships"."user_id") WHERE (users.id = 1) [0m
+  [4;35;1mContentType Load (0.2ms)[0m   [0mSELECT * FROM "content_types" WHERE ("content_types"."name" = 'Tag') LIMIT 1[0m
+  [4;36;1mTag Load (0.1ms)[0m   [0;1mSELECT * FROM "tags" LIMIT 15 OFFSET 0[0m
+Completed in 10ms (View: 2, DB: 3) | 200 OK [http://localhost/cms/tags.js]
+
+
+Processing Cms::DynamicViewsController#index (for 127.0.0.1 at 2009-05-05 23:30:26) [GET]
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPermission Load Including Associations (1.1ms)[0m   [0;1mSELECT "permissions"."id" AS t0_r0, "permissions"."name" AS t0_r1, "permissions"."full_name" AS t0_r2, "permissions"."description" AS t0_r3, "permissions"."for_module" AS t0_r4, "permissions"."created_at" AS t0_r5, "permissions"."updated_at" AS t0_r6, "groups"."id" AS t1_r0, "groups"."name" AS t1_r1, "groups"."code" AS t1_r2, "groups"."group_type_id" AS t1_r3, "groups"."created_at" AS t1_r4, "groups"."updated_at" AS t1_r5, "users"."id" AS t2_r0, "users"."login" AS t2_r1, "users"."first_name" AS t2_r2, "users"."last_name" AS t2_r3, "users"."email" AS t2_r4, "users"."crypted_password" AS t2_r5, "users"."salt" AS t2_r6, "users"."created_at" AS t2_r7, "users"."updated_at" AS t2_r8, "users"."expires_at" AS t2_r9, "users"."remember_token" AS t2_r10, "users"."remember_token_expires_at" AS t2_r11 FROM "permissions" LEFT OUTER JOIN "group_permissions" ON ("permissions"."id" = "group_permissions"."permission_id") LEFT OUTER JOIN "groups" ON ("groups"."id" = "group_permissions"."group_id") LEFT OUTER JOIN "user_group_memberships" ON ("groups"."id" = "user_group_memberships"."group_id") LEFT OUTER JOIN "users" ON ("users"."id" = "user_group_memberships"."user_id") WHERE (users.id = 1) [0m
+  [4;35;1mPageTemplate Load (1.1ms)[0m   [0mSELECT * FROM "dynamic_views" WHERE (dynamic_views.deleted = 'f') AND ( ("dynamic_views"."type" = 'PageTemplate' ) ) ORDER BY name LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/cms/administration
+Rendering cms/dynamic_views/index
+Rendered layouts/cms/_head (1.1ms)
+Rendered layouts/_cms_toolbar (0.9ms)
+Rendered cms/shared/_admin_sidebar (0.2ms)
+Rendered layouts/cms/_footer (0.1ms)
+Completed in 82ms (View: 7, DB: 4) | 200 OK [http://localhost/cms/page_templates]
+
+
+Processing Cms::TagsController#index to js (for 127.0.0.1 at 2009-05-05 23:30:26) [GET]
+  [4;36;1mUser Load (3.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPermission Load Including Associations (1.1ms)[0m   [0mSELECT "permissions"."id" AS t0_r0, "permissions"."name" AS t0_r1, "permissions"."full_name" AS t0_r2, "permissions"."description" AS t0_r3, "permissions"."for_module" AS t0_r4, "permissions"."created_at" AS t0_r5, "permissions"."updated_at" AS t0_r6, "groups"."id" AS t1_r0, "groups"."name" AS t1_r1, "groups"."code" AS t1_r2, "groups"."group_type_id" AS t1_r3, "groups"."created_at" AS t1_r4, "groups"."updated_at" AS t1_r5, "users"."id" AS t2_r0, "users"."login" AS t2_r1, "users"."first_name" AS t2_r2, "users"."last_name" AS t2_r3, "users"."email" AS t2_r4, "users"."crypted_password" AS t2_r5, "users"."salt" AS t2_r6, "users"."created_at" AS t2_r7, "users"."updated_at" AS t2_r8, "users"."expires_at" AS t2_r9, "users"."remember_token" AS t2_r10, "users"."remember_token_expires_at" AS t2_r11 FROM "permissions" LEFT OUTER JOIN "group_permissions" ON ("permissions"."id" = "group_permissions"."permission_id") LEFT OUTER JOIN "groups" ON ("groups"."id" = "group_permissions"."group_id") LEFT OUTER JOIN "user_group_memberships" ON ("groups"."id" = "user_group_memberships"."group_id") LEFT OUTER JOIN "users" ON ("users"."id" = "user_group_memberships"."user_id") WHERE (users.id = 1) [0m
+  [4;36;1mContentType Load (0.3ms)[0m   [0;1mSELECT * FROM "content_types" WHERE ("content_types"."name" = 'Tag') LIMIT 1[0m
+  [4;35;1mTag Load (0.1ms)[0m   [0mSELECT * FROM "tags" LIMIT 15 OFFSET 0[0m
+Completed in 11ms (View: 2, DB: 5) | 200 OK [http://localhost/cms/tags.js]
+
+
+Processing Cms::DynamicViewsController#edit (for 127.0.0.1 at 2009-05-05 23:30:28) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPermission Load Including Associations (1.1ms)[0m   [0mSELECT "permissions"."id" AS t0_r0, "permissions"."name" AS t0_r1, "permissions"."full_name" AS t0_r2, "permissions"."description" AS t0_r3, "permissions"."for_module" AS t0_r4, "permissions"."created_at" AS t0_r5, "permissions"."updated_at" AS t0_r6, "groups"."id" AS t1_r0, "groups"."name" AS t1_r1, "groups"."code" AS t1_r2, "groups"."group_type_id" AS t1_r3, "groups"."created_at" AS t1_r4, "groups"."updated_at" AS t1_r5, "users"."id" AS t2_r0, "users"."login" AS t2_r1, "users"."first_name" AS t2_r2, "users"."last_name" AS t2_r3, "users"."email" AS t2_r4, "users"."crypted_password" AS t2_r5, "users"."salt" AS t2_r6, "users"."created_at" AS t2_r7, "users"."updated_at" AS t2_r8, "users"."expires_at" AS t2_r9, "users"."remember_token" AS t2_r10, "users"."remember_token_expires_at" AS t2_r11 FROM "permissions" LEFT OUTER JOIN "group_permissions" ON ("permissions"."id" = "group_permissions"."permission_id") LEFT OUTER JOIN "groups" ON ("groups"."id" = "group_permissions"."group_id") LEFT OUTER JOIN "user_group_memberships" ON ("groups"."id" = "user_group_memberships"."group_id") LEFT OUTER JOIN "users" ON ("users"."id" = "user_group_memberships"."user_id") WHERE (users.id = 1) [0m
+  [4;36;1mPageTemplate Load (0.4ms)[0m   [0;1mSELECT * FROM "dynamic_views" WHERE ("dynamic_views"."id" = 3) AND (dynamic_views.deleted = 'f') AND ( ("dynamic_views"."type" = 'PageTemplate' ) ) [0m
+Rendering template within layouts/cms/administration
+Rendering cms/dynamic_views/edit
+Rendered cms/form_builder/_cms_text_field (0.3ms)
+Rendered cms/form_builder/_cms_text_field (0.2ms)
+Rendered cms/form_builder/_cms_drop_down (0.5ms)
+Rendered cms/form_builder/_cms_text_area (0.4ms)
+Rendered cms/dynamic_views/_form (3.3ms)
+Rendered layouts/cms/_head (1.1ms)
+Rendered layouts/_cms_toolbar (0.9ms)
+Rendered cms/shared/_admin_sidebar (0.2ms)
+Rendered layouts/cms/_footer (0.1ms)
+Completed in 16ms (View: 9, DB: 3) | 200 OK [http://localhost/cms/page_templates/3/edit]
+
+
+Processing Cms::TagsController#index to js (for 127.0.0.1 at 2009-05-05 23:30:28) [GET]
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPermission Load Including Associations (1.8ms)[0m   [0;1mSELECT "permissions"."id" AS t0_r0, "permissions"."name" AS t0_r1, "permissions"."full_name" AS t0_r2, "permissions"."description" AS t0_r3, "permissions"."for_module" AS t0_r4, "permissions"."created_at" AS t0_r5, "permissions"."updated_at" AS t0_r6, "groups"."id" AS t1_r0, "groups"."name" AS t1_r1, "groups"."code" AS t1_r2, "groups"."group_type_id" AS t1_r3, "groups"."created_at" AS t1_r4, "groups"."updated_at" AS t1_r5, "users"."id" AS t2_r0, "users"."login" AS t2_r1, "users"."first_name" AS t2_r2, "users"."last_name" AS t2_r3, "users"."email" AS t2_r4, "users"."crypted_password" AS t2_r5, "users"."salt" AS t2_r6, "users"."created_at" AS t2_r7, "users"."updated_at" AS t2_r8, "users"."expires_at" AS t2_r9, "users"."remember_token" AS t2_r10, "users"."remember_token_expires_at" AS t2_r11 FROM "permissions" LEFT OUTER JOIN "group_permissions" ON ("permissions"."id" = "group_permissions"."permission_id") LEFT OUTER JOIN "groups" ON ("groups"."id" = "group_permissions"."group_id") LEFT OUTER JOIN "user_group_memberships" ON ("groups"."id" = "user_group_memberships"."group_id") LEFT OUTER JOIN "users" ON ("users"."id" = "user_group_memberships"."user_id") WHERE (users.id = 1) [0m
+  [4;35;1mContentType Load (0.3ms)[0m   [0mSELECT * FROM "content_types" WHERE ("content_types"."name" = 'Tag') LIMIT 1[0m
+  [4;36;1mTag Load (0.2ms)[0m   [0;1mSELECT * FROM "tags" LIMIT 15 OFFSET 0[0m
+Completed in 10ms (View: 2, DB: 4) | 200 OK [http://localhost/cms/tags.js]
