@@ -157,8 +157,8 @@ html, body, div, span, applet, object, iframe,
   #broad div.main_wrapper {
   margin: 10px;
   border: 1px solid #CCCCCC;
-  height: 493px;
-  #width: 750px;
+  # height: 493px;
+  # width: 750px;
   }
   #splash{
   margin: 6px 4px 0 7px;
@@ -184,8 +184,8 @@ html, body, div, span, applet, object, iframe,
   margin: 10px;
   margin-bottom: 0;
   border: 1px solid #CCCCCC;
-  height: 241px;
-  #height: 243px;
+  # height: 241px;
+  # height: 243px;
   }
   #sub_nav {
   float: left;
