@@ -1,0 +1,25 @@
+:ruby: ree
+  :application: mano_browsercms
+  :user: rails
+  :group: rails
+  :ssl:
+    :self_signed: true
+  :deploy_to: /srv/mano_browsercms
+  :domain: bcms.codegreeenlabs.com
+  :repository: git@github.com:agiletoolkit/mano_browercms.git 
+  :app_symlinks:
+    - assets
+  :local_config:
+    - config/database.yml
+  :shared_children:
+  - system
+  - log
+  - pids
+  - config
+  :passenger:
+    :max_pool_size: 3
+    :use_global_queue: true
+  :mysql:
+    :innodb_buffer_pool_size: 128M
+
+
