@@ -1,0 +1,74 @@
+--- !ruby/object:Gem::Specification 
+name: bcms_news
+version: !ruby/object:Gem::Version 
+  version: 1.0.0
+platform: ruby
+authors: 
+- BrowserMedia
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2009-05-31 00:00:00 -04:00
+default_executable: 
+dependencies: []
+
+description: 
+email: github@browsermedia.com
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- README
+files: 
+- app/controllers/news_articles_controller.rb
+- app/controllers/cms/news_articles_controller.rb
+- app/models/news_article.rb
+- app/portlets/news_archive_portlet.rb
+- app/portlets/news_article_portlet.rb
+- app/portlets/recent_news_portlet.rb
+- app/views/news_articles/index.rss.builder
+- app/views/cms/news_articles/_form.html.erb
+- app/views/cms/news_articles/render.html.erb
+- app/views/portlets/news_archive/_form.html.erb
+- app/views/portlets/news_archive/render.html.erb
+- app/views/portlets/news_article/_form.html.erb
+- app/views/portlets/news_article/render.html.erb
+- app/views/portlets/recent_news/_form.html.erb
+- app/views/portlets/recent_news/render.html.erb
+- db/migrate/20090410193313_create_news_articles.rb
+- lib/bcms_news.rb
+- lib/bcms_news/routes.rb
+- rails/init.rb
+- README
+has_rdoc: true
+homepage: http://www.browsercms.org
+licenses: []
+
+post_install_message: 
+rdoc_options: []
+
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+requirements: []
+
+rubyforge_project: bcms_news
+rubygems_version: 1.3.2
+signing_key: 
+specification_version: 3
+summary: The News Module for BrowserCMS
+test_files: []
+

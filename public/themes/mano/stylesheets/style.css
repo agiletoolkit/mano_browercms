@@ -1,3 +1,5 @@
+/* @override http://bcms.codegreenlabs.com/themes/mano/stylesheets/style.css?1241724579 */
+
 html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -46,8 +48,8 @@ html, body, div, span, applet, object, iframe,
   }
 
   body {
-  font-family: Arial, sans-serif;
-  color: #838383;
+  font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+  color: #3c3c3c;
   }
   a {
   color: #0597fe;
@@ -81,8 +83,8 @@ html, body, div, span, applet, object, iframe,
 
 
   .wrapper {
-  background-color: #E5E5E5;
-  }
+  background-color: #fff;
+}
   #header {
   }
   #header div{
@@ -143,23 +145,35 @@ html, body, div, span, applet, object, iframe,
   float: left;
   width: 772px;
   # height: 515px;
-  }
+  list-style-type: disc;
+  list-style-position: inside;
+  
+}
   #broad h2 {
   font-size: 18pt;
   font-weignt: bold;
   padding: 15px;
-  }
+	
+}
   #broad p{
-  padding: 15px;
-  padding-top: 0;
-  line-height: 1.5;
-  }
+	padding: 15px;
+    padding-top: 0;
+   line-height: 1.5;
+}
+  #broad ul{
+	padding: 0 0 0 15px;
+}
   #broad div.main_wrapper {
   margin: 10px;
   border: 1px solid #CCCCCC;
   # height: 493px;
   # width: 750px;
   }
+
+#broad div.main_wrapper p img {
+	padding: 10px 10px 10px 0;
+	font-variant: normal;
+}
   #splash{
   margin: 6px 4px 0 7px;
   }

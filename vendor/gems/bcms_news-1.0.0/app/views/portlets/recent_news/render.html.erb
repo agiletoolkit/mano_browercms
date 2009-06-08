@@ -1,0 +1,24 @@
+<% content_for :html_head do %>
+  <%= auto_discovery_link_tag :rss, news_articles_url, "RSS Feed for News Articles" %>
+<% end %>
+<b>Latest News</b>
+<br/>
+<br/>
+
+<% for article in @articles %>
+  <div class="news-item-browser">
+    <% if article.release_date -%>
+      <b><%= article.release_date.to_date.to_s(:long) %></b>
+      <br/>
+    <% end %>
+  
+    <%= link_to h(article.name), news_article_path(article.route_params) %>
+    
+  </div>
+<% end %>
+
+<% unless @portlet.more_link.blank? -%>
+  <div class="news-item-browser">
+    <%= link_to "MORE", @portlet.more_link %>
+  </div>
+<% end %>

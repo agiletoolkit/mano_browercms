@@ -48,6 +48,119 @@ ActiveRecord::Schema.define(:version => 20090506022312) do
     t.integer  "updated_by_id"
   end
 
+  create_table "blog_comment_versions", :force => true do |t|
+    t.integer  "blog_comment_id"
+    t.integer  "version"
+    t.integer  "post_id"
+    t.string   "author"
+    t.string   "email"
+    t.string   "url"
+    t.string   "ip"
+    t.text     "body"
+    t.string   "name"
+    t.boolean  "published",       :default => false
+    t.boolean  "deleted",         :default => false
+    t.boolean  "archived",        :default => false
+    t.string   "version_comment"
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "blog_comments", :force => true do |t|
+    t.integer  "version"
+    t.integer  "lock_version",  :default => 0
+    t.integer  "post_id"
+    t.string   "author"
+    t.string   "email"
+    t.string   "url"
+    t.string   "ip"
+    t.text     "body"
+    t.string   "name"
+    t.boolean  "published",     :default => false
+    t.boolean  "deleted",       :default => false
+    t.boolean  "archived",      :default => false
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "blog_post_versions", :force => true do |t|
+    t.integer  "blog_post_id"
+    t.integer  "version"
+    t.integer  "blog_id"
+    t.integer  "author_id"
+    t.integer  "category_id"
+    t.string   "name"
+    t.string   "slug"
+    t.text     "summary"
+    t.text     "body"
+    t.integer  "comments_count"
+    t.datetime "published_at"
+    t.boolean  "published",       :default => false
+    t.boolean  "deleted",         :default => false
+    t.boolean  "archived",        :default => false
+    t.string   "version_comment"
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "blog_posts", :force => true do |t|
+    t.integer  "version"
+    t.integer  "lock_version",   :default => 0
+    t.integer  "blog_id"
+    t.integer  "author_id"
+    t.integer  "category_id"
+    t.string   "name"
+    t.string   "slug"
+    t.text     "summary"
+    t.text     "body"
+    t.integer  "comments_count"
+    t.datetime "published_at"
+    t.boolean  "published",      :default => false
+    t.boolean  "deleted",        :default => false
+    t.boolean  "archived",       :default => false
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "blog_versions", :force => true do |t|
+    t.integer  "blog_id"
+    t.integer  "version"
+    t.string   "name"
+    t.string   "format"
+    t.text     "template"
+    t.boolean  "published",       :default => false
+    t.boolean  "deleted",         :default => false
+    t.boolean  "archived",        :default => false
+    t.string   "version_comment"
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "blogs", :force => true do |t|
+    t.integer  "version"
+    t.integer  "lock_version",  :default => 0
+    t.string   "name"
+    t.string   "format"
+    t.text     "template"
+    t.boolean  "published",     :default => false
+    t.boolean  "deleted",       :default => false
+    t.boolean  "archived",      :default => false
+    t.integer  "created_by_id"
+    t.integer  "updated_by_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "categories", :force => true do |t|
     t.integer  "category_type_id"
     t.integer  "parent_id"

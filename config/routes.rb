@@ -38,9 +38,11 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing the them or commenting them out if you're using named routes and resources.
-  
-  map.routes_for_browser_cms_news_module
+
+  map.routes_for_bcms_blog
+  map.routes_for_bcms_news
   map.routes_for_browser_cms
+
   #map.connect ':controller/:action/:id'
   #map.connect ':controller/:action/:id.:format'
 end
