@@ -1,0 +1,1 @@
+server "sam", :app, :web, :db, :primary => true
