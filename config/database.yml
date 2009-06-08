@@ -20,6 +20,6 @@ production:
   database: mano_cms_production
   host: localhost
   username: root
-  password: 
+  password: agile123
   encoding: utf8
   socket: /var/run/mysqld/mysqld.sock
