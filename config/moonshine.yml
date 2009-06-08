@@ -6,8 +6,6 @@
 :self_signed: true
 :deploy_to: /srv/mano_browsercms
 :domain: codegreenlabs.com
-:domain_aliases
-  - bcms.codegreenlabs.com
 :repository: git@github.com:agiletoolkit/mano_browercms.git
 :local_config:
 - config/database.yml
@@ -17,6 +15,7 @@
 - pids
 - config
 :apt_gems:
+  :rails:    
   :paperclip:
   - imagemagick
 :passenger:
