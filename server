@@ -1,464 +1,33 @@
-Script started on Wed Jun  3 11:19:57 2009
-bobpayne@bob-paynes-macbook-pro/bob/dev/mano_browercms$ script/server
-=> Booting Mongrel
-=> Rails 2.3.2 application starting on http://0.0.0.0:3000
-=> Call with -d to detach
-=> Ctrl-C to shutdown server
-
-
-Processing Cms::ContentController#show (for 127.0.0.1 at 2009-06-03 11:20:24) [GET]
-  Parameters: {"path"=>["images", "banner.png"]}
-Caching is disabled
-  [4;36;1mGroup Load (0.3ms)[0m   [0;1mSELECT * FROM "groups" WHERE ("groups"."code" = 'guest') LIMIT 1[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "permissions" INNER JOIN "group_permissions" ON "permissions".id = "group_permissions".permission_id WHERE (name in ('edit_content','publish_content','administrate')) AND (("group_permissions".group_id = 1)) [0m
-  [4;36;1mRedirect Load (0.1ms)[0m   [0;1mSELECT * FROM "redirects" WHERE ("redirects"."from_path" = '/images/banner.png') LIMIT 1[0m
-  [4;35;1mAttachment Load (0.3ms)[0m   [0mSELECT * FROM "attachments" WHERE ("attachments"."file_path" = '/images/banner.png') AND (((("attachments"."archived" = 'f' AND "attachments"."published" = 't')) AND (attachments.deleted = 'f')) AND (("attachments"."archived" = 'f' AND "attachments"."published" = 't'))) LIMIT 1[0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "permissions" INNER JOIN "group_permissions" ON "permissions".id = "group_permissions".permission_id WHERE (name in ('edit_content','publish_content','administrate')) AND (("group_permissions".group_id = 1)) [0m
-..... Displaying live version of page
-  [4;35;1mPage Load (1.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."path" = '/images/banner.png') AND (((("pages"."archived" = 'f' AND "pages"."published" = 't')) AND (pages.deleted = 'f')) AND (("pages"."archived" = 'f' AND "pages"."published" = 't'))) LIMIT 1[0m
-Page Not Found
-  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "permissions" INNER JOIN "group_permissions" ON "permissions".id = "group_permissions".permission_id WHERE (name in ('edit_content','publish_content')) AND (("group_permissions".group_id = 1)) [0m
-  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."path" = '/system/not_found') AND (((("pages"."archived" = 'f' AND "pages"."published" = 't')) AND (pages.deleted = 'f')) AND (("pages"."archived" = 'f' AND "pages"."published" = 't'))) LIMIT 1[0m
-Rendering Error Page: #<Page id: 2, version: 4, lock_version: 3, name: "Page Not Found", title: nil, path: "/system/not_found", template_file_name: "default.html.erb", description: nil, keywords: nil, language: nil, cacheable: true, hidden: true, published: true, deleted: false, archived: false, created_by_id: 1, updated_by_id: 1, created_at: "2009-05-06 02:23:48", updated_at: "2009-05-06 02:23:50">
-Rendering template within layouts/templates/default
-Rendering cms/content/show (not_found)
-  [4;36;1mConnector Load (1.2ms)[0m   [0;1mSELECT * FROM "connectors" WHERE ("connectors".page_id = 2) AND (("connectors"."page_version" = 4) AND ("connectors".page_id = 2)) ORDER BY connectors.container, connectors.position[0m
-  [4;35;1mHtmlBlock Load (0.9ms)[0m   [0mSELECT * FROM "html_blocks" WHERE ("html_blocks"."id" = 1) [0m
-  [4;36;1mHtmlBlock::Version Load (0.3ms)[0m   [0;1mSELECT * FROM "html_block_versions" WHERE ("html_block_versions".html_block_id = 1 AND ("html_block_versions"."version" = 1)) LIMIT 1[0m
-..... Rendering connectable HtmlBlock #1 v1
-  [4;35;1mSectionNode Load (0.3ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".node_id = 2 AND "section_nodes".node_type = 'Page') LIMIT 1[0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 2) [0m
-  [4;35;1mSectionNode Load (0.2ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".node_id = 2 AND "section_nodes".node_type = 'Section') LIMIT 1[0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 1) [0m
-  [4;35;1mSectionNode Load (0.5ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 2) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 2)) LIMIT 1[0m
-  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 2) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (1.0ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 1) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 2) [0m
-  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) AND (pages.deleted = 'f') [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 3) [0m
-  [4;35;1mSection Load (0.2ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 4) [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 5) [0m
-  [4;35;1mSection Load (0.2ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 6) [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 7) [0m
-  [4;35;1mSection Load (0.2ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 8) [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 9) [0m
-  [4;35;1mPage Load (0.1ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 22) AND (pages.deleted = 'f') [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 10) [0m
-  [4;35;1mSectionNode Load (1.6ms)[0m   [0mSELECT * FROM "section_nodes" WHERE (((section_nodes.node_type IN ('Section','Page','Link')) AND ("section_nodes".section_id = 1)) AND ("section_nodes".section_id = 1)) ORDER BY section_nodes.position[0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 2) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) AND (pages.deleted = 'f') [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 3) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 4) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 5) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 6) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 7) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 8) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 9) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 22) AND (pages.deleted = 'f') [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 10) [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 3) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 3)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 5) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 4) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 4)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 10) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.5ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 5) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 5)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 12) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 6) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 6)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 14) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 7) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 7)) LIMIT 1[0m
-  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 8) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 10) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 10)) LIMIT 1[0m
-  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 23) AND (pages.deleted = 'f') [0m
-  [4;35;1mPageTemplate Load (0.3ms)[0m   [0mSELECT * FROM "dynamic_views" WHERE ((("dynamic_views"."handler" = 'erb' AND "dynamic_views"."format" = 'html' AND "dynamic_views"."name" = 'default') AND (dynamic_views.deleted = 'f')) AND ("dynamic_views"."handler" = 'erb' AND "dynamic_views"."format" = 'html' AND "dynamic_views"."name" = 'default')) AND ( ("dynamic_views"."type" = 'PageTemplate' ) ) LIMIT 1[0m
-
-
-Processing Cms::ContentController#show (for 127.0.0.1 at 2009-06-03 11:20:25) [GET]
-  Parameters: {"path"=>["images", "green.gif"]}
-Caching is disabled
-  [4;36;1mGroup Load (1.5ms)[0m   [0;1mSELECT * FROM "groups" WHERE ("groups"."code" = 'guest') LIMIT 1[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "permissions" INNER JOIN "group_permissions" ON "permissions".id = "group_permissions".permission_id WHERE (name in ('edit_content','publish_content','administrate')) AND (("group_permissions".group_id = 1)) [0m
-  [4;36;1mRedirect Load (0.1ms)[0m   [0;1mSELECT * FROM "redirects" WHERE ("redirects"."from_path" = '/images/green.gif') LIMIT 1[0m
-  [4;35;1mAttachment Load (0.2ms)[0m   [0mSELECT * FROM "attachments" WHERE ("attachments"."file_path" = '/images/green.gif') AND (((("attachments"."archived" = 'f' AND "attachments"."published" = 't')) AND (attachments.deleted = 'f')) AND (("attachments"."archived" = 'f' AND "attachments"."published" = 't'))) LIMIT 1[0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "permissions" INNER JOIN "group_permissions" ON "permissions".id = "group_permissions".permission_id WHERE (name in ('edit_content','publish_content','administrate')) AND (("group_permissions".group_id = 1)) [0m
-..... Displaying live version of page
-  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."path" = '/images/green.gif') AND (((("pages"."archived" = 'f' AND "pages"."published" = 't')) AND (pages.deleted = 'f')) AND (("pages"."archived" = 'f' AND "pages"."published" = 't'))) LIMIT 1[0m
-Page Not Found
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "permissions" INNER JOIN "group_permissions" ON "permissions".id = "group_permissions".permission_id WHERE (name in ('edit_content','publish_content')) AND (("group_permissions".group_id = 1)) [0m
-  [4;35;1mPage Load (0.8ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."path" = '/system/not_found') AND (((("pages"."archived" = 'f' AND "pages"."published" = 't')) AND (pages.deleted = 'f')) AND (("pages"."archived" = 'f' AND "pages"."published" = 't'))) LIMIT 1[0m
-Rendering Error Page: #<Page id: 2, version: 4, lock_version: 3, name: "Page Not Found", title: nil, path: "/system/not_found", template_file_name: "default.html.erb", description: nil, keywords: nil, language: nil, cacheable: true, hidden: true, published: true, deleted: false, archived: false, created_by_id: 1, updated_by_id: 1, created_at: "2009-05-06 02:23:48", updated_at: "2009-05-06 02:23:50">
-Rendering template within layouts/templates/default
-Rendering cms/content/show (not_found)
-  [4;36;1mConnector Load (0.6ms)[0m   [0;1mSELECT * FROM "connectors" WHERE ("connectors".page_id = 2) AND (("connectors"."page_version" = 4) AND ("connectors".page_id = 2)) ORDER BY connectors.container, connectors.position[0m
-  [4;35;1mHtmlBlock Load (0.3ms)[0m   [0mSELECT * FROM "html_blocks" WHERE ("html_blocks"."id" = 1) [0m
-  [4;36;1mHtmlBlock::Version Load (0.3ms)[0m   [0;1mSELECT * FROM "html_block_versions" WHERE ("html_block_versions".html_block_id = 1 AND ("html_block_versions"."version" = 1)) LIMIT 1[0m
-..... Rendering connectable HtmlBlock #1 v1
-  [4;35;1mSectionNode Load (0.3ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".node_id = 2 AND "section_nodes".node_type = 'Page') LIMIT 1[0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 2) [0m
-  [4;35;1mSectionNode Load (0.2ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".node_id = 2 AND "section_nodes".node_type = 'Section') LIMIT 1[0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 1) [0m
-  [4;35;1mSectionNode Load (0.5ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 2) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 2)) LIMIT 1[0m
-  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 2) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (1.1ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 1) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 2) [0m
-  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) AND (pages.deleted = 'f') [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 3) [0m
-  [4;35;1mSection Load (0.2ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 4) [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 5) [0m
-  [4;35;1mSection Load (0.2ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 6) [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 7) [0m
-  [4;35;1mSection Load (0.2ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 8) [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 9) [0m
-  [4;35;1mPage Load (0.1ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 22) AND (pages.deleted = 'f') [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 10) [0m
-  [4;35;1mSectionNode Load (1.6ms)[0m   [0mSELECT * FROM "section_nodes" WHERE (((section_nodes.node_type IN ('Section','Page','Link')) AND ("section_nodes".section_id = 1)) AND ("section_nodes".section_id = 1)) ORDER BY section_nodes.position[0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 2) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) AND (pages.deleted = 'f') [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 3) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 4) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 5) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 6) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 7) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 8) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 9) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 22) AND (pages.deleted = 'f') [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 10) [0m
-  [4;35;1mSectionNode Load (0.5ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 3) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 3)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 5) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 4) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 4)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 10) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.5ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 5) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 5)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 12) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 6) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 6)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 14) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 7) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 7)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 8) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 10) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 10)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 23) AND (pages.deleted = 'f') [0m
-  [4;35;1mPageTemplate Load (0.4ms)[0m   [0mSELECT * FROM "dynamic_views" WHERE ((("dynamic_views"."handler" = 'erb' AND "dynamic_views"."format" = 'html' AND "dynamic_views"."name" = 'default') AND (dynamic_views.deleted = 'f')) AND ("dynamic_views"."handler" = 'erb' AND "dynamic_views"."format" = 'html' AND "dynamic_views"."name" = 'default')) AND ( ("dynamic_views"."type" = 'PageTemplate' ) ) LIMIT 1[0m
-
-
-Processing Cms::ContentController#show (for 127.0.0.1 at 2009-06-03 11:20:25) [GET]
-  Parameters: {"path"=>["images", "recycle.gif"]}
-Caching is disabled
-  [4;36;1mGroup Load (1.5ms)[0m   [0;1mSELECT * FROM "groups" WHERE ("groups"."code" = 'guest') LIMIT 1[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "permissions" INNER JOIN "group_permissions" ON "permissions".id = "group_permissions".permission_id WHERE (name in ('edit_content','publish_content','administrate')) AND (("group_permissions".group_id = 1)) [0m
-  [4;36;1mRedirect Load (0.1ms)[0m   [0;1mSELECT * FROM "redirects" WHERE ("redirects"."from_path" = '/images/recycle.gif') LIMIT 1[0m
-  [4;35;1mAttachment Load (0.2ms)[0m   [0mSELECT * FROM "attachments" WHERE ("attachments"."file_path" = '/images/recycle.gif') AND (((("attachments"."archived" = 'f' AND "attachments"."published" = 't')) AND (attachments.deleted = 'f')) AND (("attachments"."archived" = 'f' AND "attachments"."published" = 't'))) LIMIT 1[0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "permissions" INNER JOIN "group_permissions" ON "permissions".id = "group_permissions".permission_id WHERE (name in ('edit_content','publish_content','administrate')) AND (("group_permissions".group_id = 1)) [0m
-..... Displaying live version of page
-  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."path" = '/images/recycle.gif') AND (((("pages"."archived" = 'f' AND "pages"."published" = 't')) AND (pages.deleted = 'f')) AND (("pages"."archived" = 'f' AND "pages"."published" = 't'))) LIMIT 1[0m
-Page Not Found
-  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "permissions" INNER JOIN "group_permissions" ON "permissions".id = "group_permissions".permission_id WHERE (name in ('edit_content','publish_content')) AND (("group_permissions".group_id = 1)) [0m
-  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."path" = '/system/not_found') AND (((("pages"."archived" = 'f' AND "pages"."published" = 't')) AND (pages.deleted = 'f')) AND (("pages"."archived" = 'f' AND "pages"."published" = 't'))) LIMIT 1[0m
-Rendering Error Page: #<Page id: 2, version: 4, lock_version: 3, name: "Page Not Found", title: nil, path: "/system/not_found", template_file_name: "default.html.erb", description: nil, keywords: nil, language: nil, cacheable: true, hidden: true, published: true, deleted: false, archived: false, created_by_id: 1, updated_by_id: 1, created_at: "2009-05-06 02:23:48", updated_at: "2009-05-06 02:23:50">
-Rendering template within layouts/templates/default
-Rendering cms/content/show (not_found)
-  [4;36;1mConnector Load (0.6ms)[0m   [0;1mSELECT * FROM "connectors" WHERE ("connectors".page_id = 2) AND (("connectors"."page_version" = 4) AND ("connectors".page_id = 2)) ORDER BY connectors.container, connectors.position[0m
-  [4;35;1mHtmlBlock Load (0.3ms)[0m   [0mSELECT * FROM "html_blocks" WHERE ("html_blocks"."id" = 1) [0m
-  [4;36;1mHtmlBlock::Version Load (0.3ms)[0m   [0;1mSELECT * FROM "html_block_versions" WHERE ("html_block_versions".html_block_id = 1 AND ("html_block_versions"."version" = 1)) LIMIT 1[0m
-..... Rendering connectable HtmlBlock #1 v1
-  [4;35;1mSectionNode Load (0.3ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".node_id = 2 AND "section_nodes".node_type = 'Page') LIMIT 1[0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 2) [0m
-  [4;35;1mSectionNode Load (0.2ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".node_id = 2 AND "section_nodes".node_type = 'Section') LIMIT 1[0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 1) [0m
-  [4;35;1mSectionNode Load (0.5ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 2) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 2)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 2) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (1.0ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 1) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 2) [0m
-  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) AND (pages.deleted = 'f') [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 3) [0m
-  [4;35;1mSection Load (0.2ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 4) [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 5) [0m
-  [4;35;1mSection Load (0.2ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 6) [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 7) [0m
-  [4;35;1mSection Load (0.2ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 8) [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 9) [0m
-  [4;35;1mPage Load (0.1ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 22) AND (pages.deleted = 'f') [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 10) [0m
-  [4;35;1mSectionNode Load (1.6ms)[0m   [0mSELECT * FROM "section_nodes" WHERE (((section_nodes.node_type IN ('Section','Page','Link')) AND ("section_nodes".section_id = 1)) AND ("section_nodes".section_id = 1)) ORDER BY section_nodes.position[0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 2) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) AND (pages.deleted = 'f') [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 3) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 4) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 5) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 6) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 7) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 8) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 9) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 22) AND (pages.deleted = 'f') [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 10) [0m
-  [4;35;1mSectionNode Load (0.5ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 3) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 3)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 5) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.6ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 4) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 4)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 10) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 5) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 5)) LIMIT 1[0m
-  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 12) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.5ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 6) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 6)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 14) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 7) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 7)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 8) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.5ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 10) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 10)) LIMIT 1[0m
-  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 23) AND (pages.deleted = 'f') [0m
-  [4;35;1mPageTemplate Load (0.3ms)[0m   [0mSELECT * FROM "dynamic_views" WHERE ((("dynamic_views"."handler" = 'erb' AND "dynamic_views"."format" = 'html' AND "dynamic_views"."name" = 'default') AND (dynamic_views.deleted = 'f')) AND ("dynamic_views"."handler" = 'erb' AND "dynamic_views"."format" = 'html' AND "dynamic_views"."name" = 'default')) AND ( ("dynamic_views"."type" = 'PageTemplate' ) ) LIMIT 1[0m
-
-
-Processing Cms::ContentController#show (for 127.0.0.1 at 2009-06-03 11:20:25) [GET]
-  Parameters: {"path"=>["assets", "loading.gif"]}
-Caching is disabled
-  [4;36;1mGroup Load (2.6ms)[0m   [0;1mSELECT * FROM "groups" WHERE ("groups"."code" = 'guest') LIMIT 1[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "permissions" INNER JOIN "group_permissions" ON "permissions".id = "group_permissions".permission_id WHERE (name in ('edit_content','publish_content','administrate')) AND (("group_permissions".group_id = 1)) [0m
-  [4;36;1mRedirect Load (0.1ms)[0m   [0;1mSELECT * FROM "redirects" WHERE ("redirects"."from_path" = '/assets/loading.gif') LIMIT 1[0m
-  [4;35;1mAttachment Load (0.1ms)[0m   [0mSELECT * FROM "attachments" WHERE ("attachments"."file_path" = '/assets/loading.gif') AND (((("attachments"."archived" = 'f' AND "attachments"."published" = 't')) AND (attachments.deleted = 'f')) AND (("attachments"."archived" = 'f' AND "attachments"."published" = 't'))) LIMIT 1[0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "permissions" INNER JOIN "group_permissions" ON "permissions".id = "group_permissions".permission_id WHERE (name in ('edit_content','publish_content','administrate')) AND (("group_permissions".group_id = 1)) [0m
-..... Displaying live version of page
-  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."path" = '/assets/loading.gif') AND (((("pages"."archived" = 'f' AND "pages"."published" = 't')) AND (pages.deleted = 'f')) AND (("pages"."archived" = 'f' AND "pages"."published" = 't'))) LIMIT 1[0m
-Page Not Found
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "permissions" INNER JOIN "group_permissions" ON "permissions".id = "group_permissions".permission_id WHERE (name in ('edit_content','publish_content')) AND (("group_permissions".group_id = 1)) [0m
-  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."path" = '/system/not_found') AND (((("pages"."archived" = 'f' AND "pages"."published" = 't')) AND (pages.deleted = 'f')) AND (("pages"."archived" = 'f' AND "pages"."published" = 't'))) LIMIT 1[0m
-Rendering Error Page: #<Page id: 2, version: 4, lock_version: 3, name: "Page Not Found", title: nil, path: "/system/not_found", template_file_name: "default.html.erb", description: nil, keywords: nil, language: nil, cacheable: true, hidden: true, published: true, deleted: false, archived: false, created_by_id: 1, updated_by_id: 1, created_at: "2009-05-06 02:23:48", updated_at: "2009-05-06 02:23:50">
-Rendering template within layouts/templates/default
-Rendering cms/content/show (not_found)
-  [4;36;1mConnector Load (0.6ms)[0m   [0;1mSELECT * FROM "connectors" WHERE ("connectors".page_id = 2) AND (("connectors"."page_version" = 4) AND ("connectors".page_id = 2)) ORDER BY connectors.container, connectors.position[0m
-  [4;35;1mHtmlBlock Load (0.3ms)[0m   [0mSELECT * FROM "html_blocks" WHERE ("html_blocks"."id" = 1) [0m
-  [4;36;1mHtmlBlock::Version Load (0.3ms)[0m   [0;1mSELECT * FROM "html_block_versions" WHERE ("html_block_versions".html_block_id = 1 AND ("html_block_versions"."version" = 1)) LIMIT 1[0m
-..... Rendering connectable HtmlBlock #1 v1
-  [4;35;1mSectionNode Load (0.2ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".node_id = 2 AND "section_nodes".node_type = 'Page') LIMIT 1[0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 2) [0m
-  [4;35;1mSectionNode Load (0.2ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".node_id = 2 AND "section_nodes".node_type = 'Section') LIMIT 1[0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 1) [0m
-  [4;35;1mSectionNode Load (0.5ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 2) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 2)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 2) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (1.0ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 1) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 2) [0m
-  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) AND (pages.deleted = 'f') [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 3) [0m
-  [4;35;1mSection Load (0.2ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 4) [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 5) [0m
-  [4;35;1mSection Load (0.2ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 6) [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 7) [0m
-  [4;35;1mSection Load (0.2ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 8) [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 9) [0m
-  [4;35;1mPage Load (0.1ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 22) AND (pages.deleted = 'f') [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 10) [0m
-  [4;35;1mSectionNode Load (1.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE (((section_nodes.node_type IN ('Section','Page','Link')) AND ("section_nodes".section_id = 1)) AND ("section_nodes".section_id = 1)) ORDER BY section_nodes.position[0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 2) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) AND (pages.deleted = 'f') [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 3) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 4) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 5) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 6) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 7) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 8) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 9) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 22) AND (pages.deleted = 'f') [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 10) [0m
-  [4;35;1mSectionNode Load (0.5ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 3) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 3)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 5) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 4) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 4)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 10) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.6ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 5) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 5)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 12) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 6) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 6)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 14) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 7) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 7)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 8) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 10) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 10)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 23) AND (pages.deleted = 'f') [0m
-  [4;35;1mPageTemplate Load (0.3ms)[0m   [0mSELECT * FROM "dynamic_views" WHERE ((("dynamic_views"."handler" = 'erb' AND "dynamic_views"."format" = 'html' AND "dynamic_views"."name" = 'default') AND (dynamic_views.deleted = 'f')) AND ("dynamic_views"."handler" = 'erb' AND "dynamic_views"."format" = 'html' AND "dynamic_views"."name" = 'default')) AND ( ("dynamic_views"."type" = 'PageTemplate' ) ) LIMIT 1[0m
-
-
-Processing Cms::ContentController#show (for 127.0.0.1 at 2009-06-03 11:20:25) [GET]
-  Parameters: {"path"=>["assets", "closelabel.gif"]}
-Caching is disabled
-  [4;36;1mGroup Load (1.6ms)[0m   [0;1mSELECT * FROM "groups" WHERE ("groups"."code" = 'guest') LIMIT 1[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "permissions" INNER JOIN "group_permissions" ON "permissions".id = "group_permissions".permission_id WHERE (name in ('edit_content','publish_content','administrate')) AND (("group_permissions".group_id = 1)) [0m
-  [4;36;1mRedirect Load (0.1ms)[0m   [0;1mSELECT * FROM "redirects" WHERE ("redirects"."from_path" = '/assets/closelabel.gif') LIMIT 1[0m
-  [4;35;1mAttachment Load (0.1ms)[0m   [0mSELECT * FROM "attachments" WHERE ("attachments"."file_path" = '/assets/closelabel.gif') AND (((("attachments"."archived" = 'f' AND "attachments"."published" = 't')) AND (attachments.deleted = 'f')) AND (("attachments"."archived" = 'f' AND "attachments"."published" = 't'))) LIMIT 1[0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "permissions" INNER JOIN "group_permissions" ON "permissions".id = "group_permissions".permission_id WHERE (name in ('edit_content','publish_content','administrate')) AND (("group_permissions".group_id = 1)) [0m
-..... Displaying live version of page
-  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."path" = '/assets/closelabel.gif') AND (((("pages"."archived" = 'f' AND "pages"."published" = 't')) AND (pages.deleted = 'f')) AND (("pages"."archived" = 'f' AND "pages"."published" = 't'))) LIMIT 1[0m
-Page Not Found
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "permissions" INNER JOIN "group_permissions" ON "permissions".id = "group_permissions".permission_id WHERE (name in ('edit_content','publish_content')) AND (("group_permissions".group_id = 1)) [0m
-  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."path" = '/system/not_found') AND (((("pages"."archived" = 'f' AND "pages"."published" = 't')) AND (pages.deleted = 'f')) AND (("pages"."archived" = 'f' AND "pages"."published" = 't'))) LIMIT 1[0m
-Rendering Error Page: #<Page id: 2, version: 4, lock_version: 3, name: "Page Not Found", title: nil, path: "/system/not_found", template_file_name: "default.html.erb", description: nil, keywords: nil, language: nil, cacheable: true, hidden: true, published: true, deleted: false, archived: false, created_by_id: 1, updated_by_id: 1, created_at: "2009-05-06 02:23:48", updated_at: "2009-05-06 02:23:50">
-Rendering template within layouts/templates/default
-Rendering cms/content/show (not_found)
-  [4;36;1mConnector Load (0.6ms)[0m   [0;1mSELECT * FROM "connectors" WHERE ("connectors".page_id = 2) AND (("connectors"."page_version" = 4) AND ("connectors".page_id = 2)) ORDER BY connectors.container, connectors.position[0m
-  [4;35;1mHtmlBlock Load (0.3ms)[0m   [0mSELECT * FROM "html_blocks" WHERE ("html_blocks"."id" = 1) [0m
-  [4;36;1mHtmlBlock::Version Load (0.3ms)[0m   [0;1mSELECT * FROM "html_block_versions" WHERE ("html_block_versions".html_block_id = 1 AND ("html_block_versions"."version" = 1)) LIMIT 1[0m
-..... Rendering connectable HtmlBlock #1 v1
-  [4;35;1mSectionNode Load (0.2ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".node_id = 2 AND "section_nodes".node_type = 'Page') LIMIT 1[0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 2) [0m
-  [4;35;1mSectionNode Load (0.2ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".node_id = 2 AND "section_nodes".node_type = 'Section') LIMIT 1[0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 1) [0m
-  [4;35;1mSectionNode Load (0.5ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 2) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 2)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 2) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (1.1ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 1) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 2) [0m
-  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) AND (pages.deleted = 'f') [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 3) [0m
-  [4;35;1mSection Load (0.2ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 4) [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 5) [0m
-  [4;35;1mSection Load (0.2ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 6) [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 7) [0m
-  [4;35;1mSection Load (0.2ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 8) [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 9) [0m
-  [4;35;1mPage Load (0.1ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 22) AND (pages.deleted = 'f') [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 10) [0m
-  [4;35;1mSectionNode Load (1.8ms)[0m   [0mSELECT * FROM "section_nodes" WHERE (((section_nodes.node_type IN ('Section','Page','Link')) AND ("section_nodes".section_id = 1)) AND ("section_nodes".section_id = 1)) ORDER BY section_nodes.position[0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 2) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) AND (pages.deleted = 'f') [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 3) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 4) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 5) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 6) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 7) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 8) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 9) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 22) AND (pages.deleted = 'f') [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 10) [0m
-  [4;35;1mSectionNode Load (0.5ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 3) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 3)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 5) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 4) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 4)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 10) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.5ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 5) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 5)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 12) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 6) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 6)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 14) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 7) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 7)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 8) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 10) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 10)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 23) AND (pages.deleted = 'f') [0m
-  [4;35;1mPageTemplate Load (0.3ms)[0m   [0mSELECT * FROM "dynamic_views" WHERE ((("dynamic_views"."handler" = 'erb' AND "dynamic_views"."format" = 'html' AND "dynamic_views"."name" = 'default') AND (dynamic_views.deleted = 'f')) AND ("dynamic_views"."handler" = 'erb' AND "dynamic_views"."format" = 'html' AND "dynamic_views"."name" = 'default')) AND ( ("dynamic_views"."type" = 'PageTemplate' ) ) LIMIT 1[0m
-
-
-Processing Cms::ContentController#show (for 127.0.0.1 at 2009-06-03 11:21:44) [GET]
-  Parameters: {"path"=>["assets", "loading.gif"]}
-Caching is disabled
-  [4;36;1mGroup Load (1.6ms)[0m   [0;1mSELECT * FROM "groups" WHERE ("groups"."code" = 'guest') LIMIT 1[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "permissions" INNER JOIN "group_permissions" ON "permissions".id = "group_permissions".permission_id WHERE (name in ('edit_content','publish_content','administrate')) AND (("group_permissions".group_id = 1)) [0m
-  [4;36;1mRedirect Load (0.1ms)[0m   [0;1mSELECT * FROM "redirects" WHERE ("redirects"."from_path" = '/assets/loading.gif') LIMIT 1[0m
-  [4;35;1mAttachment Load (0.2ms)[0m   [0mSELECT * FROM "attachments" WHERE ("attachments"."file_path" = '/assets/loading.gif') AND (((("attachments"."archived" = 'f' AND "attachments"."published" = 't')) AND (attachments.deleted = 'f')) AND (("attachments"."archived" = 'f' AND "attachments"."published" = 't'))) LIMIT 1[0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "permissions" INNER JOIN "group_permissions" ON "permissions".id = "group_permissions".permission_id WHERE (name in ('edit_content','publish_content','administrate')) AND (("group_permissions".group_id = 1)) [0m
-..... Displaying live version of page
-  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."path" = '/assets/loading.gif') AND (((("pages"."archived" = 'f' AND "pages"."published" = 't')) AND (pages.deleted = 'f')) AND (("pages"."archived" = 'f' AND "pages"."published" = 't'))) LIMIT 1[0m
-Page Not Found
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "permissions" INNER JOIN "group_permissions" ON "permissions".id = "group_permissions".permission_id WHERE (name in ('edit_content','publish_content')) AND (("group_permissions".group_id = 1)) [0m
-  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."path" = '/system/not_found') AND (((("pages"."archived" = 'f' AND "pages"."published" = 't')) AND (pages.deleted = 'f')) AND (("pages"."archived" = 'f' AND "pages"."published" = 't'))) LIMIT 1[0m
-Rendering Error Page: #<Page id: 2, version: 4, lock_version: 3, name: "Page Not Found", title: nil, path: "/system/not_found", template_file_name: "default.html.erb", description: nil, keywords: nil, language: nil, cacheable: true, hidden: true, published: true, deleted: false, archived: false, created_by_id: 1, updated_by_id: 1, created_at: "2009-05-06 02:23:48", updated_at: "2009-05-06 02:23:50">
-Rendering template within layouts/templates/default
-Rendering cms/content/show (not_found)
-  [4;36;1mConnector Load (0.7ms)[0m   [0;1mSELECT * FROM "connectors" WHERE ("connectors".page_id = 2) AND (("connectors"."page_version" = 4) AND ("connectors".page_id = 2)) ORDER BY connectors.container, connectors.position[0m
-  [4;35;1mHtmlBlock Load (0.3ms)[0m   [0mSELECT * FROM "html_blocks" WHERE ("html_blocks"."id" = 1) [0m
-  [4;36;1mHtmlBlock::Version Load (0.3ms)[0m   [0;1mSELECT * FROM "html_block_versions" WHERE ("html_block_versions".html_block_id = 1 AND ("html_block_versions"."version" = 1)) LIMIT 1[0m
-..... Rendering connectable HtmlBlock #1 v1
-  [4;35;1mSectionNode Load (0.2ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".node_id = 2 AND "section_nodes".node_type = 'Page') LIMIT 1[0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 2) [0m
-  [4;35;1mSectionNode Load (0.2ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".node_id = 2 AND "section_nodes".node_type = 'Section') LIMIT 1[0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 1) [0m
-  [4;35;1mSectionNode Load (0.5ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 2) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 2)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 2) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (1.0ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 1) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 2) [0m
-  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) AND (pages.deleted = 'f') [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 3) [0m
-  [4;35;1mSection Load (0.2ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 4) [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 5) [0m
-  [4;35;1mSection Load (0.2ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 6) [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 7) [0m
-  [4;35;1mSection Load (0.2ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 8) [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 9) [0m
-  [4;35;1mPage Load (0.1ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 22) AND (pages.deleted = 'f') [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 10) [0m
-  [4;35;1mSectionNode Load (1.6ms)[0m   [0mSELECT * FROM "section_nodes" WHERE (((section_nodes.node_type IN ('Section','Page','Link')) AND ("section_nodes".section_id = 1)) AND ("section_nodes".section_id = 1)) ORDER BY section_nodes.position[0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 2) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) AND (pages.deleted = 'f') [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 3) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 4) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 5) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 6) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 7) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 8) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 9) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 22) AND (pages.deleted = 'f') [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 10) [0m
-  [4;35;1mSectionNode Load (0.5ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 3) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 3)) LIMIT 1[0m
-  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 5) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 4) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 4)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 10) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 5) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 5)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 12) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 6) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 6)) LIMIT 1[0m
-  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 14) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 7) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 7)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 8) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 10) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 10)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 23) AND (pages.deleted = 'f') [0m
-  [4;35;1mPageTemplate Load (0.3ms)[0m   [0mSELECT * FROM "dynamic_views" WHERE ((("dynamic_views"."handler" = 'erb' AND "dynamic_views"."format" = 'html' AND "dynamic_views"."name" = 'default') AND (dynamic_views.deleted = 'f')) AND ("dynamic_views"."handler" = 'erb' AND "dynamic_views"."format" = 'html' AND "dynamic_views"."name" = 'default')) AND ( ("dynamic_views"."type" = 'PageTemplate' ) ) LIMIT 1[0m
-
-
-Processing Cms::ContentController#show (for 127.0.0.1 at 2009-06-03 11:21:44) [GET]
-  Parameters: {"path"=>["assets", "closelabel.gif"]}
-Caching is disabled
-  [4;36;1mGroup Load (1.5ms)[0m   [0;1mSELECT * FROM "groups" WHERE ("groups"."code" = 'guest') LIMIT 1[0m
-  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "permissions" INNER JOIN "group_permissions" ON "permissions".id = "group_permissions".permission_id WHERE (name in ('edit_content','publish_content','administrate')) AND (("group_permissions".group_id = 1)) [0m
-  [4;36;1mRedirect Load (0.1ms)[0m   [0;1mSELECT * FROM "redirects" WHERE ("redirects"."from_path" = '/assets/closelabel.gif') LIMIT 1[0m
-  [4;35;1mAttachment Load (0.2ms)[0m   [0mSELECT * FROM "attachments" WHERE ("attachments"."file_path" = '/assets/closelabel.gif') AND (((("attachments"."archived" = 'f' AND "attachments"."published" = 't')) AND (attachments.deleted = 'f')) AND (("attachments"."archived" = 'f' AND "attachments"."published" = 't'))) LIMIT 1[0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "permissions" INNER JOIN "group_permissions" ON "permissions".id = "group_permissions".permission_id WHERE (name in ('edit_content','publish_content','administrate')) AND (("group_permissions".group_id = 1)) [0m
-..... Displaying live version of page
-  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."path" = '/assets/closelabel.gif') AND (((("pages"."archived" = 'f' AND "pages"."published" = 't')) AND (pages.deleted = 'f')) AND (("pages"."archived" = 'f' AND "pages"."published" = 't'))) LIMIT 1[0m
-Page Not Found
-  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "permissions" INNER JOIN "group_permissions" ON "permissions".id = "group_permissions".permission_id WHERE (name in ('edit_content','publish_content')) AND (("group_permissions".group_id = 1)) [0m
-  [4;35;1mPage Load (0.4ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."path" = '/system/not_found') AND (((("pages"."archived" = 'f' AND "pages"."published" = 't')) AND (pages.deleted = 'f')) AND (("pages"."archived" = 'f' AND "pages"."published" = 't'))) LIMIT 1[0m
-Rendering Error Page: #<Page id: 2, version: 4, lock_version: 3, name: "Page Not Found", title: nil, path: "/system/not_found", template_file_name: "default.html.erb", description: nil, keywords: nil, language: nil, cacheable: true, hidden: true, published: true, deleted: false, archived: false, created_by_id: 1, updated_by_id: 1, created_at: "2009-05-06 02:23:48", updated_at: "2009-05-06 02:23:50">
-Rendering template within layouts/templates/default
-Rendering cms/content/show (not_found)
-  [4;36;1mConnector Load (0.6ms)[0m   [0;1mSELECT * FROM "connectors" WHERE ("connectors".page_id = 2) AND (("connectors"."page_version" = 4) AND ("connectors".page_id = 2)) ORDER BY connectors.container, connectors.position[0m
-  [4;35;1mHtmlBlock Load (0.3ms)[0m   [0mSELECT * FROM "html_blocks" WHERE ("html_blocks"."id" = 1) [0m
-  [4;36;1mHtmlBlock::Version Load (0.3ms)[0m   [0;1mSELECT * FROM "html_block_versions" WHERE ("html_block_versions".html_block_id = 1 AND ("html_block_versions"."version" = 1)) LIMIT 1[0m
-..... Rendering connectable HtmlBlock #1 v1
-  [4;35;1mSectionNode Load (0.2ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".node_id = 2 AND "section_nodes".node_type = 'Page') LIMIT 1[0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 2) [0m
-  [4;35;1mSectionNode Load (0.2ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".node_id = 2 AND "section_nodes".node_type = 'Section') LIMIT 1[0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 1) [0m
-  [4;35;1mSectionNode Load (0.5ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 2) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 2)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 2) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (1.1ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 1) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 2) [0m
-  [4;35;1mPage Load (0.3ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) AND (pages.deleted = 'f') [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 3) [0m
-  [4;35;1mSection Load (0.2ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 4) [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 5) [0m
-  [4;35;1mSection Load (0.2ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 6) [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 7) [0m
-  [4;35;1mSection Load (0.2ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 8) [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 9) [0m
-  [4;35;1mPage Load (0.1ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 22) AND (pages.deleted = 'f') [0m
-  [4;36;1mSection Load (0.2ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 10) [0m
-  [4;35;1mSectionNode Load (1.6ms)[0m   [0mSELECT * FROM "section_nodes" WHERE (((section_nodes.node_type IN ('Section','Page','Link')) AND ("section_nodes".section_id = 1)) AND ("section_nodes".section_id = 1)) ORDER BY section_nodes.position[0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 2) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 1) AND (pages.deleted = 'f') [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 3) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 4) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 5) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 6) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 7) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "sections" WHERE ("sections"."id" = 8) [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 9) [0m
-  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = 22) AND (pages.deleted = 'f') [0m
-  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sections" WHERE ("sections"."id" = 10) [0m
-  [4;35;1mSectionNode Load (0.6ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 3) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 3)) LIMIT 1[0m
-  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 5) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.5ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 4) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 4)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 10) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.5ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 5) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 5)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 12) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.7ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 6) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 6)) LIMIT 1[0m
-  [4;36;1mPage Load (0.4ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 14) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.5ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 7) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 7)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 8) AND (pages.deleted = 'f') [0m
-  [4;35;1mSectionNode Load (0.4ms)[0m   [0mSELECT * FROM "section_nodes" WHERE ("section_nodes".section_id = 10) AND ((section_nodes.node_type IN ('Link','Page')) AND ("section_nodes".section_id = 10)) LIMIT 1[0m
-  [4;36;1mPage Load (0.3ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = 23) AND (pages.deleted = 'f') [0m
-  [4;35;1mPageTemplate Load (0.4ms)[0m   [0mSELECT * FROM "dynamic_views" WHERE ((("dynamic_views"."handler" = 'erb' AND "dynamic_views"."format" = 'html' AND "dynamic_views"."name" = 'default') AND (dynamic_views.deleted = 'f')) AND ("dynamic_views"."handler" = 'erb' AND "dynamic_views"."format" = 'html' AND "dynamic_views"."name" = 'default')) AND ( ("dynamic_views"."type" = 'PageTemplate' ) ) LIMIT 1[0m
-^CExiting
-bobpayne@bob-paynes-macbook-pro/bob/dev/mano_browercms$ mate .
-bobpayne@bob-paynes-macbook-pro/bob/dev/mano_browercms$ 
+Script started on Thu Jun 11 18:57:19 2009
+bobpayne@bob-paynes-macbook-pro/bob/dev/mano_browercms$ ls
+Capfile		app		doc		log		server		vendor
+README		config		generate	public		test
+Rakefile	db		install.rb	script		tmp
+bobpayne@bob-paynes-macbook-pro/bob/dev/mano_browercms$ git push
+Counting objects: 8, done.
+Delta compression using 2 threads.
+Compressing objects:  25% (1/4)   Compressing objects:  50% (2/4)   Compressing objects:  75% (3/4)   Compressing objects: 100% (4/4)   Compressing objects: 100% (4/4), done.
+Writing objects:  16% (1/6)   Writing objects:  33% (2/6)   Writing objects:  50% (3/6)   Writing objects:  66% (4/6)   Writing objects:  83% (5/6)   Writing objects: 100% (6/6)   Writing objects: 100% (6/6), 550 bytes, done.
+Total 6 (delta 2), reused 2 (delta 0)
+To git@github.com:agiletoolkit/mano_browercms.git
+   31e8416..d359023  master -> master
+bobpayne@bob-paynes-macbook-pro/bob/dev/mano_browercms$ git pushhs[K[K[K[K[K[K[K[Kls
+Capfile		app		doc		log		server		vendor
+README		config		generate	public		test
+Rakefile	db		install.rb	script		tmp
+bobpayne@bob-paynes-macbook-pro/bob/dev/mano_browercms$ mate.[K .
+bobpayne@bob-paynes-macbook-pro/bob/dev/mano_browercms$ mat .github
+bash: mat: command not found
+bobpayne@bob-paynes-macbook-pro/bob/dev/mano_browercms$ mate .gitignore
+bobpayne@bob-paynes-macbook-pro/bob/dev/mano_browercms$ git pull
+remote: Counting objects: 7, done.[K
+remote: Compressing objects:  25% (1/4)   [Kremote: Compressing objects:  50% (2/4)   [Kremote: Compressing objects:  75% (3/4)   [Kremote: Compressing objects: 100% (4/4)   [Kremote: Compressing objects: 100% (4/4), done.[K
+remote: Total 4 (delta 3), reused 0 (delta 0)[K
+Unpacking objects:  25% (1/4)   Unpacking objects:  50% (2/4)   Unpacking objects:  75% (3/4)   Unpacking objects: 100% (4/4)   Unpacking objects: 100% (4/4), done.
+From git@github.com:agiletoolkit/mano_browercms
+   d359023..4d9c76c  master     -> origin/master
+Updating d359023..4d9c76c
+Fast forward
+ db/development.sqlite3 |  Bin 153600 -> 160768 bytes
+ 1 files changed, 0 insertions(+), 0 deletions(-)
+bobpayne@bob-paynes-macbook-pro/bob/dev/mano_browercms$ git ad

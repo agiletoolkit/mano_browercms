@@ -1,4 +1,4 @@
 log
 cache/*.*
-db/production.sqlite3.db
+db/*.sqlite3.db
 config/database.yml
