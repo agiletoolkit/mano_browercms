@@ -1,1 +1,1 @@
-server "sam", :app, :web, :db, :primary => true
+server "mano", :app, :web, :db, :primary => true
