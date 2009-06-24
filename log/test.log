@@ -1,0 +1,19 @@
+~~ Loading extensions from /bob/dev/mano_browercms/vendor/gems/browsercms-3.0.0/lib/cms/extensions/action_view/base.rb
+~~ Loading extensions from /bob/dev/mano_browercms/vendor/gems/browsercms-3.0.0/lib/cms/extensions/active_record/base.rb
+~~ Loading extensions from /bob/dev/mano_browercms/vendor/gems/browsercms-3.0.0/lib/cms/extensions/active_record/connection_adapters/abstract/schema_statements.rb
+~~ Loading extensions from /bob/dev/mano_browercms/vendor/gems/browsercms-3.0.0/lib/cms/extensions/active_record/errors.rb
+~~ Loading extensions from /bob/dev/mano_browercms/vendor/gems/browsercms-3.0.0/lib/cms/extensions/active_support/cache/file_store.rb
+~~ Loading extensions from /bob/dev/mano_browercms/vendor/gems/browsercms-3.0.0/lib/cms/extensions/hash.rb
+~~ Loading extensions from /bob/dev/mano_browercms/vendor/gems/browsercms-3.0.0/lib/cms/extensions/integer.rb
+~~ Loading extensions from /bob/dev/mano_browercms/vendor/gems/browsercms-3.0.0/lib/cms/extensions/nil.rb
+~~ Loading extensions from /bob/dev/mano_browercms/vendor/gems/browsercms-3.0.0/lib/cms/extensions/string.rb
+  [4;36;1mSQL (3.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mDynamicView Load (0.2ms)[0m   [0mSELECT * FROM "dynamic_views" WHERE ("dynamic_views"."deleted" = 'f') [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mPageRoute Load (0.4ms)[0m   [0mSELECT * FROM "page_routes" ORDER BY page_routes.name[0m
