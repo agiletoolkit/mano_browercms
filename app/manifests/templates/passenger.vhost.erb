@@ -1,0 +1,30 @@
+<VirtualHost *:80>
+  ServerName cms.<%= configuration[:domain] || `hostname -f` %>
+  DocumentRoot "<%= configuration[:deploy_to] + "/current/public" %>"
+  RailsEnv production
+  <directory "<%= configuration[:deploy_to] + "/current/public" %>">
+    Order allow,deny
+    Allow from all
+  </directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+  ServerName <%= configuration[:domain] || `hostname -f` %>
+  DocumentRoot "<%= configuration[:deploy_to] + "/current/public" %>"
+  RailsEnv production
+  RewriteEngine On
+
+  # Uncomment for rewrite debugging
+  #RewriteLog /var/sites/mysite/log/rewrite.log
+  #RewriteLogLevel 9
+
+  #apache should serve cached pages
+  RewriteRule ^/$ /cache/index.html [QSA]
+  RewriteRule ^([^.]+)$ /cache/$1.html [QSA]
+
+  <directory "<%= configuration[:deploy_to] + "/current/public" %>">
+    Order allow,deny
+    Allow from all
+  </directory>
+</VirtualHost>
+
