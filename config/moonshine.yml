@@ -5,7 +5,7 @@
 :ssl:
 :self_signed: true
 :deploy_to: /srv/mano_browsercms
-:domain: agiledc.com
+:domain: codegreenlab.com
 :repository: git@github.com:agiletoolkit/mano_browercms.git
 :local_config:
 - config/database.yml
