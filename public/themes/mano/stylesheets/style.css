@@ -1,10 +1,14 @@
 /* Page Size & Magins */
+html {
+    background-color: #425C8F;
+}
+
 body {
     margin:0px;
 }
 
 #main-doc {
-    width: 100%; 
+    width: 95%; 
     min-width: 957px;
 }
 
@@ -53,6 +57,7 @@ body {
 #bd {
     padding: 20px;
     min-height: 400px;
+    background-color: #fff;
 }
 
 #search {
@@ -61,18 +66,15 @@ body {
 
 /* Footer */
 #ft {
-    background:#425C8F none repeat scroll 0 0;
-    height:35px;
     color:#fff;
 }
 
 #ft ul {
-    padding-top:10px;
+    padding-top:0px;
 }
 
 #ft span {
     color:#FFFFFF;
     float:left;
-    padding:10px 0 0 15px;
     margin-right:120px;
 }
