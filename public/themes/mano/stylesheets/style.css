@@ -8,8 +8,10 @@ body {
 }
 
 #main-doc {
-    width: 95%; 
-    min-width: 957px;
+    width: 1000px; 
+}
+
+#bd th, #bd td {
 }
 
 /* Headers */
