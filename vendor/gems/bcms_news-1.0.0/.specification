@@ -9,28 +9,29 @@ autorequire:
 bindir: bin
 cert_chain: []
 
-date: 2009-05-31 00:00:00 -04:00
+date: 2009-07-01 00:00:00 -05:00
 default_executable: 
 dependencies: []
 
-description: 
+description: The News Module for BrowserCMS
 email: github@browsermedia.com
 executables: []
 
 extensions: []
 
 extra_rdoc_files: 
+- LICENSE.txt
 - README
 files: 
-- app/controllers/news_articles_controller.rb
 - app/controllers/cms/news_articles_controller.rb
+- app/controllers/news_articles_controller.rb
 - app/models/news_article.rb
 - app/portlets/news_archive_portlet.rb
 - app/portlets/news_article_portlet.rb
 - app/portlets/recent_news_portlet.rb
-- app/views/news_articles/index.rss.builder
 - app/views/cms/news_articles/_form.html.erb
 - app/views/cms/news_articles/render.html.erb
+- app/views/news_articles/index.rss.builder
 - app/views/portlets/news_archive/_form.html.erb
 - app/views/portlets/news_archive/render.html.erb
 - app/views/portlets/news_article/_form.html.erb
@@ -41,14 +42,20 @@ files:
 - lib/bcms_news.rb
 - lib/bcms_news/routes.rb
 - rails/init.rb
+- LICENSE.txt
 - README
+- test/functional/news_articles_controller_test.rb
+- test/performance/browsing_test.rb
+- test/test_helper.rb
+- test/unit/news_article_test.rb
+- test/unit/recent_news_portlet_test.rb
 has_rdoc: true
-homepage: http://www.browsercms.org
+homepage: http://browsercms.org
 licenses: []
 
 post_install_message: 
-rdoc_options: []
-
+rdoc_options: 
+- --charset=UTF-8
 require_paths: 
 - lib
 required_ruby_version: !ruby/object:Gem::Requirement 
@@ -65,10 +72,14 @@ required_rubygems_version: !ruby/object:Gem::Requirement
   version: 
 requirements: []
 
-rubyforge_project: bcms_news
-rubygems_version: 1.3.2
+rubyforge_project: browsercms
+rubygems_version: 1.3.4
 signing_key: 
-specification_version: 3
+specification_version: 2
 summary: The News Module for BrowserCMS
-test_files: []
-
+test_files: 
+- test/functional/news_articles_controller_test.rb
+- test/performance/browsing_test.rb
+- test/test_helper.rb
+- test/unit/news_article_test.rb
+- test/unit/recent_news_portlet_test.rb

@@ -1,0 +1,21 @@
+<% page_title @page.page_title %>
+
+<% content_for :html_head do %>
+  <meta name="generator" content="BrowserCMS <%= Cms.version %>"/>
+<% end %>
+
+<% if @show_toolbar %>
+  <% content_for :html_head do %>
+    <%= stylesheet_link_tag 'cms/page' %>
+  <% end %>
+  <% flash.keep %>
+  <iframe src="<%=h cms_toolbar_path(:page_id => @page.id, :page_version => @page.version, :mode => @mode, :page_toolbar => @show_page_toolbar ? 1 : 0) %>" width="100%" height="<%= @show_page_toolbar ? 159 : 100 %>px" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" name="cms_toolbar"></iframe>
+<% end %>
+
+<% @page.connectors.for_page_version(@page.version).each do |c| %>
+  <% content_for(c.container.to_sym) do %>
+    <%= render_connector c %>
+  <% end %>
+<% end %> 
+
+

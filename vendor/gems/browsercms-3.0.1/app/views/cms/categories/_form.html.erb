@@ -1,0 +1,36 @@
+<% if CategoryType.count > 0 %>
+  <% content_for :html_head do %>
+    <script type="text/javascript">
+      jQuery(function($){
+        var categoriesByType = <%= CategoryType.category_map.to_json %>
+        $("#category_category_type_id").change(function(){
+          $("#category_parent_id option").remove()
+          $.each(categoriesByType[$(this).val()], function(){        
+            $("#category_parent_id").append($.createElement("option", this[0], {value: this[1]}))
+          })
+        })
+      })
+    </script>
+  <% end %>
+
+  <% @block.category_type ||= (Category.last(:include => :category_type) && Category.last.category_type) %>  
+  <%= f.cms_drop_down :category_type_id, CategoryType.all(:order => "name").map{|c| [c.name, c.id]}, :prompt => "Select a Type of Category", :label => "Type" %>
+
+  <% categories = @block.category_type ? @block.category_type.category_list.map{|c| [c.path, c.id]} : [] %>
+  <% unless categories.empty? %>
+    <%= f.cms_drop_down :parent_id, categories, :include_blank => true %>
+  <% end %>
+  
+  <%= f.cms_text_field :name %>
+
+<% else %>
+  <% page_title "Please Create A Category Type" %>
+  <% content_for :html_head do %>
+    <script type="text/javascript">
+      jQuery(function($){
+        $('.buttons').remove()
+      })
+    </script>
+  <% end %>
+  <p>Before you can create a category, you must <%= link_to "create a category type", new_cms_category_type_path %>.  Each category must have a category type.  For example, if you plan to categorize your news releases, you might create a "News Release" category type.</p>
+<% end %>

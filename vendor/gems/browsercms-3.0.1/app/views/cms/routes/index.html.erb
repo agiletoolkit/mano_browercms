@@ -1,0 +1,40 @@
+<% page_title "Rails Routes" %>
+<% content_for :functions do %>
+  <h1><%=h page_title %></h1>
+<% end %>
+
+<div style="margin: 10px 0">
+  <% form_tag cms_routes_path, :method => :get do %>
+    <label>
+      Path to Test: <%= text_field_tag :path, @path, :size => 50 %>
+    </label>
+    <% unless @route.blank? %>
+      <div style="margin: 10px 0">
+        <%=h @route.inspect %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<div class="roundedcorners">
+<table class="data">
+  <tr>
+    <th class="first" colspan="2"><div class="dividers">Name</div></th>
+    <th><div class="dividers" style="width: 50px;">Verb</div></th>
+    <th><div class="dividers">Pattern</div></th>
+    <th class="last" colspan="2"><div class="dividers">Result</div></th>
+
+  </tr>
+  <% for route in @routes %><tr>
+    <td class="first"></td>
+    <td><%=h route[:name] %></td>
+    <td><%=h route[:verb] %></td>
+    <td><%=h route[:segs] %></td>
+    <td><%=h route[:reqs] %></td>
+    <td class="last"></td>
+  </tr><% end %>
+</table>
+<div class="tl"></div>
+<div class="tr"></div>
+<div class="bl"></div>
+<div class="br"></div>
+</div>

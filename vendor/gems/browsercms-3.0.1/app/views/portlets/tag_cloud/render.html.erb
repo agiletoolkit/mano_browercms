@@ -1,0 +1,5 @@
+<div class="tag-cloud">
+  <% for tag in @cloud %>
+    <%= link_to h(tag.name), "/tags/#{tag.name.to_slug}", :class => @sizes.split(" ")[tag.size] %>
+  <% end %>
+</div>

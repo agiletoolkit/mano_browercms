@@ -1,0 +1,12 @@
+<ul id="section_node_<%= section_node.id %>" class="section_node<%= " rootlet" if root %>" style="display: <%= display ? "''" : "none" %>">
+  <li>
+    <%= render :partial => "node", :locals => {
+        :node => node, 
+        :node_type => "section", 
+        :icon => "#{section_icons(node)} #{action_icon(root ? :root_folder : :folder, :class => "folder")}",
+        :hidden => node.hidden?,
+        :access_icon => status_icon(node.status),
+      } %>
+    <%= render :partial => "section_node", :collection => node.child_nodes.all(:order => 'position'), :locals => {:display => false} %>    
+  </li>
+</ul>

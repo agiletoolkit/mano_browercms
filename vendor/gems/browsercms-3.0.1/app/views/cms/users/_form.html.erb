@@ -1,0 +1,12 @@
+<% content_for :html_head do %>
+  <%= stylesheet_link_tag('cms/form_layout') %>
+<% end %>
+<% form_for([:cms, @user]) do |f| %>
+  <%= f.error_messages %>
+  <%= render :partial => 'user_fields', :locals => {:f => f} unless @change_password %>
+  <%= render :partial => 'password', :locals => {:f => f} if @user.new_record? %>
+  <%= render :partial => 'groups' %>
+  <div class="buttons">
+    <%= lt_button_wrapper(f.submit("Save", :class => "submit")) %>
+  </div>
+<% end %>

@@ -1,0 +1,62 @@
+<% page_title "Administration / User Browser" %>
+<% @toolbar_title = "List Users" %>
+
+<% content_for :toolbar_links do %>
+  <%= link_to(span_tag("ADD USER"), new_cms_user_path, 
+    :id => "add_user_button", 
+    :class => "button") %>
+<% end %>
+
+<% content_for :functions do %>
+  <%= render(:partial => "toolbar") %>
+<% end %>
+
+<div class="roundedcorners">
+<table class="data" width="100%">
+  <thead>
+    <tr>
+      <th class="first"></th>
+      <th><div class="dividers">Name</div></th>
+      <th><div class="dividers">Email</div></th>
+      <th><div class="dividers">Groups</div></th>
+      <th><div class="dividers">Expiration</div></th>
+      <th class="last" colspan="2">Activation</th>
+    </tr>
+  </thead>
+    <% @users.each do |user|%>
+    <tr>
+        <td class="first"></td>
+        <td><div class="dividers"><%= link_to "#{user.first_name} #{user.last_name}", [:cms, user] %></div></td>
+	      <td><div class="dividers"><%= link_to user.email, "mailto:#{user.email}" %></div></td>
+        <td>
+            <div class="dividers">
+            <% user.groups.all(:order => "groups.name").each do |g| %>
+	            <%= g.name %><br/>
+	          <% end %>
+	          </div>
+        </td>
+	      <td><div class="dividers"><%= user.expires_at ? format_date(user.expires_at) : "Never" %></div></td>
+        <td>
+	  <% unless user.expired? %>
+	  <span class="user_state">Active</span>
+            <%= link_to("<span>Disable</span>", [:disable, :cms, user], :class => "http_put sm_button") if @users.size > 1 %>	  
+	    <% else %>
+	  <span class="user_state">Inactive</span>
+            <%= link_to("<span>Enable</span>", [:enable, :cms, user], :class => "http_put sm_button") %>
+	  <% end %>
+        </td>
+        <td class="last"></td>
+    </tr>
+    <% end %>
+</table>
+<div class="tl"></div>
+<div class="tr"></div>
+<div class="bl"></div>
+<div class="br"></div>
+</div>
+<% if @users.size == 0 && params[:key_word]%>
+  <div class="pagination">No results found for '<%= params[:key_word] %>'</div>
+<% elsif @users.total_pages > 1 %>
+  <%= render_pagination @users, :users %>
+<% end %>
+

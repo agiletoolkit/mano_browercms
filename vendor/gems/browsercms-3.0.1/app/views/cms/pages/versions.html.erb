@@ -1,0 +1,91 @@
+<% @page_title = @toolbar_title = "List Versions / '#{@page.name}' Page" %>
+<% content_for(:html_head) do %>
+  <% javascript_tag do %>
+    jQuery(function($){
+      $('table.data tbody tr').hover(function(){
+        $(this).addClass('hover')
+      }, function(){
+        $(this).removeClass('hover')
+      }).click(function(){
+        var match = this.id.match(/(.*)_(\d+)/) 
+        var type = match[1];
+        var id = match[2];
+        $('table.data tbody tr').removeClass('selected');
+        $(this).addClass('selected');
+        $('#view_button').removeClass('disabled').attr('href', '/cms/pages/<%= @page.id %>/version/'+id+'?mode=view');
+        if ($(this).hasClass('current')){
+          $('#revert_button').addClass('disabled').attr('href', '');
+          $('#revert_form').attr('action', '');
+          $('#revert_form_version').attr('value', '');
+          $('#edit_content_button').removeClass('disabled').attr('href', '/cms/pages/<%= @page.id %>?mode=edit');
+          $('#edit_properties_button').removeClass('disabled').attr('href', '/cms/pages/<%= @page.id %>/edit');
+        } else {
+          $('#revert_button').removeClass('disabled');
+          $('#revert_form').attr('action', '/cms/pages/<%= @page.id %>/revert_to/'+id);
+          $('#revert_form_version').attr('value', id);
+          $('#edit_content_button').addClass('disabled').attr('href', '');
+          $('#edit_properties_button').addClass('disabled').attr('href', '');
+        }
+      })
+    })
+  <% end %>
+  <%= stylesheet_link_tag("cms/content_library") %>
+  <%= stylesheet_link_tag("cms/form_layout") %>
+<% end %>
+<% content_for :functions do %>
+  <%=  "<h1>#{ @toolbar_title }</h1>" %>
+  <%= link_to span_tag("view"), "#", :id => "view_button", :class => "button disabled" %>
+  <%= link_to span_tag("edit content"), "#", :id => "edit_content_button", :class => "button disabled" %>
+  <%= link_to span_tag("edit properties"), "#", :id => "edit_properties_button", :class => "button disabled" %>
+  <%= link_to span_tag("revert"), "#", :id => "revert_button", :class => "button disabled", :onclick => "$('#revert_form').submit(); return false;" %>
+  <% form_tag '', :method => 'put', :id => "revert_form" do %>
+  <%= hidden_field_tag :version, '', :id => 'revert_form_version'  %>
+  <% end %>
+  <br clear="all" />
+<% end %>
+
+<div class="roundedcorners">
+  <table id="blocks" class="data">
+    <thead>
+      <tr>
+        <th class="first" colspan="2"><div class="dividers">Version</div></th>
+        <th><div class="dividers">Comment</div></th>
+        <th><div class="dividers">Date</div></th>
+        <th class="last" colspan="2"><div class="dividers">Editor</div></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @page.versions.all(:order => "version desc").each_with_index do |r, i| %>
+        <% current = @page.version == r.version %>
+        <tr id="revision_<%= r.version %>" <%= 'class="current"' if current %>>
+          <td class="first"></td>
+          <td>
+            <div class="dividers">
+              <%= "v.#{r.version}" %>
+              <%= '(LIVE)' if @page.version == r.version %>
+              <%= '(CURRENT)' if i == 0 %>
+            </div>
+          </td>
+          <td>
+            <div class="dividers"><%=h r.version_comment %></div>
+          </td>
+          <td>
+            <div class="dividers"><%= r.created_at.strftime("%b %d, %Y %I:%M %p") if r.created_at %></div>
+          </td>
+          <td>
+            <div><%= r.updated_by.login if r.updated_by %></div>
+          </td>
+          <td class="last"></td>
+        </tr>
+      <% end %>
+      <tr>
+	<td colspan="8" class="buffer"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="tl"></div>
+  <div class="tr"></div>
+  <div class="bl"></div>
+  <div class="br"></div>
+</div>
+
