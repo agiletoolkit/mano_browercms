@@ -1,6 +1,6 @@
 /* Page Size & Magins */
 html {
-    background-color: #425C8F;
+    background-color: #023568;
 }
 
 body {
@@ -12,6 +12,7 @@ body {
 }
 
 #bd th, #bd td {
+    border:none;
 }
 
 /* Headers */
