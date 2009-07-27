@@ -29,7 +29,7 @@ body {
     padding:0px 0px 15px 0px;
     margin:10px 0px 10px 0px;
 }
-
+/**
 .menu li {
     float: left;
     border-right: 1px solid #023568;
@@ -54,7 +54,42 @@ body {
     font-size: 12px;
     font-weight: bold;
     text-transform:uppercase;
-}
+} **/
+
+/* These styles just pretty up the page a bit. */
+
+/* These styles create the dropdown menus. */
+#menu {
+	margin: 0;
+	padding: 0;
+	height: 1em; }
+#menu li {
+	list-style: none;
+	float: left; }
+#menu li a {
+	display: block;
+	padding: 3px 8px;
+	background-color: #5e8ce9;
+	color: #fff;
+	text-decoration: none; }
+#menu li ul {
+	display: none; 
+	width: 10em; /* Width to help Opera out */
+	background-color: #69f;}
+#menu li:hover ul, #menu li.hover ul {
+	display: block;
+	position: absolute;
+	margin: 0;
+	padding: 0; }
+#menu li:hover li, #menu li.hover li {
+	float: none; }
+#menu li:hover li a, #menu li.hover li a {
+	background-color: #69f;
+	border-bottom: 1px solid #fff;
+	color: #000; }
+#menu li li a:hover {
+	background-color: #8db3ff; }
+
 
 /* Body */
 #bd {
