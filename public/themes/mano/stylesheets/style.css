@@ -69,8 +69,12 @@ body {
 #menu li a {
 	display: block;
 	padding: 3px 8px;
-	background-color: #5e8ce9;
+	background-color: #425C8F;
 	color: #fff;
+	font-weight: bold;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform:uppercase;
 	text-decoration: none; }
 #menu li ul {
 	display: none; 
@@ -84,7 +88,7 @@ body {
 #menu li:hover li, #menu li.hover li {
 	float: none; }
 #menu li:hover li a, #menu li.hover li a {
-	background-color: #69f;
+	background-color: #CCDDFF;
 	border-bottom: 1px solid #fff;
 	color: #000; }
 #menu li li a:hover {
