@@ -26,8 +26,8 @@ body {
 
 /** Navigation **/
 #top-nav {
-    padding:0px 0px 15px 0px;
-    margin:10px 0px 10px 0px;
+    padding:0px 0px 12px 0px;
+    margin:3px 0px 3px 0px;
 }
 /**
 .menu li {
@@ -63,16 +63,25 @@ body {
 	margin: 0;
 	padding: 0;
 	height: 1em; }
+
 #menu li {
 	list-style: none;
-	float: left; }
+    float: left; }
+
+#menu li.depth-1 {
+	border-right: 1px solid #023568;
+	}
+
+#menu li.last {
+	    border-right: none;}
+	
 #menu li a {
 	display: block;
 	padding: 3px 8px;
 	background-color: #425C8F;
 	color: #fff;
 	font-weight: bold;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: bold;
     text-transform:uppercase;
 	text-decoration: none; }
