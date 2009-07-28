@@ -30,33 +30,6 @@ body {
     margin:3px 0px 3px 0px;
 }
 
-.menu-footer li {
-    float: left;
-    border-right: 1px solid #023568;
-    list-style: none;
-}
-
-.menu-footer li.last {
-    border-right: none;
-}
-
-.menu-footer a:hover {
-    color: #BFD5FF;
-}
-
-.menu-footer a {
-    padding: 1px 20px;
-    color: #FFF;
-    display: block;
-    float: left;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform:uppercase;
-} 
-
-/* These styles just pretty up the page a bit. */
 
 /* These styles create the dropdown menus. */
 #menu {
@@ -75,26 +48,23 @@ body {
 #menu li.last {
 	    border-right: none;}
 	
-#menu li a {
+#menu li a, #menu-footer a {
 	display: block;
-	padding: 3px 8px;
+	padding: 3px 12px;
 	background-color: #425C8F;
 	color: #fff;
 	font-weight: bold;
     font-size: 13px;
     font-weight: bold;
-    text-transform:uppercase;
+	text-transform:capitalize;
 	text-decoration: none; }
-	
+
+
 #menu li ul {
 	display: none; 
 	width: 10em; /* Width to help Opera out */
 	background-color: #69f;
 	z-index:100}
-
-#menu a:hover {
-    color: #BFD5FF;
-}
 
 #menu li:hover ul, #menu li.hover ul {
 	display: block;
@@ -104,13 +74,41 @@ body {
 	
 #menu li:hover li, #menu li.hover li {
 	float: none; }
+	
 #menu li:hover li a, #menu li.hover li a {
-	background-color: #CCDDFF;
+	background-color: #425C8F;
 	border-bottom: 1px solid #fff;
-	color: #000; }
+	color: #fff; }
+	
 #menu li li a:hover {
 	background-color: #8db3ff; }
+	
 
+/* Adding a hover color to the footer and drop down*/
+#menu a:hover, #menu-footer a:hover {
+    color: #BFD5FF;
+}
+
+/* Footer Menu */
+#menu-footer li {
+    float: left;
+    border-right: 1px solid #fff;
+    list-style: none;
+}
+
+#menu-footer li.last {
+    border-right: none;
+}
+
+#menu-footer a {
+    padding: 1px 20px;
+    float: left;
+    font-size: 12px;
+} 
+
+#menu-footer a{
+	background-color: #023568
+}
 
 /* Body */
 #bd {
