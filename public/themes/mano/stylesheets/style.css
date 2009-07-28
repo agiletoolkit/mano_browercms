@@ -89,7 +89,8 @@ body {
 #menu li ul {
 	display: none; 
 	width: 10em; /* Width to help Opera out */
-	background-color: #69f;}
+	background-color: #69f;
+	z-index:100}
 
 #menu a:hover {
     color: #BFD5FF;
@@ -100,6 +101,7 @@ body {
 	position: absolute;
 	margin: 0;
 	padding: 0; }
+	
 #menu li:hover li, #menu li.hover li {
 	float: none; }
 #menu li:hover li a, #menu li.hover li a {
