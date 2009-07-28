@@ -135,3 +135,29 @@ body {
     float:left;
     margin-right:120px;
 }
+
+
+/* Slideshow */
+#slide-images{
+    position:relative;
+    display:block;
+    margin:0px;
+    padding:0px;
+    width:990px;
+    height:150px;
+    overflow:hidden;
+}
+
+#slide-images li{
+    position:absolute;
+    display:block;
+    list-style-type:none;
+    margin:0px;
+    padding:0px;
+    background-color:#FFFFFF;
+}
+
+#slide-images li img{
+    display:block;
+    background-color:#FFFFFF;
+}
