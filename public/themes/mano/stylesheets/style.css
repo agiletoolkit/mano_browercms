@@ -24,91 +24,75 @@ body {
     background-color: #023568;
 }
 
-/** Navigation **/
-#top-nav {
-    padding:0px 0px 12px 0px;
-    margin:3px 0px 3px 0px;
+.right {
+	float: right;
 }
 
+/** Navigation **/
 
-/* These styles create the dropdown menus. */
-#menu {
+
+
+#menu, #menu ul,#menu-footer, #menu-footer ul { /* all lists */
 	margin: 0;
-	padding: 0;
-	height: 1em; }
-
-#menu li {
 	list-style: none;
-    float: left; }
+	line-height: 1;
+}
 
-#menu li.depth-1 {
-	border-right: 1px solid #023568;
-	}
-
-#menu li.last {
-	    border-right: none;}
-	
-#menu li a, #menu-footer a {
+#menu a, #menu-footer a  {
 	display: block;
-	padding: 3px 12px;
-	background-color: #425C8F;
+	padding: 5px 5px 7px 5px;
+	background-color: #023568;
 	color: #fff;
-	font-weight: bold;
     font-size: 13px;
     font-weight: bold;
 	text-transform:capitalize;
-	text-decoration: none; }
+	text-decoration: none;
 
-
-#menu li ul {
-	display: none; 
-	width: 10em; /* Width to help Opera out */
-	background-color: #69f;
-	z-index:100}
-
-#menu li:hover ul, #menu li.hover ul {
-	display: block;
-	position: absolute;
-	margin: 0;
-	padding: 0; }
-	
-#menu li:hover li, #menu li.hover li {
-	float: none; }
-	
-#menu li:hover li a, #menu li.hover li a {
+}
+#menu  a{
 	background-color: #425C8F;
-	border-bottom: 1px solid #fff;
-	color: #fff; }
-	
-#menu li li a:hover {
-	background-color: #8db3ff; }
-	
-
-/* Adding a hover color to the footer and drop down*/
-#menu a:hover, #menu-footer a:hover {
-    color: #BFD5FF;
+	width: 7em;
 }
 
-/* Footer Menu */
+#menu a:hover{
+	background-color: #7790C0;
+}
+
+#menu li,#menu-footer li { /* all list items */
+	list-style: none;
+	float: left;
+}
+
+#menu li {
+	width: 8em; /* width needed or else Opera goes nuts */	
+}
+
+#menu li ul { /* second-level lists */
+	position: absolute;
+	background: #69f;
+	width: 8em;
+	z-index:100;
+	left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
+}
+
+#menu li:hover ul, #nav li.sfhover ul { /* lists nested under hovered list items */
+    background-color: #425C8F;
+	left: auto;
+}
+
+#menu li.depth-1 {
+	border-right: 2px solid  #023568;
+}
+
 #menu-footer li {
-    float: left;
-    border-right: 1px solid #fff;
-    list-style: none;
+	border-right: 1px solid  #fff;
 }
 
-#menu-footer li.last {
+#menu li.last, #menu-footer li.last {
     border-right: none;
 }
+	
 
-#menu-footer a {
-    padding: 1px 20px;
-    float: left;
-    font-size: 12px;
-} 
-
-#menu-footer a{
-	background-color: #023568
-}
 
 /* Body */
 #bd {
