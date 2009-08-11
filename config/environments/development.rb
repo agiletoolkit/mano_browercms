@@ -15,3 +15,7 @@ config.action_controller.perform_caching             = false
 
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
+
+#Set the site domain so that errors don't pop up when you assign tasks in 
+#browsercms: reported in lighthouse bug #146
+SITE_DOMAIN="localhost:3000"
