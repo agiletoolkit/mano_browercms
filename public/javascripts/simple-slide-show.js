@@ -2,9 +2,14 @@ var delay = 3000;
 var start_frame = 0;
 
 function init() {
-	var lis = $('slide-images').getElementsByTagName('li');
+  var slideContainer = $('slide-images');
+  if (!slideContainer) {
+    return;
+  }
+  
+	var lis = slideContainer.getElementsByTagName('li');
 	
-	for( i=0; i < lis.length; i++){
+	for(var i=0; i < lis.length; i++){
 		if(i!=0){
 			lis[i].style.display = 'none';
 		}
