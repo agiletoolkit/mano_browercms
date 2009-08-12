@@ -122,16 +122,15 @@ body {
 
 
 /* Slideshow */
-#slide-images{
+#slides {
+	height:150px;
     position:relative;
     display:block;
     margin:0px;
     padding:0px;
-    height:150px;
-    overflow:hidden;
 }
 
-#slide-images li{
+#slides li{
     position:absolute;
     display:block;
     list-style-type:none;
@@ -140,7 +139,9 @@ body {
     background-color:#FFFFFF;
 }
 
-#slide-images li img{
+#slides li img{
+
+    overflow:hidden;
     display:block;
     background-color:#FFFFFF;
 }
