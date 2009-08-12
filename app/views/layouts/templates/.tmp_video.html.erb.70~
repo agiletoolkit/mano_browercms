@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <title><%= page_title %></title>
+  <%= render 'shared/header' -%>
+</head>
+<body>
+  <%= cms_toolbar -%>
+  <div id="main-doc" class="yui-t6">
+    <div id="hd" role="banner">
+      <div id="banner">
+        <a href="/"><img src="/themes/mano/images/mano-logo-hands.jpg" titl="logo"/></a><a href="/"><img src="/themes/mano/images/mano-logo.jpg" alt="logo"/></a><a href="/"><img src="/images/banner-shim-lg.jpg"></a><a href="/donate"><img src="/themes/mano/images/donate-button-round-red2.jpg" alt="donate image"/></a>
+      </div>
+      <%= render 'shared/menu' -%>
+    </div>
+    <div id="bd" role="main">
+  	  <div class="yui-g">
+        <%= container :main %>
+      </div>
+  	</div>
+    <div id="ft" role="contentinfo"><%= render 'shared/footer' %></div>
+  </div>
+</body>
+</html>

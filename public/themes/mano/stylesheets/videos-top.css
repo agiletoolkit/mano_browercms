@@ -1,0 +1,111 @@
+* {
+padding: 0px;
+margin: 0px;
+}
+html {
+overflow-y: scroll; /* scrollbar fix */
+}
+body {
+margin: 0px;
+padding: 0px;
+font-family: verdana, arial, helvetica, sans-serif;
+font-size: 100%;
+padding: 10px 0px 0px 0px;
+}
+
+#bd {
+	background-color: #023568;
+}
+div.centered 
+{
+text-align: center;
+}
+
+div.centre
+{
+  text-align: left;
+  width: 435px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.centered table 
+{
+margin: 0 auto; 
+text-align: left;
+}
+
+div.layout
+{
+  text-align: center;
+}
+
+div.centre1000
+{
+  text-align: left;
+   width: 950px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#container2 {
+background-color: #FFFFFF;
+font-size: 0.75em;
+overflow: hidden;
+width: 950px;
+margin: 0 auto;
+}
+
+#container {
+background-color: #FFFFFF;
+font-size: 0.75em;
+overflow: hidden;
+width: 580px;
+margin: 0 auto;
+}
+* html #container {
+height: 1%;
+}
+
+#container h1 {
+font-size: 1.7em;
+clear: both;
+padding: 0 0 0 0px;
+}
+#container p {
+padding: 0 10px 1em;
+}
+
+.tl {
+background-image: url('/images/white-circle.png');
+width: 10px;
+height: 10px;
+float: left;
+font-size: 0;
+}
+.tr {
+background-image: url('/images/white-circle.png');
+background-position: 10px 0px;
+width: 10px;
+height: 10px;
+float: right;
+font-size: 0;
+}
+.bl {
+background-image: url('/images/white-circle.png');
+background-position: 0px 10px;
+width: 10px;
+height: 10px;
+float: left;
+font-size: 0;
+}
+.br {
+background-image: url('/images/white-circle.png');
+background-position: 10px 10px;
+width: 10px;
+height: 10px;
+float: right;
+font-size: 0;
+}

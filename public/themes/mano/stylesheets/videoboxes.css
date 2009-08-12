@@ -1,0 +1,32 @@
+* html .boxhead h2 {
+height: 1%; font-family:Times New Roman; font-size:10pt
+}
+.sidebox {
+margin: 0 auto;
+background: url('/images/sbbody-r.gif') no-repeat right bottom;
+font-size: 100%;
+}
+.boxhead {
+margin: 0;
+padding: 0;
+background: url('/images/sbhead-r.gif') no-repeat right top;
+text-align: center
+}
+.boxhead h2 {
+margin: 0;
+background: url('/images/sbhead-l.gif') no-repeat left top;
+color: #FFFFFF;
+font-weight: bold;
+font-family:Times New Roman;
+font-size: 10pt;
+line-height: 1em; padding-left:30px; padding-right:30px; padding-top:22px; padding-bottom:5px; font-family:Times New Roman
+}
+.boxbody {
+margin: 0;
+background: url('/images/sbbody-l.gif') no-repeat left bottom;; padding-left:30px; padding-right:30px; padding-top:5px; padding-bottom:31px
+}
+ table.MsoNormalTable{
+ 	mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman"
+	}
