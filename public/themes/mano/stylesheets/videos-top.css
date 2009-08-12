@@ -16,6 +16,7 @@ padding: 10px 0px 0px 0px;
 #bd {
 	background-color: #023568;
 }
+
 div.centered 
 {
 text-align: center;
@@ -54,7 +55,7 @@ div.centre1000
 background-color: #FFFFFF;
 font-size: 0.75em;
 overflow: hidden;
-width: 950px;
+width: 990px;
 margin: 0 auto;
 }
 

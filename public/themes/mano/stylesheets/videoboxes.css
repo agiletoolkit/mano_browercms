@@ -19,7 +19,9 @@ color: #FFFFFF;
 font-weight: bold;
 font-family:Times New Roman;
 font-size: 10pt;
-line-height: 1em; padding-left:30px; padding-right:30px; padding-top:22px; padding-bottom:5px; font-family:Times New Roman
+line-height: 1em; 
+padding-left:30px; 
+padding-right:30px; padding-top:22px; padding-bottom:5px; font-family:Times New Roman
 }
 .boxbody {
 margin: 0;
