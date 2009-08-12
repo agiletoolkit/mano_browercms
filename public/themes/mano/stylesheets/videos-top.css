@@ -1,6 +1,6 @@
 * {
 padding: 0px;
-margin: 0px;
+margin: 0px; 
 }
 html {
 overflow-y: scroll; /* scrollbar fix */
@@ -8,8 +8,6 @@ overflow-y: scroll; /* scrollbar fix */
 body {
 margin: 0px;
 padding: 0px;
-font-family: verdana, arial, helvetica, sans-serif;
-font-size: 100%;
 padding: 10px 0px 0px 0px;
 }
 
