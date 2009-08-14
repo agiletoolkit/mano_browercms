@@ -2,6 +2,8 @@
 <div id="menu-footer" class="right">
 <ul>
   <li><a href="/footer_nav/site_map">Site Map</a></li>
+  <li><a href="/footer_nav/privacy_policy">Privacy Policy</a></li>
   <li><a href="/footer_nav/contact">Contact Us</a></li>
+  <li class="last"><a href="/footer_nav/our_office">Our Office</a></li>
 </ul>
 </div>
