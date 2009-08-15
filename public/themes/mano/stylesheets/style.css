@@ -75,7 +75,7 @@ body {
 	left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
 }
 
-#menu li:hover ul, #nav li.sfhover ul { /* lists nested under hovered list items */
+#menu li:hover ul, #menu li.sfhover ul { /* lists nested under hovered list items */
     background-color: #425C8F;
 	left: auto;
 }

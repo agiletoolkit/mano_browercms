@@ -9,14 +9,8 @@
 
 <script type="text/javascript"><!--//--><![CDATA[//><!--
 
-// Is this code still being used somewhere?
 sfHover = function() {
-  var nav = document.getElementById("nav");
-  if (!nav) {
-    return;
-  }
-  
-	var sfEls = nav.getElementsByTagName("li");
+	var sfEls = document.getElementById("menu").getElementsByTagName("ul")[0].getElementsByTagName("li");
 	for (var i=0; i<sfEls.length; i++) {
 		sfEls[i].onmouseover=function() {
 			this.className+=" sfhover";
