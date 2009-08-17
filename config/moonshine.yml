@@ -1,11 +1,11 @@
 :ruby: ree
-:application: codegreenlab.com
+:application: manoamano.org
 :user: rails
 :group: rails
 :ssl:
 :self_signed: true
 :deploy_to: /srv/mano_browsercms
-:domain: codegreenlab.com
+:domain: manoamano.org
 :repository: git@github.com:agiletoolkit/mano_browercms.git
 :local_config:
 - config/database.yml
