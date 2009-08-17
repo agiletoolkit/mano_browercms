@@ -78,6 +78,7 @@ body {
 #menu li:hover ul, #menu li.sfhover ul { /* lists nested under hovered list items */
     background-color: #425C8F;
 	left: auto;
+  height: 1%;
 }
 
 #menu li.depth-1 {
