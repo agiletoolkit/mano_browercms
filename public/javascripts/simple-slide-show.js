@@ -10,7 +10,7 @@ function init() {
   }
 
   if (slideContainer.className == 'testimonial') {
-    delay = 10000;
+    delay = 15000;
   }
 
   var lis = slideContainer.getElementsByTagName('li');
