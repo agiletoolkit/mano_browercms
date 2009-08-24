@@ -8,9 +8,15 @@ Feature: Redirect to iPhone Version of App
 Scenario: Default page redirects to iPhone site
   Given an iPhone request
 	When  I go to the homepage
-	Then  I should go to /donations
+	Then  I should be on /donations
+	
+Scenario: Default page does not redirect to iPhone site
+  Given a standard web request
+  When I go to the homepage
+  Then I should be on the homepage
 
-
-
-
-  
+Scenario: iPhone Page allows you to go back to the standard site
+  Given an iPhone request
+  When I go to the homepage
+  And I follow standard_site_link
+	Then I should be on the homepage
