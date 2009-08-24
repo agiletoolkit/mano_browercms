@@ -1,5 +1,3 @@
-require "step_defiintions/webrat_steps"
-
 Feature: Redirect to iPhone Version of App
   In order Make it simple to donate
   As a iPhone Donator
