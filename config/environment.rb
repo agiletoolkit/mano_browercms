@@ -12,6 +12,7 @@ Rails::Initializer.run do |config|
   config.gem "bcms_blog"
   config.gem "rspec-rails", :lib => false, :version => ">= 1.2.0"
   config.gem "rspec", :lib => false, :version => ">= 1.2.0"
+  config.gem "cucumber"
   
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
