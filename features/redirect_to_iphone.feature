@@ -7,11 +7,13 @@ Feature: Redirect to iPhone Version of App
 
 Scenario: Default page redirects to iPhone site
   Given an iPhone request
+  And a homepage
 	When  I go to the homepage
 	Then  I should be on /donations
 	
 Scenario: Default page does not redirect to iPhone site
   Given a standard web request
+	And a homepage
   When I go to the homepage
   Then I should be on the homepage
 
