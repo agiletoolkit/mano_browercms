@@ -10,6 +10,9 @@ module NavigationHelpers
     
     when /the homepage/
       '/'
+    when /the new fake_feature page/
+      new_fake_feature_path
+
     
     # Add more mappings here.
     # Here is a more fancy example:
