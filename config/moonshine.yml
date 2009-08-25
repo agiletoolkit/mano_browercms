@@ -11,7 +11,7 @@
     :only:
     :self_signed: false
 :deploy_to: /srv/mano_browsercms
-:domain: manoamano.org
+:domain: www.manoamano.org
 :repository: git@github.com:agiletoolkit/mano_browercms.git
 :local_config:
 - config/database.yml
