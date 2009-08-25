@@ -1,5 +1,5 @@
 Given /^an iPhone request$/ do
-  # pending
+  header("User-agent", "Mobile Safari")
 end
 
 Given /^a homepage/ do

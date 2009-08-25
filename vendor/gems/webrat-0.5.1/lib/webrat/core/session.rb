@@ -114,7 +114,6 @@ For example:
     end
 
     def request_page(url, http_method, data) #:nodoc:
-      puts "headers: #{headers}"
       h = headers
       h['HTTP_REFERER'] = @current_url if @current_url
 

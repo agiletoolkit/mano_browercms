@@ -56,7 +56,7 @@ module ActionController
 
       def is_iphone_request?
         return false if self.class.ignore_iphone_user_agent
-        request.user_agent =~ /(Mobile\/.+Safari)/
+        request.user_agent =~ /(Mobile.+Safari)/
       end
       
       def is_iphone_subdomain?
