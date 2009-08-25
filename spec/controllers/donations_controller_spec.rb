@@ -6,6 +6,10 @@ describe DonationsController, "routes" do
     route_for(:controller => "donations", :action => "index").should == "/donations"
   end
   
+  it "should route to the non Restful action" do
+    route_for(:controller => "donations", :action => "view_full_site").should == "/donations/view_full_site"
+  end
+  
 end
 
 describe DonationsController do
@@ -22,7 +26,7 @@ describe DonationsController do
   it "should redirect to the root" do
     post :view_full_site
     
-    response.should redirect_to(cms_home_url)
+    response.should redirect_to('/')
   end
 
 end

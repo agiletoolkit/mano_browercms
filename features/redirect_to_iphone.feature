@@ -23,6 +23,7 @@ Scenario: Default page does not redirect to iPhone site
 
 Scenario: iPhone Page allows you to go back to the standard site
   Given an iPhone request
+  And a homepage
   When I go to the homepage
   And I follow "Go to standard page"
 	Then I should be on the homepage

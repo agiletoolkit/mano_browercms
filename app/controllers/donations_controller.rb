@@ -5,6 +5,6 @@ class DonationsController < ApplicationController
   
   def view_full_site
     session["full_site"] = true
-    redirect_to cms_home_url
+    redirect_to '/'
   end  
 end

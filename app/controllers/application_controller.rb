@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   
   def redirect_to_iphone
     if iphone_user?
-      redirect_to donations_url unless (session['full_site'] )
+      redirect_to('/donations') unless (session['full_site'] )
     end
   end
   
