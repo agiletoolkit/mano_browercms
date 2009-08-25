@@ -8,11 +8,17 @@
   </directory>
 </VirtualHost>
 
-<VirtualHost *:80>
+<VirtualHost *:80 *:443>
   ServerName <%= configuration[:domain] || `hostname -f` %>
   DocumentRoot "<%= configuration[:deploy_to] + "/current/public" %>"
+  SSLCertificateFile    /srv/mano_browsercms/certs/www.manoamano.org.crt
+  SSLCertificateKeyFile /srv/mano_browsercms/certs/privkey.pem
+  SSLCertificateChainFile /srv/mano_browsercms/certs/gd_bundle.crt
+
   RailsEnv production
   RewriteEngine On
+  SSLEngine On
+
 
   # Uncomment for rewrite debugging
   #RewriteLog /var/sites/mysite/log/rewrite.log
