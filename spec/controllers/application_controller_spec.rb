@@ -34,7 +34,7 @@ describe ApplicationController do
     response.redirect_url.include?("/donations").should == true
   end
 
-  it "should redirect to ssl for mobile safari" do
+  it "should redirect to ssl for mobile safari if " do
     request.user_agent = "Mobile   Safari   2.8"
     
     get "/"

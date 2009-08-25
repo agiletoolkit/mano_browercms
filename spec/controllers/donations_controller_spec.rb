@@ -3,11 +3,11 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe DonationsController, "routes" do
   
   it "should route to donations ignoring cms" do
-    route_for(:controller => "donations", :action => "index").should == "/donations"
+    route_for(:controller => "donations", :action => "index").should == "/cms/donations"
   end
   
   it "should route to the non Restful action" do
-    route_for(:controller => "donations", :action => "view_full_site").should == "/donations/view_full_site"
+    route_for(:controller => "donations", :action => "view_full_site").should == "/cms/donations/view_full_site"
   end
   
 end

@@ -11,7 +11,7 @@ module NavigationHelpers
     when /the homepage/
       '/'
     when /donations_page/
-      '/donations'
+      '/cms/donations'
     
     # Add more mappings here.
     # Here is a more fancy example:
