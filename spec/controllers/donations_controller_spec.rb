@@ -22,7 +22,7 @@ describe DonationsController do
   it "should redirect to the root" do
     post :view_full_site
     
-    response.should redirect_to("/")    
+    response.should redirect_to(cms_home_url)
   end
 
 end

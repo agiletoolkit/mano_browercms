@@ -13,3 +13,7 @@ Given /^a homepage/ do
   section_node.save!
   page.publish
 end
+
+Given /^a standard web request$/ do
+  header("User-agent", "Safari")
+end

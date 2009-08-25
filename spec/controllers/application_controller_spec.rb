@@ -17,5 +17,30 @@ describe ApplicationController do
     
     response.should be_success
   end
+  
+  it "should not redirect to the iPhone app if the user agent does not match mobile safari" do
+    request.user_agent = "Wicked Safari"
+    
+    get "/"
+    
+    response.should be_success
+  end
+  
+  it "should work with any varation of the user agent" do
+    request.user_agent = "Mobile   Safari   2.8"
+    
+    get "/"
+    
+    response.should redirect_to('/donations')
+  end
+  
+  it "should redirect even if the word Mobile isn't first in the user agent" do
+    request.user_agent = "     Mobile   Safari   2.8"
+    
+    get '/'
+    
+    response.should redirect_to('/donations')
+  end
+  
 
 end

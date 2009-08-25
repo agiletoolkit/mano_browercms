@@ -10,6 +10,14 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   
   def redirect_to_iphone
-    redirect_to donations_url unless session['full_site']
+    if iphone_user?
+      redirect_to donations_url unless (session['full_site'] )
+    end
+  end
+  
+  protected ###############################################
+  
+  def iphone_user?
+    return request.user_agent.match(/Mobile.+Safari/)
   end
 end
