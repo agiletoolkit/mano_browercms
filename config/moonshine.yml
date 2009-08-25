@@ -5,7 +5,7 @@
 :ssl:
     :ip: 208.75.84.239
     :certificate_file: /srv/mano_browsercms/certs/www.manoamono.org.crt
-    :certificate_key_file: /srv/mano_browsercms/certs/www.manoamono.org.key
+    :certificate_key_file: /srv/mano_browsercms/certs/privkey.pem
     :certificate_chain_file: /srv/mano_browsercms/certs/gd_bundle.crt
     :vhost_extra:
     :only:
