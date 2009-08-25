@@ -8,7 +8,7 @@
   </directory>
 </VirtualHost>
 
-<VirtualHost *:80>
+<VirtualHost *:80 *:443>
   ServerName <%= configuration[:domain] || `hostname -f` %>
   DocumentRoot "<%= configuration[:deploy_to] + "/current/public" %>"
   RailsEnv production
