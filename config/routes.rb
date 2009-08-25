@@ -38,10 +38,13 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing the them or commenting them out if you're using named routes and resources.
+
+  map.connect 'donations', :controller => 'donations', :action => 'index'
+  map.connect 'donations/view_full_site', :controller => 'donations', :action => "view_full_site"
   map.routes_for_bcms_blog
   map.routes_for_bcms_news
   map.routes_for_browser_cms
-
-  #map.connect ':controller/:action/:id'
-  #map.connect ':controller/:action/:id.:format'
+  
+  map.connect ':controller/:action/:id'
+  map.connect ':controller/:action/:id.:format'
 end

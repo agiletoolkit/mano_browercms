@@ -1,5 +1,5 @@
 Given /^an iPhone request$/ do
-  # pending
+  header("User-agent", "Mobile Safari")
 end
 
 Given /^a homepage/ do
@@ -12,4 +12,8 @@ Given /^a homepage/ do
 
   section_node.save!
   page.publish
+end
+
+Given /^a standard web request$/ do
+  header("User-agent", "Safari")
 end
