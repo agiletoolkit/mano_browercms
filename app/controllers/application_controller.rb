@@ -11,7 +11,16 @@ class ApplicationController < ActionController::Base
   
   def redirect_to_iphone
     if iphone_user?
-      redirect_to('/donations') unless (session['full_site'] )
+      redirect_to(:controller => 'donations', :action => 'index', :protocol => 'https://' )  unless (session['full_site'] )
+    end
+  end
+  
+  def redirect_to_ssl
+    if request.ssl? || local_request?
+      return true
+    else
+      redirect_to url_for params.merge({:protocol => 'https://'})
+      return false
     end
   end
   
@@ -19,5 +28,15 @@ class ApplicationController < ActionController::Base
   
   def iphone_user?
     return request.user_agent.match(/Mobile.+Safari/)
+  end
+end
+
+
+def redirect_to_ssl
+  if request.ssl? || local_request?
+    return true
+  else
+    redirect_to url_for params.merge({:protocol => 'https://'})
+    return false
   end
 end

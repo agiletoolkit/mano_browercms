@@ -7,7 +7,7 @@ describe ApplicationController do
     
     get "/"
     
-    response.should redirect_to("/donations")
+    response.redirect_url.include?("/donations").should == true
   end
   
   it "should not redirect to the iPhoneApp if the session says not to" do
@@ -31,7 +31,15 @@ describe ApplicationController do
     
     get "/"
     
-    response.should redirect_to('/donations')
+    response.redirect_url.include?("/donations").should == true
+  end
+
+  it "should redirect to ssl for mobile safari" do
+    request.user_agent = "Mobile   Safari   2.8"
+    
+    get "/"
+
+    response.redirect_url.include?("https://").should == true
   end
   
   it "should redirect even if the word Mobile isn't first in the user agent" do
@@ -39,7 +47,7 @@ describe ApplicationController do
     
     get '/'
     
-    response.should redirect_to('/donations')
+    response.redirect_url.include?("/donations").should == true
   end
   
 
