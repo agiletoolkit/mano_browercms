@@ -3,7 +3,13 @@
 :user: rails
 :group: rails
 :ssl:
-:self_signed: true
+    :ip: 208.75.84.239
+    :certificate_file: /srv/mano_browsercms/certs/www.manoamono.org.crt
+    :certificate_key_file: /srv/mano_browsercms/certs/www.manoamono.org.key
+    :certificate_chain_file: /srv/mano_browsercms/certs/gd_bundle.crt
+    :vhost_extra:
+    :only:
+    :self_signed: false
 :deploy_to: /srv/mano_browsercms
 :domain: manoamano.org
 :repository: git@github.com:agiletoolkit/mano_browercms.git
