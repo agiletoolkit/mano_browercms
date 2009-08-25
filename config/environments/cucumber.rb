@@ -20,3 +20,7 @@ config.gem 'webrat',      :lib => false,        :version => '>=0.5.0' unless Fil
 config.gem 'rspec',       :lib => false,        :version => '>=1.2.6' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec'))
 config.gem 'rspec-rails', :lib => 'spec/rails', :version => '>=1.2.6' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec-rails'))
 
+CONFIG = {}
+CONFIG[:use_ssl_for_donations] = false
+
+

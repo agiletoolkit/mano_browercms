@@ -28,6 +28,9 @@ config.action_controller.page_cache_directory = RAILS_ROOT + "/public/cache/"
 # Enable threaded mode
 # config.threadsafe!
 
+CONFIG = {}
+CONFIG[:use_ssl_for_donations] = true
+
 #Set the site domain so that errors don't pop up when you assign tasks in 
 #browsercms: reported in lighthouse bug #146
 SITE_DOMAIN="codegreenlab.com"

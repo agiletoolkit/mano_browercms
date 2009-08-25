@@ -34,13 +34,24 @@ describe ApplicationController do
     response.redirect_url.include?("/donations").should == true
   end
 
-  it "should redirect to ssl for mobile safari if " do
+  it "should redirect to ssl for mobile safari if ssl_enabled" do
+    CONFIG[:use_ssl_for_donations] = true
     request.user_agent = "Mobile   Safari   2.8"
     
     get "/"
 
     response.redirect_url.include?("https://").should == true
   end
+
+  it "should not redirect to ssl for mobile safari if is not ssl_enabled" do
+    CONFIG[:use_ssl_for_donations] = false
+    request.user_agent = "Mobile   Safari   2.8"
+    
+    get "/"
+
+    response.redirect_url.include?("http://").should == true
+  end
+
   
   it "should redirect even if the word Mobile isn't first in the user agent" do
     request.user_agent = "     Mobile   Safari   2.8"

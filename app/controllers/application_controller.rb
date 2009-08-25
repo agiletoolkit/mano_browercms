@@ -11,7 +11,11 @@ class ApplicationController < ActionController::Base
   
   def redirect_to_iphone
     if iphone_user?
-      redirect_to(:controller => 'donations', :protocol => "https")  unless (session['full_site'] )
+      if (CONFIG[:use_ssl_for_donations])
+        redirect_to(:controller => 'donations', :protocol => "https")  unless (session['full_site'] )
+      else
+        redirect_to(:controller => 'donations')  unless (session['full_site'] )
+      end
     end
   end
   

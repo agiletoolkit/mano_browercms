@@ -30,3 +30,6 @@ config.action_mailer.delivery_method = :test
 #Set the site domain so that errors don't pop up when you assign tasks in 
 #browsercms: reported in lighthouse bug #146
 SITE_DOMAIN="codegreenlab.com"
+
+CONFIG = {}
+CONFIG[:use_ssl_for_donations] = false
