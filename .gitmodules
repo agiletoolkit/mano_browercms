@@ -1,0 +1,3 @@
+[submodule "vendor\plugins\active_merchant"]
+ path = vendor/plugins/active_merchant
+ url = git://github.com/Shopify/active_merchant.git
