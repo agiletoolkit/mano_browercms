@@ -1,0 +1,26 @@
+<h3>Credit Card Information</h3>
+
+<p>
+  <%= f.label :first_name, "First Name:" %>*
+  <%= f.text_field :first_name %>
+</p>
+<p>
+  <%= f.label :last_name, "Last Name:" %>*
+  <%= f.text_field :last_name %>
+</p>
+<p>
+	<%= f.label :credit_card_number, "Credit Card Number:" %>*
+	<%= f.text_field :credit_card_number %>
+</p>
+<p>
+	<%= f.label :card_security_code, "Card Security Code:" %>*
+	<%= f.text_field :card_security_code, :size => 3, :maxlength => 3 %>
+</p>
+<p>
+	<label for="date_expiration_month">Expiration Month:</label>*
+	<%= select_month @payment_authorizer.expiration_month.to_i, :field_name => "expiration_month" %>
+</p>
+<p>
+	<label for="date_expiration_year">Expiration Year:</label>*
+	<%= select_year @payment_authorizer.expiration_year.to_i, :field_name => "expiration_year", :start_year => Date.today.year, :end_year => (Date.today.year + 15) %>
+</p>

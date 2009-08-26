@@ -36,7 +36,9 @@ class PaymentAuthorizer < ActiveValidations::Base
   end
   
   def credit_card
-    return ActiveMerchant::Billing::CreditCard.new(:first_name => @first_name, :last_name => @last_name, :number => @credit_card_number, :month => @expiration_month,
-                                                                                            :year => @expiration_year, :verification_value => @card_security_code)
+    return ActiveMerchant::Billing::CreditCard.new(
+      :first_name => @first_name, :last_name => @last_name, 
+      :number => @credit_card_number, :verification_value => @card_security_code,
+      :month => @expiration_month, :year => @expiration_year)
   end
 end

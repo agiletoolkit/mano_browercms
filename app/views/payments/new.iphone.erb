@@ -1,0 +1,20 @@
+<%= error_messages_for(:payment_authorizer, :header_message => nil, :message => nil) %>
+<%= @error_message %><br/>
+<% form_for :payment_authorizer, @payment_authorizer, :url => {:controller => "payments", :action => "attempt"} do |f| -%>
+
+  <p>
+    <label for="donation_amount_in_cents">Donation Amount *</label>
+    <%= text_field_tag "donation_amount_in_cents" %>
+  </p>
+
+  <%= render :partial => 'payments/credit_card_form', :locals => { :f => f } %>
+  <%= render :partial => 'payments/billing_address_form', :locals => { :f => f } %>
+  <%= render :partial => 'payments/contact_information_form', :locals => { :f => f } %>
+
+  <p>
+  	Please Wait a few seconds after clicking while payment is being processed.
+  </p>
+  
+  <%= f.submit "Process Payment", :disable_with => "Please Wait..." %>
+  
+<% end -%>
