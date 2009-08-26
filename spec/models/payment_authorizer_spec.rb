@@ -195,6 +195,6 @@ describe PaymentAuthorizer do
         
         @payment_authorizer.transaction_id.should == "123456"
       end
-    end
+    end 
   end
 end

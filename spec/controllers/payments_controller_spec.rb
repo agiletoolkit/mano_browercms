@@ -24,10 +24,10 @@ describe PaymentsController do
     post :attempt, :payment_authorizer => {}, :date => {}, :donation_amount_in_cents => 5000
   end
 
-  it "should not attempt donation of zero or lower" do
+  it "should not attempt donation less than 100" do
     @payment_authorizer.should_not_receive(:attempt)
 
-    post :attempt, :payment_authorizer => {}, :date => {}, :donation_amount_in_cents => 0
+    post :attempt, :payment_authorizer => {}, :date => {}, :donation_amount_in_cents => 98
 
     assigns[:error_message].should_not be_blank
     response.should render_template("new")
@@ -48,7 +48,7 @@ describe PaymentsController do
 
     response.should render_template("new")
   end
-  
+
   describe "using Mobile Safari" do
     before(:each) do
       request.user_agent = "Mobile Safari"
@@ -77,3 +77,4 @@ describe PaymentsController do
     # end
   end
 end
+

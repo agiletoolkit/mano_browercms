@@ -33,3 +33,8 @@ SITE_DOMAIN="codegreenlab.com"
 
 CONFIG = {}
 CONFIG[:use_ssl_for_donations] = false
+CONFIG[:gateway_credentials] = {
+    :login => "wayne_1251299990_biz_api1.gmail.com",
+    :password => "1251300001",
+    :signature => "AG-gTY93Yi7ucj72Z2QXHRRO4e7tAKeHwcjB4IPeMtGCI1hsDJmkUng5"
+}

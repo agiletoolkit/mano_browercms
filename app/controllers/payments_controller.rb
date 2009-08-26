@@ -13,7 +13,7 @@ class PaymentsController < ApplicationController
 
     # TODO: create new model & save off transaction ID, name, email, payment amount
 
-    if amount <= 0
+    if amount <= 98
       @error_message = "Your donation amount seems to be incorrect. Please try again."
       render :action => "new"
     elsif @payment_authorizer.attempt(amount)
