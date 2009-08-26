@@ -10,6 +10,7 @@ Rails::Initializer.run do |config|
   config.gem "browsercms"
   config.gem "bcms_news"
   config.gem "bcms_blog"
+  config.gem "activemerchant", :lib => "active_merchant"
   config.gem "rspec-rails", :lib => false, :version => ">= 1.2.0"
   config.gem "rspec", :lib => false, :version => ">= 1.2.0"
   config.gem "cucumber"

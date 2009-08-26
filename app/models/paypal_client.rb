@@ -30,6 +30,7 @@ class PaypalClient
   end
   
   def gateway
+    puts CONFIG[:gateway_credentials]
     return ActiveMerchant::Billing::PaypalGateway.new(CONFIG[:gateway_credentials])
   end
   

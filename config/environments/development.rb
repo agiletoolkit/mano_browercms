@@ -19,9 +19,9 @@ config.action_mailer.raise_delivery_errors = false
 CONFIG = {}
 CONFIG[:use_ssl_for_donations] = false
 CONFIG[:gateway_credentials] = {
-    :login => "wayne_1251299990_biz_api1.gmail.com",
-    :password => "1251300001",
-    :signature => "AG-gTY93Yi7ucj72Z2QXHRRO4e7tAKeHwcjB4IPeMtGCI1hsDJmkUng5"
+    :login => "manoamano_api1.manoamano.org",
+    :password => "4HUTGJ628ZQJYJ5T",
+    :signature => "A84OPQHyR9Id2LfVKRBUe313HvA9A37FdmAUhqf1DZO.1u.Q490Ct5DX5"
 }
 
 #Set the site domain so that errors don't pop up when you assign tasks in 
