@@ -344,15 +344,15 @@ window.iPhone = window.iPhone || {};
        
         // On touch
         item.addEventListener("touchstart", function(e) {
-          var _this = this;
-          // console.log(_this.tagName);
-
-          // Add active class after a short timeout
-          // (timeout removes interference with scroll)
-          this.timeout = setTimeout(function() {
-            // $(_this).click();
-          }, 150);
-
+          // var _this = this;
+          // // console.log(_this.tagName);
+          // 
+          // // Add active class after a short timeout
+          // // (timeout removes interference with scroll)
+          // this.timeout = setTimeout(function() {
+          //   // $(_this).click();
+          // }, 150);
+          // 
           // Prevent default
           e.preventDefault();
         }, false);
@@ -401,26 +401,27 @@ window.iPhone = window.iPhone || {};
 
 var Agile09 = {
 
-  inviteURL: 'foobar.php',
+  inviteURL: '/cms/donations/invite',
+  donationCart: {},
   
   formatRow: function(item) {
     return ' ' + 
       '<li class="listRowTemplate_template"> ' +
         '<div class="cost">' + item.price + '</div> ' +
+        '<div class="row-name">' + item.name + '</div>' +
         '<div class="listRowRadios"> ' +
           '<label for="' + item.id + '-25" class="p25">25%</label><input type="radio" value=".25" name="' + item.id + '" id="' + item.id + '-25"/> ' +
           '<label for="' + item.id + '-50" class="p50">50%</label><input type="radio" value=".50" name="' + item.id + '" id="' + item.id + '-50"/> ' +
           '<label for="' + item.id + '-75" class="p75">75%</label><input type="radio" value=".75" name="' + item.id + '" id="' + item.id + '-75"/> ' +
           '<label for="' + item.id + '-100" class="p100">100%</label><input type="radio" value="1" name="' + item.id + '" id="' + item.id + '-100"/> ' +
         '</div>' +
-        '<div class="row-desc">' + item.text + '</div> ' +
+        '<div class="row-desc">' + item.text.replace(item.name, '<strong>' + item.name + '</strong>') + '</div> ' +
         '<div class="row-total"><span class="row-cost"></span></div>' +
       '</li>';
   }, // formatRow
   
   makeRows: function(data) {
     var $list = $('#list');
-    // $('#list li label').unbind('choose');
     $list.empty();
     
     for(var i=0, dataLen=data.length; i<dataLen; i++) {
@@ -434,23 +435,23 @@ var Agile09 = {
       var $parent = $this.parent();
       var $row = $parent.parent();
       var idx = $parent.children().index(this);
-
+      var item = $.trim($row.find('.row-name').text());
       if($parent.hasClass(this.className)) {
         $parent.removeClass(this.className);
         $row.find('.row-cost').empty();
+        delete Agile09.donationCart[item];
       }
       else {
         $parent.attr('class', 'listRowRadios ' + this.className);
+        var amount = (Number($row.find('.cost').text()) * Number($('#' + $this.attr('for')).val())).toFixed(2);
+        Agile09.donationCart[item] = amount;
         $row.find('.row-cost').html(
-          (Number($row.find('.cost').text()) * Number($('#' + $this.attr('for')).val())).toFixed(2)
+          Agile09.formatAmount(amount)
         );
       }
       Agile09.getTotal();
     });
 
-    $('#total-donation').click(function() {
-      $(this).focus();
-    });
   }, // makeRows
   
   getTotal: function() {
@@ -462,16 +463,26 @@ var Agile09 = {
         }
       }
       else {
-        var n = Number(this.innerHTML);
+        var n = Number(Agile09.donationCart[$(this).parent().siblings('.row-name').eq(0).text()]);
       }
       if(!isNaN(n)) {
         total += n;
       }
     });
     $('#total-donation').val(total.toFixed(2));
+    var x = [];
+    for(var k in Agile09.donationCart) {
+      x.push(k);
+    }
+    $('#causes').val(x.join(','));
     window.scrollTo(0, 1);
   }, // getTotal
   
+  formatAmount: function(val) {
+    var dollars_cents = val.split('.');
+    return dollars_cents[0] + '<sup>' + dollars_cents[1] + '</sup>';
+  }, // formatAmount
+
   activateConfirmationPage: function() {
     var $TellFriend = $('#TellFriend');
 
@@ -498,14 +509,14 @@ var Agile09 = {
   
   _init: function() {
     var data = [
-        { id: 'ms', text: 'Medical Supplies lorem ipsum dolor sit amet', price: '25' }, 
-        { id: 'cn', text: 'Clinical Nurse lorem ipsum dolor sit amet', price: '60' }, 
-        { id: 'al', text: 'Airlift lorem ipsum dolor sit amet', price: '330' }, 
-        { id: 'rw', text: '22 ft of Roadway lorem ipsum dolor sit amet', price: '100' },
-        { id: 'se', text: 'Something Else lorem ipsum dolor sit amet', price: '150' },
-        { id: 'sb', text: 'Something Better lorem ipsum dolor sit amet', price: '500' }
-        
+        { id: 'ms', name: 'Medical Supplies', text: 'Helps ship $1,500 worth of Medical Supplies', price: '25' }, 
+        { id: 'cn', name: 'Clinical Nurse', text: 'Pays the salary of a Clinical Nurse for a week', price: '60' }, 
+        { id: 'cp', name: 'Critical Patient', text: 'Can airlift a Critical Patient to proper medical facilities', price: '330' }, 
+        { id: 'rw', name: '22 ft of Roadway', text: 'Helps lay 22 ft of Roadway in Bolivia', price: '100' },
+        { id: 'fv', name: 'Flood Victims', text: 'Airlifts 125 lbs of food to Flood Victims', price: '10' },
+        { id: 'ft', name: 'Fruit Trees', text: 'Purchases and plants five Fruit Trees', price: '30' }        
     ];
+
     Agile09.makeRows(data);
 
     $otherBtn = $('label.dollars-other');
@@ -528,11 +539,18 @@ var Agile09 = {
 
     $otherField.blur(function() {
       Agile09.getTotal();
-    }); 
+    });
+    
+    // $('#donation-form').submit(function(e) {
+    //   var totdon = Number($('#total-donation')[0].value);
+    //   $('#header').text(totdon);
+    //   if(isNaN(totdon) || !totdon) {
+    //     return false;
+    //     e.preventDefault();
+    //   }
+    //   return false;
+    // });
 
-    if(document.getElementById('confirmation')) {
-      Agile09.activateConfirmationPage();
-    }
   } // _init
 
 

@@ -10,8 +10,14 @@
   <link rel="stylesheet" href="/stylesheets/iphone/reset.css">
   <link rel="stylesheet" href="/stylesheets/iphone/main.css">
   <link rel="stylesheet" href="/stylesheets/iphone/forms.css">
+
+  <!-- <script type="application/x-javascript" src="http://172.20.33.54:1840/ibug.js"></script> -->
+
 </head>
 <body>
+<div id="header">
+    <div class="click-instructions">Click here mo-fo</div>
+</div>
 <div id="container">
   <div id="content">        
     <div id="header">
@@ -38,26 +44,12 @@
     </div>
   </div>
 </div>
-<div id="footer">  
-  <% payment_service_for "Donation", CONFIG[:paypal_email],
-          :currency => 'USD',
-          :service => :paypal,
-          :html => { :name => "donation-total" } do |service|
-
-      service.item_name "Donation"
-      service.tax '0.00'
-
-      service.notify_url url_for(:only_path => false, :controller => "payments", :action => 'notify')
-      service.return_url url_for(:only_path => false,
-          :controller => 'payments', :action => 'receipt')
-      service.cancel_return_url url_for(:only_path => false,
-          :controller => 'payments', :action => 'new') %>
-
-      <input type="hidden" name="custom" id="causes" value="" />
-      $<input type="text" name="amount" id="total-donation" readonly="readonly" />
-      <input type="image" src="/images/iphone/btn_donate.png" value="Donate" name="submit" class="btn btn-donate" />
-
-  <% end %>
+<div id="footer">
+  <form action="/cms/payments/confirm" method="post" name="donation-total" id="donation-form">
+  <input type="hidden" name="causes" id="causes" value="" />
+  $<input type="text" name="donation_amount_in_dollars" id="total-donation" readonly />
+  <input type="image" src="/images/iphone/btn_donate.png" value="Donate" name="submit" class="btn btn-donate" />
+  </form>
 </div>
 <script type="text/javascript" src="/javascripts/jquery-min.js" charset="utf-8"></script>
 <script type="text/javascript" src="/javascripts/mam-agile09.js" charset="utf-8"></script>
