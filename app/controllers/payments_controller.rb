@@ -25,7 +25,7 @@ class PaymentsController < ApplicationController
     puts "============="
     puts params.inspect
     
-    render :nothing
+    render :nothing => true
   end
 
   # TODO: CWJ eliminate this action if we stick with offsite payment
