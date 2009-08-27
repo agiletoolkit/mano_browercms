@@ -1,4 +1,4 @@
-body { background: #cce2ed url(/images/iphone/bkg_gradient.pngx) repeat-x 0 0; margin: 0px; padding: 0px; min-height: 416px; font-family: Helvetica; width:100%; color:#2a2a2a; }
+body { background: #cce2ed url(/images/iphone/bkg_gradient.png) repeat-x 0 0; margin: 0px; padding: 0px; min-height: 416px; font-family: Helvetica; width:100%; color:#2a2a2a; }
 
 .back_button_template {
     font-family: Helvetica;
@@ -28,7 +28,7 @@ h3 { color:#2b87ba; text-transform:uppercase; margin:0 5px; }
 #list {overflow: hidden; display: block; padding: 0px; height: auto; -webkit-margin-top-collapse: separate; -webkit-margin-bottom-collapse: separate; position: relative; }
 #list li { display:block; position:relative; list-style-type:none; overflow:hidden; margin:5px 0; padding:0; border-bottom:1px solid #eee; height:81px; width:310px;  -webkit-margin-bottom-collapse:separate; }
 #list li.last { border:none; }
-#list li .cost { display:block; position:absolute; left:0; top:0; height:84px; width:50px; line-height:40px; font-weight:bold; background:transparent url(/images/iphone/bkg_donate_cause_amount.png) no-repeat center top; color:#003366; text-indent:11px; font-size:22px; letter-spacing:-.01em; }
+#list li .cost { display:block; position:absolute; left:0; top:4px; height:84px; width:50px; line-height:40px; font-weight:bold; background:transparent url(/images/iphone/bkg_donate_cause_amount.png) no-repeat center top; color:#003366; text-indent:11px; font-size:22px; letter-spacing:-.01em; }
 
 #list li .listRowRadios { overflow:hidden; position:absolute; background:transparent url(/images/iphone/btn_support_cause_percent.png) no-repeat 0 0; height:36px; margin:35px 0 0 60px; width:180px; }
 #list li .listRowRadios.p25 { background-position:0 -46px; }
@@ -38,15 +38,15 @@ h3 { color:#2b87ba; text-transform:uppercase; margin:0 5px; }
 #list li .listRowRadios label { position:relative; display:block; float:left; width:45px; height:40px; line-height:40px; text-indent:-9999px; }
 #list li .listRowRadios label.active { background:#4a4a4a; }
 #list li .listRowRadios input { vertical-align:bottom; margin:25px 10px 0; display:none; }
-
+#list li .row-name { display:none; }
 #list li .row-desc { position: absolute; left:0; top:0; height:50px; font-size:12px; text-overflow:ellipsis; overflow: hidden; margin:0 0 0 60px; width:200px; line-height:1.1em; }
 
 /*.rowTitle_template { font-size:19px !important; margin-left:50px; margin-top:-5px; }*/
 
 #list li .row-total {  }
-#list li .row-total .row-cost {font-size:19px; color:#11aa11; display:block; position:absolute; left:245px; top:35px; background:none; height:40px; line-height:40px; vertical-align:bottom; width:50px; text-align:left; }
+#list li .row-total .row-cost {font-size:19px; color:#11aa11; display:block; position:absolute; left:245px; top:30px; background:none; height:40px; line-height:40px; vertical-align:bottom; width:50px; text-align:left; }
 
-#header, #footer { left:0; width:100%; z-index:200; margin:0; padding:0; }
+#header, #hd, #footer { left:0; width:100%; z-index:200; margin:0; padding:0; }
 #footer { height:50px; background:#e1e1e1; position:absolute; top:376px; text-align:right; width:100%; z-index:200; margin:0; padding:0; }
 
 #total-donation { border:1px solid #2a2a2a; color:#2a2a2a; background:#fff; font-size:15px; height:30px; width:80px; margin:4px 4px 0; -wap-input-format: "4N"; vertical-align:middle;  }
@@ -77,3 +77,5 @@ h3 { color:#2b87ba; text-transform:uppercase; margin:0 5px; }
 #stackLayout { position:relative; margin:0 auto; overflow:hidden; }
 
 #TellFriend, #MessageSent { display:none; }
+
+/*.click-instructions { position:absolute; display:block; top:0; left:0; height:50px; width:120px; margin:40px 10px; background:transparent url(/images/iphone/click-to-toggle.png) 0 0; z-index:999;}*/

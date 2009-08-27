@@ -15,6 +15,9 @@
 
 </head>
 <body>
+<div id="header">
+    <div class="click-instructions">Click here mo-fo</div>
+</div>
 <div id="container">
   <div id="content">        
     <div id="header">
@@ -42,7 +45,7 @@
   </div>
 </div>
 <div id="footer">
-  <form action="/cms/payments/confirm" method="post" name="donation-total">
+  <form action="/cms/payments/confirm" method="post" name="donation-total" id="donation-form">
   <input type="hidden" name="causes" id="causes" value="" />
   $<input type="text" name="donation_amount_in_dollars" id="total-donation" readonly />
   <input type="image" src="/images/iphone/btn_donate.png" value="Donate" name="submit" class="btn btn-donate" />
