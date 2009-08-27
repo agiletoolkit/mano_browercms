@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html manifest="OfflineApp.manifest">
+<head>
+<title>Thank You!</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=320, width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="YES">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon" href="/images/iphone/WebClipIcon.png">
+<link rel="stylesheet" href="/stylesheets/iphone/reset.css">
+<link rel="stylesheet" href="/stylesheets/iphone/main.css">
+<link rel="stylesheet" href="/stylesheets/iphone/forms.css">
+</head>
+<body>
+<!-- <div id="header"> Top </div> -->
+<div id="container">
+  <div id="confirmation">
+    <h3>Thank You!</h3>
+    <p>Hey <strong>[Name]</strong>, thanks for your donation of <strong>$[$$.$$]</strong>, which can help Mano a Mano provide <strong>[Cause]</strong>, <strong>[Cause]</strong> and <strong>[Cause]</strong> to the people in Bolivia.</p>
+    <p>A copy of the receipt has been sent to <strong>[email]</strong>.</p>
+    <p id="taf-link"><a href="#" id="open-taf">Tell a friend</a> or <a href="http://manoamano.org/">Visit Mano a Mano</a>.</p>
+    <div id="TellFriend">
+      <form id="tell-a-friend" name="tell-a-friend" action="post">
+        <ul>
+          <li>
+            <label for="tell_friend_email">Email Address</label>
+            <input id="tell_friend_email" name="tell_friend_email" type="text" value="" class="half" />
+          </li>
+          <li>
+            <input id="tell_friend_action" name="tell_friend_action" type="submit" value="Tell a friend" />
+          </li>
+        </ul>
+      </form>
+    </div>
+    <div id="MessageSent">
+      <p>We've sent a message to <strong>[email]</strong>.</p>
+      Thanks for spreading the word. <a href="http://manoamano.org/">Visit Mano a Mano</a>
+      </p>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="/javascripts/jquery-min.js" charset="utf-8"></script>
+<script type="text/javascript" src="/javascripts/mam-agile09.js" charset="utf-8"></script>
+</body>
+</html>
