@@ -18,20 +18,18 @@ class PaypalClient
   
   def attempt_with_valid_credit_card(price)
     response = gateway.authorize(price, @credit_card, {:ip => "", :billing_address => @billing_address})
-    # ActiveRecord::Base.logger.warn("response: #{response.message}")
-    # 
+
     if response.success?
       capture_result = gateway.capture(price, response.authorization)
       @transaction_id = capture_result.params['transaction_id']
       return true
     else
+      # ActiveRecord::Base.logger.warn("response: #{response.message}")
       return false
     end
   end
   
   def gateway
-    puts CONFIG[:gateway_credentials]
     return ActiveMerchant::Billing::PaypalGateway.new(CONFIG[:gateway_credentials])
   end
-  
 end

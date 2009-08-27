@@ -65,16 +65,6 @@ describe PaymentsController do
     
       assigns[:payment_authorizer].should == @payment_authorizer
     end
-    
-    # it "should have countries" do
-    #   COUNTRIES.should_not be_nil
-    #   COUNTRIES.should be_instance_of(Array)
-    # 
-    #   get :new
-    # 
-    #   response.should be_success
-    #   response.include?("United States").should == true
-    # end
   end
 end
 

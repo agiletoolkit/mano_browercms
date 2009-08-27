@@ -27,14 +27,18 @@ config.action_mailer.delivery_method = :test
 # like if you have constraints or database-specific column types
 # config.active_record.schema_format = :sql
 
+CONFIG = {}
+CONFIG[:use_ssl_for_donations] = false
+
+require "active_merchant"
+ActiveMerchant::Billing::Base.mode = :test
+# must be a Sandbox account to test using Paypal 
+CONFIG[:gateway_credentials] = {
+  :login => "colin_1238600447_biz_api1.8thlight.com",
+  :password => "1238600454",
+  :signature => "AFcWxV21C7fd0v3bYYYRCpSSRl31AXhz1eU1BJpGgz0Kb2dDocZQP04t"
+}
+
 #Set the site domain so that errors don't pop up when you assign tasks in 
 #browsercms: reported in lighthouse bug #146
 SITE_DOMAIN="codegreenlab.com"
-
-CONFIG = {}
-CONFIG[:use_ssl_for_donations] = false
-CONFIG[:gateway_credentials] = {
-    :login => "wayne_1251299990_biz_api1.gmail.com",
-    :password => "1251300001",
-    :signature => "AG-gTY93Yi7ucj72Z2QXHRRO4e7tAKeHwcjB4IPeMtGCI1hsDJmkUng5"
-}
