@@ -510,11 +510,11 @@ var Agile09 = {
   _init: function() {
     var data = [
         { id: 'ms', name: 'Medical Supplies', text: 'Helps ship $1,500 worth of Medical Supplies', price: '25' }, 
-        { id: 'cn', name: 'Clinical Nurse', text: 'Pays the salary of a Clinical Nurse for a week', price: '60' }, 
-        { id: 'cp', name: 'Critical Patient', text: 'Can airlift a Critical Patient to proper medical facilities', price: '330' }, 
+        { id: 'cn', name: 'a Clinical Nurse', text: 'Pays the salary of a Clinical Nurse for a week', price: '60' }, 
+        { id: 'cp', name: 'Critical Patient Airlift', text: 'Can provide a Critical Patient Airlift to proper medical facilities', price: '330' }, 
         { id: 'rw', name: '22 ft of Roadway', text: 'Helps lay 22 ft of Roadway in Bolivia', price: '100' },
-        { id: 'fv', name: 'Flood Victims', text: 'Airlifts 125 lbs of food to Flood Victims', price: '10' },
-        { id: 'ft', name: 'Fruit Trees', text: 'Purchases and plants five Fruit Trees', price: '30' }        
+        { id: 'fv', name: '125 lbs of Food', text: 'Airlifts 125 lbs of Food to flood victims', price: '10' },
+        { id: 'ft', name: 'Five Fruit Trees', text: 'Purchases and plants Five Fruit Trees', price: '30' }        
     ];
 
     Agile09.makeRows(data);
