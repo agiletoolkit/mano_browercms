@@ -30,6 +30,16 @@ config.action_controller.page_cache_directory = RAILS_ROOT + "/public/cache/"
 
 CONFIG = {}
 CONFIG[:use_ssl_for_donations] = true
+CONFIG[:gateway_credentials] = {
+  :login => "manoamano_api1.manoamano.org",
+  :password => "4HUTGJ628ZQJYJ5T",
+  :signature => "A84OPQHyR9Id2LfVKRBUe313HvA9A37FdmAUhqf1DZO.1u.Q490Ct5DX5"
+}
+
+require "active_merchant"
+ActiveMerchant::Billing::Base.mode = :test
+# CONFIG[:paypal_email] = "manoamano_api1@manoamano.org"
+CONFIG[:paypal_email] = "colin_1238600447_biz@8thlight.com"
 
 #Set the site domain so that errors don't pop up when you assign tasks in 
 #browsercms: reported in lighthouse bug #146

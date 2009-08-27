@@ -1,7 +1,6 @@
 <% payment_service_for "Donation", CONFIG[:paypal_email],
         :currency => 'USD',
-        :service => :paypal,
-        :html => { :name => "donation-total" } do |service|
+        :service => :paypal do |service| 
 
     service.item_name "Donation"
     service.tax '0.00'
@@ -16,4 +15,5 @@
     Amount: $<input type="text" name="amount" id="total-donation" />
     <input type="image" src="/images/iphone/btn_donate.png" value="Donate" name="submit" class="btn btn-donate" />
 
+    <%= submit_tag 'Continue to Payment Information' %>
 <% end %>

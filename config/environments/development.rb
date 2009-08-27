@@ -16,14 +16,20 @@ config.action_controller.perform_caching             = false
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
 
-CONFIG = {}
-CONFIG[:use_ssl_for_donations] = false
-CONFIG[:gateway_credentials] = {
-    :login => "manoamano_api1.manoamano.org",
-    :password => "4HUTGJ628ZQJYJ5T",
-    :signature => "A84OPQHyR9Id2LfVKRBUe313HvA9A37FdmAUhqf1DZO.1u.Q490Ct5DX5"
-}
-
 #Set the site domain so that errors don't pop up when you assign tasks in 
 #browsercms: reported in lighthouse bug #146
 SITE_DOMAIN="localhost:3000"
+
+CONFIG = {}
+CONFIG[:use_ssl_for_donations] = false
+
+require "active_merchant"
+ActiveMerchant::Billing::Base.mode = :test
+# must be a Sandbox account to test using Paypal 
+CONFIG[:gateway_credentials] = {
+  :login => "colin_1238600447_biz_api1.8thlight.com",
+  :password => "1238600454",
+  :signature => "AFcWxV21C7fd0v3bYYYRCpSSRl31AXhz1eU1BJpGgz0Kb2dDocZQP04t"
+}
+
+CONFIG[:paypal_email] = "colin_1238600447_biz@8thlight.com"
