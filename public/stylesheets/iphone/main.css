@@ -1,0 +1,79 @@
+body { background: #cce2ed url(/images/iphone/bkg_gradient.pngx) repeat-x 0 0; margin: 0px; padding: 0px; min-height: 416px; font-family: Helvetica; width:100%; color:#2a2a2a; }
+
+.back_button_template {
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.59375) 0px -1px 0px;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 30px;
+    -webkit-dashboard-region: dashboard-region(control rectangle);
+    width: 60px;
+    position: absolute;
+    right: auto;
+    bottom: auto;
+    margin-top: 0px;
+    top: 7px;
+    left: 5px;
+    cursor: default;
+    -webkit-user-select: none;
+}
+h1 { margin:10px 0 0 0; background:transparent url(/images/iphone/logo_48x48.jpg) no-repeat 20px 50%; line-height:55px; height:55px; font-size:1.5em; text-transform:uppercase; padding:0 0 0 85px; font-weight:bold; position:relative; }
+h3 { color:#2b87ba; text-transform:uppercase; margin:0 5px; }
+#listLevel { position:relative; background:#fff; margin:10px 5px; -webkit-border-radius:10px; padding:0 5px; }
+#list {overflow: hidden; display: block; padding: 0px; height: auto; -webkit-margin-top-collapse: separate; -webkit-margin-bottom-collapse: separate; position: relative; }
+#list li { display:block; position:relative; list-style-type:none; overflow:hidden; margin:5px 0; padding:0; border-bottom:1px solid #eee; height:81px; width:310px;  -webkit-margin-bottom-collapse:separate; }
+#list li.last { border:none; }
+#list li .cost { display:block; position:absolute; left:0; top:0; height:84px; width:50px; line-height:40px; font-weight:bold; background:transparent url(/images/iphone/bkg_donate_cause_amount.png) no-repeat center top; color:#003366; text-indent:11px; font-size:22px; letter-spacing:-.01em; }
+
+#list li .listRowRadios { overflow:hidden; position:absolute; background:transparent url(/images/iphone/btn_support_cause_percent.png) no-repeat 0 0; height:36px; margin:35px 0 0 60px; width:180px; }
+#list li .listRowRadios.p25 { background-position:0 -46px; }
+#list li .listRowRadios.p50 { background-position:0 -92px; }
+#list li .listRowRadios.p75 { background-position:0 -138px; }
+#list li .listRowRadios.p100 { background-position:0 -184px; }
+#list li .listRowRadios label { position:relative; display:block; float:left; width:45px; height:40px; line-height:40px; text-indent:-9999px; }
+#list li .listRowRadios label.active { background:#4a4a4a; }
+#list li .listRowRadios input { vertical-align:bottom; margin:25px 10px 0; display:none; }
+
+#list li .row-desc { position: absolute; left:0; top:0; height:50px; font-size:12px; text-overflow:ellipsis; overflow: hidden; margin:0 0 0 60px; width:200px; line-height:1.1em; }
+
+/*.rowTitle_template { font-size:19px !important; margin-left:50px; margin-top:-5px; }*/
+
+#list li .row-total {  }
+#list li .row-total .row-cost {font-size:19px; color:#11aa11; display:block; position:absolute; left:245px; top:35px; background:none; height:40px; line-height:40px; vertical-align:bottom; width:50px; text-align:left; }
+
+#header, #footer { left:0; width:100%; z-index:200; margin:0; padding:0; }
+#footer { height:50px; background:#e1e1e1; position:absolute; top:376px; text-align:right; width:100%; z-index:200; margin:0; padding:0; }
+
+#total-donation { border:1px solid #2a2a2a; color:#2a2a2a; background:#fff; font-size:15px; height:30px; width:80px; margin:4px 4px 0; -wap-input-format: "4N"; vertical-align:middle;  }
+.btn-donate { width:72px; height:36px; padding:0; margin:4px 15px 0 6px; vertical-align:middle; border:0; }
+
+#container { height:356px; }
+#container #content { }
+
+#dollarAmounts { background:#fff; -webkit-border-radius:10px; width:300px; margin:10px 5px; padding:5px 5px 10px; clear:both; overflow:hidden; }
+#dollarAmounts .btn-holder { width:300px; margin:0 0 0 5px; padding:5px 0; }
+#dollarAmounts .btn { width:48px; height:36px; text-indent:-9999px; display:block; float:left; background:transparent url(/images/iphone/sprite_fixed_buttons.png) no-repeat 0 0; margin:0 8px 0 0; }
+#dollarAmounts .btn.dollars-5  { background-position:0 0; }
+#dollarAmounts .btn.dollars-25 { background-position:-59px 0; }
+#dollarAmounts .btn.dollars-50 { background-position:-118px 0; }
+#dollarAmounts .btn.dollars-100 { background-position:-176px 0; }
+#dollarAmounts .btn.dollars-100 { background-position:-176px 0; }
+#dollarAmounts .btn.dollars-other { background-position:-235px 0; width:65px; }
+#dollarAmounts .btn.dollars-5.active  { background-position:0 -46px; }
+#dollarAmounts .btn.dollars-25.active { background-position:-59px -46px; }
+#dollarAmounts .btn.dollars-50.active { background-position:-118px -46px; }
+#dollarAmounts .btn.dollars-100.active { background-position:-176px -46px; }
+
+
+#dollarAmounts .row-cost { display:none; width:50px; height:20px; border:1px solid #999; line-height:20px; }
+
+#container #donateForm { }
+
+#stackLayout { position:relative; margin:0 auto; overflow:hidden; }
+
+#TellFriend, #MessageSent { display:none; }

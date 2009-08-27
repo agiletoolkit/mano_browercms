@@ -1,0 +1,81 @@
+/* ----------------------------------------------------
+
+Description:	Styling form elements
+Filename:			forms.css
+Version:			1.0
+Created:			2008.01.14
+LastModified:	2008.01.25 (tzw)
+
+---------------------------------------------------- */
+fieldset    { padding:5px; margin: 0 5px 10px 5px; border:0; background-color:#fff; }
+legend      { font-weight: bold; font-size:1.2em;}
+
+
+/* Form fields
+-------------------------------------------------------------- */
+input,
+textarea 			{ margin:0.5em 0; padding:5px; border:1px solid #bbb;}
+
+
+/* Form layout elements
+-------------------------------------------------------------- */
+form { margin:0; padding:0; }
+form ul 								{	margin:0 0 -5px -5px;}
+form li 								{	margin:0;	padding:5px; display:block; position:relative; clear:both; list-style:none;}
+form label, li label		{	display:block; padding:0; margin:0 0 -5px 0; color:#777;}
+
+
+/* Form layout sizes
+-------------------------------------------------------------- */
+.fourth									{	width:24% !important;}
+.third 									{	width:32% !important;}
+.half 									{	width:48% !important;}
+.small 									{	width:25%;}
+.medium									{	width:25%;}
+.full										{	width:96%;}
+input.mini, select.mini {	width:20px;}
+
+textarea.small 					{	height:5.5em;}
+textarea.medium 				{	height:10em;}
+textarea.large 					{	height:20em;}
+
+input.dm, select.dm			{	width:48px;}
+input.yy, select.yy 		{	width:40px;}
+
+
+/* Success, notice and error boxes
+-------------------------------------------------------------- */
+#errorExplanation	{ margin:5px; padding:5px; background-color:#ffe; border:1px solid #FF9;}
+
+.error      			{ color: #8a1f11; }
+.notice     			{ background: #fff6bf; color: #514721; border-color: #ffd324; }
+.success    			{ background: #e6efc2; color: #264409; border-color: #d6d880; }
+.error a    			{ color: #8a1f11; }
+.notice a   			{ color: #514721; }
+.success a  			{ color: #264409; }
+
+
+/* Miscellaneous
+-------------------------------------------------------------- */
+body, p, div, span, td, li	{font-size:12px;font-family:'Helvetica Neue', 'Lucida Grande', Helvetica, Arial, sans-serif;color:#444; line-height:1.25em;}
+p									{margin-bottom:1.5em;}
+strong						{color:#2a2a2a;}
+
+/*body              {color:#2a2a2a;background:#cce2ed;}*/
+.hidden						{display:none;}
+.instruction			{color:#bbb;}
+#confirmation    { padding:5px 10px; margin: 60px 5px 10px 5px; border:0; background-color:#fff; -webkit-border-radius:10px; }
+
+
+/* Headings
+-------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {font-weight:bold;color:#2B87BA;margin-bottom:0}
+
+h1 				{font-size:1.5em; text-transform:uppercase; }
+h2 				{font-size:2em;}
+h3 				{font-size:1.3em; line-height:2em; }
+h4 				{font-size:1.25em;line-height:1.25;}
+h5 				{font-size:1em;}
+h6 				{font-size:1em;}
+
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {margin:0;}

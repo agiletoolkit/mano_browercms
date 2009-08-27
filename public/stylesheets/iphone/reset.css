@@ -1,0 +1,24 @@
+/* ----------------------------------------------------
+
+Description:	Global reset all elements for browsers
+Filename:			reset.css
+Version:			1.0
+Created:			2008.01.14
+LastModified:	2008.01.25 (tzw)
+
+---------------------------------------------------- */
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, 
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td 
+				{ margin:0; padding:0; border:0; font-weight:inherit; font-style:inherit; font-size:100%; font-family:inherit; vertical-align:baseline; }
+body			{ line-height:1.618; }
+table			{ border-collapse:separate; border-spacing:0; }
+caption, th, td	{ text-align:left; font-weight:normal; }
+table, td, th 	{ vertical-align:middle; }
+
+blockquote:before, 
+blockquote:after, 
+q:before, 
+q:after			{ content:""; }
+blockquote, q 	{ quotes:"" ""; }
+a img			{ border:none; }
