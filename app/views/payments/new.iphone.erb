@@ -1,21 +1,19 @@
 <% payment_service_for "Donation", CONFIG[:paypal_email],
         :currency => 'USD',
         :service => :paypal,
-        :html => { :name => "donation-total" } do |service| 
+        :html => { :name => "donation-total" } do |service|
 
-    service.amount "15"
     service.item_name "Donation"
     service.tax '0.00'
 
-    # service.notify_url url_for(:only_path => false, :controller => "payments", :action => 'notify')
+    service.notify_url url_for(:only_path => false, :controller => "payments", :action => 'notify')
     service.return_url url_for(:only_path => false,
         :controller => 'payments', :action => 'receipt')
     service.cancel_return_url url_for(:only_path => false,
         :controller => 'payments', :action => 'new') %>
-    Causes: <input name="causes" id="causes" value="Larry, Curly, and Moe" />
-    <br />
-    
-    $<input type="text" name="donation_amount_in_dollars" id="total-donation" value="<%= 15 %>" />
 
+    Causes: <input type="text" name="causes" id="causes" value="" />
+    Amount: $<input type="text" name="amount" id="total-donation" />
     <input type="image" src="/images/iphone/btn_donate.png" value="Donate" name="submit" class="btn btn-donate" />
+
 <% end %>

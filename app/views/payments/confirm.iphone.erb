@@ -1,5 +1,5 @@
 <% payment_service_for "Donation", CONFIG[:paypal_email],
-        :amount => @donation_amount_in_dollars, :currency => 'USD',
+        :currency => 'USD',
         :service => :paypal do |service| 
 
     service.item_name "Donation"
@@ -11,7 +11,9 @@
     service.cancel_return_url url_for(:only_path => false,
         :controller => 'payments', :action => 'new') %>
 
-    <p>Donation Amount: $<%= @donation_amount_in_dollars %></p>
+    Causes: <input type="text" name="causes" id="causes" value="" />
+    Amount: $<input type="text" name="amount" id="total-donation" />
+    <input type="image" src="/images/iphone/btn_donate.png" value="Donate" name="submit" class="btn btn-donate" />
 
     <%= submit_tag 'Continue to Payment Information' %>
 <% end %>
