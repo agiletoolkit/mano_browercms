@@ -38,6 +38,7 @@ CONFIG[:gateway_credentials] = {
   :password => "1238600454",
   :signature => "AFcWxV21C7fd0v3bYYYRCpSSRl31AXhz1eU1BJpGgz0Kb2dDocZQP04t"
 }
+CONFIG[:paypal_email] = "colin@8thlight.com"
 
 #Set the site domain so that errors don't pop up when you assign tasks in 
 #browsercms: reported in lighthouse bug #146
