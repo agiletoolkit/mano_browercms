@@ -35,6 +35,9 @@ CONFIG[:gateway_credentials] = {
   :password => "4HUTGJ628ZQJYJ5T",
   :signature => "A84OPQHyR9Id2LfVKRBUe313HvA9A37FdmAUhqf1DZO.1u.Q490Ct5DX5"
 }
+
+require "active_merchant"
+ActiveMerchant::Billing::Base.mode = :test
 # CONFIG[:paypal_email] = "manoamano_api1@manoamano.org"
 CONFIG[:paypal_email] = "colin_1238600447_biz@8thlight.com"
 
