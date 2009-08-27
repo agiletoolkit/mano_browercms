@@ -39,12 +39,11 @@ ActionController::Routing::Routes.draw do |map|
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing the them or commenting them out if you're using named routes and resources.
 
-  map.connect ':controller/:action/:id'
-  map.connect 'cms/donations', :controller => 'donations', :action => 'index'
-  map.connect 'cms/donations/view_full_site', :controller => 'donations', :action => "view_full_site"
+  map.connect 'cms/payments/:action', :controller => 'payments'
+  map.connect 'cms/donations/:action', :controller => 'donations'
   map.routes_for_bcms_blog
   map.routes_for_bcms_news
-  map.routes_for_browser_cms
+  map.routes_for_browser_cms  
   
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
