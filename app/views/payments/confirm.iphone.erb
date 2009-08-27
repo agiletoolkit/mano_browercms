@@ -1,16 +1,7 @@
 <% payment_service_for @payment_authorizer.id, CONFIG[:paypal_email],
-        :amount => @donation_amount_in_cents, :currency => 'USD',
+        :amount => @donation_amount_in_dollars, :currency => 'USD',
         :service => :paypal do |service| 
 
-    service.address_override true
-    service.customer :first_name => @payment_authorizer.first_name,
-        :last_name => @payment_authorizer.last_name,
-        :email => @payment_authorizer.email_address
-    service.shipping_address :city => @payment_authorizer.city,
-        :address1 => @payment_authorizer.address_line_one,
-        :state => @payment_authorizer.state,
-        :country => @payment_authorizer.country,
-        :zip => @payment_authorizer.zip
     service.item_name "Donation"
     service.tax '0.00'
 
@@ -20,18 +11,7 @@
     service.cancel_return_url url_for(:only_path => false,
         :controller => 'payments', :action => 'new') %>
 
-    <h1>Confirm Details</h1>
-
-    <p>First Name: <%= @payment_authorizer.first_name %></p>
-    <p>Last Name: <%= @payment_authorizer.last_name %></p>
-    <p>Email: <%= @payment_authorizer.email_address %></p>
-    <p>Address: <%= @payment_authorizer.address_line_one %></p>
-    <p>City: <%= @payment_authorizer.city %></p>
-    <p>State / Province: <%= @payment_authorizer.state %></p>
-    <p>Country: <%= @payment_authorizer.country %></p>
-    <p>Zip: <%= @payment_authorizer.zip %></p>
-
-    <p>Donation Amount: $<%= format("%0.2f", @donation_amount_in_cents.to_f / 100) %></p>
+    <p>Donation Amount: $<%= @donation_amount_in_dollars %></p>
 
     <%= submit_tag 'Continue to Payment Information' %>
 <% end %>

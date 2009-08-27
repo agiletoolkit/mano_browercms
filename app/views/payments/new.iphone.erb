@@ -3,21 +3,10 @@
 <% form_for :payment_authorizer, @payment_authorizer, :url => {:controller => "payments", :action => "confirm"} do |f| -%>
 
   <p>
-    <label for="donation_amount_in_cents">Donation Amount *</label>
-    <%= text_field_tag "donation_amount_in_cents" %>
+    <label for="donation_amount_in_dollars">Donation Amount *</label>
+    $ <%= text_field_tag "donation_amount_in_dollars" %>
   </p>
   
-  <p>
-    <%= f.label :first_name, "First Name:" %>*
-    <%= f.text_field :first_name %>
-  </p>
-  <p>
-    <%= f.label :last_name, "Last Name:" %>*
-    <%= f.text_field :last_name %>
-  </p>
-  
-  <%= render :partial => 'payments/contact_information_form', :locals => { :f => f } %>
-
   <%= f.submit "Continue" %>
   
 <% end -%>

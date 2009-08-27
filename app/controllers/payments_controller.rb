@@ -9,8 +9,8 @@ class PaymentsController < ApplicationController
   
   def confirm
     payment_params = params[:payment_authorizer]
-    @payment_authorizer = PaymentAuthorizer.new(params[:payment_authorizer])
-    @donation_amount_in_cents = params[:donation_amount_in_cents]
+    @payment_authorizer = PaymentAuthorizer.new
+    @donation_amount_in_dollars = params[:donation_amount_in_dollars]
 
     # TODO: CWJ create new model & save off transaction ID, name, email, payment amount.
     #           Perhaps we should change PaymentAuthorizer to this model since it no longer
@@ -19,15 +19,17 @@ class PaymentsController < ApplicationController
 
   # TODO: CWJ add postback notification action (maybe checking a field in the db on the above model)
   def notify
-    
+    puts "============="
+    puts "Notified by Paypal: "
+    puts "============="
+    puts params.inspect
   end
-  
 
   # TODO: CWJ eliminate this action if we stick with offsite payment
   def attempt
     payment_params = params[:payment_authorizer]
     @payment_authorizer = PaymentAuthorizer.new(payment_params)
-    amount = params[:donation_amount_in_cents].to_i
+    amount = params[:donation_amount_in_dollars].to_i
 
     if amount <= 98
       @error_message = "Your donation amount seems to be incorrect. Please try again."

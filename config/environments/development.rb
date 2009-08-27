@@ -31,3 +31,5 @@ CONFIG[:gateway_credentials] = {
   :password => "1238600454",
   :signature => "AFcWxV21C7fd0v3bYYYRCpSSRl31AXhz1eU1BJpGgz0Kb2dDocZQP04t"
 }
+
+CONFIG[:paypal_email] = "colin_1238600447_biz@8thlight.com"
