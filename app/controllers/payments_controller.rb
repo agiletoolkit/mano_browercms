@@ -17,6 +17,12 @@ class PaymentsController < ApplicationController
     #           does any payment processing
   end
 
+  # TODO: CWJ add postback notification action (maybe checking a field in the db on the above model)
+  def notify
+    
+  end
+  
+
   # TODO: CWJ eliminate this action if we stick with offsite payment
   def attempt
     payment_params = params[:payment_authorizer]

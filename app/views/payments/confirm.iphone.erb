@@ -14,11 +14,11 @@
     service.item_name "Donation"
     service.tax '0.00'
 
-    service.notify_url url_for(:only_path => false, :action => 'notify')
+    service.notify_url url_for(:only_path => false, :controller => "payments", :action => 'notify')
     service.return_url url_for(:only_path => false,
-        :controller => 'account', :action => 'receipt')
+        :controller => 'payments', :action => 'receipt')
     service.cancel_return_url url_for(:only_path => false,
-        :controller => 'account', :action => 'show') %>
+        :controller => 'payments', :action => 'new') %>
 
     <h1>Confirm Details</h1>
 
@@ -33,5 +33,5 @@
 
     <p>Donation Amount: $<%= format("%0.2f", @donation_amount_in_cents.to_f / 100) %></p>
 
-    <%= submit_tag 'Make Payment' %>
+    <%= submit_tag 'Continue to Payment Information' %>
 <% end %>
