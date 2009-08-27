@@ -12,13 +12,13 @@
 <link rel="stylesheet" href="/stylesheets/iphone/forms.css">
 </head>
 <body>
-<!-- <div id="header"> Top </div> -->
 <div id="container">
   <div id="confirmation">
     <h3>Thank You!</h3>
-    <p>Hey <strong>[Name]</strong>, thanks for your donation of <strong>$[$$.$$]</strong>, which can help Mano a Mano provide <strong>[Cause]</strong>, <strong>[Cause]</strong> and <strong>[Cause]</strong> to the people in Bolivia.</p>
-    <p>A copy of the receipt has been sent to <strong>[email]</strong>.</p>
-    <p id="taf-link"><a href="#" id="open-taf">Tell a friend</a> or <a href="http://manoamano.org/">Visit Mano a Mano</a>.</p>
+
+    <p>Hey <strong><%=@first_name%></strong>, thanks for your donation of <strong>$<%=@donation_amount_in_dollars%></strong>, which can help Mano a Mano provide <strong><%=@causes%></strong> to the people in Bolivia.</p>
+    <p>A copy of the receipt has been sent to <strong><%=@email%></strong>.</p>
+    <p id="taf-link"><a href="#" id="open-taf">Tell a friend</a> or <%= link_to_external "Visit Mano a Mano", {:controller => "donations", :action => "view_full_site"} %>.</p>
     <div id="TellFriend">
       <form id="tell-a-friend" name="tell-a-friend" action="post">
         <ul>
@@ -33,8 +33,9 @@
       </form>
     </div>
     <div id="MessageSent">
-      <p>We've sent a message to <strong>[email]</strong>.</p>
-      <p>Thanks for spreading the word. <a href="http://manoamano.org/">Visit Mano a Mano</a></p>
+      <p>We've sent a message to <strong><%=@email%></strong>.</p>
+      Thanks for spreading the word. <%= link_to_external "Visit Mano a Mano", {:controller => "donations", :action => "view_full_site"} %>
+      </p>
     </div>
   </div>
 </div>

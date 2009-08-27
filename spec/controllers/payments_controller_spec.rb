@@ -101,11 +101,15 @@ describe PaymentsController do
     end
     
     it "should assign payment information" do
-      post :receipt, :mc_gross => "100", :payer_email => "test@testing.com", :first_name => "Test", :last_name => "Testerson", :custom => "First Cause, Second Cause, Third Cause"
+      post :receipt, :mc_gross => "100", :payer_email => "test@testing.com", 
+                     :first_name => "Test", :last_name => "Testerson", 
+                     :custom => "First Cause, Second Cause, Third Cause",
+                     :payment_gross => "20.00"
 
       assigns[:email].should == "test@testing.com"
       assigns[:first_name].should == "Test"
       assigns[:causes].should == "First Cause, Second Cause, Third Cause"
+      assigns[:donation_amount_in_dollars].should == "20.00"
     end
   end
   
