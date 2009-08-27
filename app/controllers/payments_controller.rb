@@ -27,6 +27,7 @@ class PaymentsController < ApplicationController
     @email = params[:payer_email]
     @first_name = params[:first_name]
     @causes = params[:custom]
+    @donation_amount_in_dollars = params[:payment_gross]
   end
   
 
