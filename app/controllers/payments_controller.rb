@@ -24,6 +24,8 @@ class PaymentsController < ApplicationController
     puts "Notified by Paypal: "
     puts "============="
     puts params.inspect
+    
+    render :nothing
   end
 
   # TODO: CWJ eliminate this action if we stick with offsite payment
