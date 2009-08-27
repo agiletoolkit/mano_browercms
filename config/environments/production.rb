@@ -36,10 +36,7 @@ CONFIG[:gateway_credentials] = {
   :signature => "A84OPQHyR9Id2LfVKRBUe313HvA9A37FdmAUhqf1DZO.1u.Q490Ct5DX5"
 }
 
-require "active_merchant"
-ActiveMerchant::Billing::Base.mode = :test
-# CONFIG[:paypal_email] = "manoamano_api1@manoamano.org"
-CONFIG[:paypal_email] = "colin_1238600447_biz@8thlight.com"
+CONFIG[:paypal_email] = "manoamano@manoamano.org"
 
 #Set the site domain so that errors don't pop up when you assign tasks in 
 #browsercms: reported in lighthouse bug #146
