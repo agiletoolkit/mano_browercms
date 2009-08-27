@@ -1,6 +1,7 @@
 class PaymentsController < ApplicationController
   include ActiveMerchant::Billing::Integrations
   skip_before_filter :redirect_to_iphone
+  skip_before_filter :verify_authenticity_token, :only => [:notify]
   acts_as_iphone_controller
   
   def new

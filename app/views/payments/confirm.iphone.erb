@@ -1,4 +1,4 @@
-<% payment_service_for @payment_authorizer.id, CONFIG[:paypal_email],
+<% payment_service_for "TODO: save model - this should be the ID", CONFIG[:paypal_email],
         :amount => @donation_amount_in_dollars, :currency => 'USD',
         :service => :paypal do |service| 
 
