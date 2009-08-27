@@ -6,10 +6,10 @@ describe "index" do
   end
   
   it "should have a custom field" do
-    response.should have_tag("input[type=hidden][name=custom][id=causes]")
+    response.should have_tag("input[type=hidden][name=custom][id=causes]", :count => 1)
   end
   
   it "should have a donation amount" do
-    response.should have_tag("input[type=text][name=amount][readonly=readonly]")
+    response.should have_tag("input[type=text][name=amount][readonly=readonly]", :count => 1)
   end
 end
