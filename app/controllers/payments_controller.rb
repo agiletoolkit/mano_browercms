@@ -1,7 +1,7 @@
 class PaymentsController < ApplicationController
   include ActiveMerchant::Billing::Integrations
   skip_before_filter :redirect_to_iphone
-  skip_before_filter :verify_authenticity_token, :only => [:notify]
+  skip_before_filter :verify_authenticity_token, :only => [:notify, :receipt]
   acts_as_iphone_controller
   
   def new
@@ -20,13 +20,15 @@ class PaymentsController < ApplicationController
 
   # TODO: CWJ add postback notification action (maybe checking a field in the db on the above model)
   def notify
-    puts "============="
-    puts "Notified by Paypal: "
-    puts "============="
-    puts params.inspect
-    
-    render :nothing => true
+    # render :nothing => true
   end
+  
+  def receipt
+    @email = params[:payer_email]
+    @first_name = params[:first_name]
+    @causes = params[:custom]
+  end
+  
 
   # TODO: CWJ eliminate this action if we stick with offsite payment
   def attempt

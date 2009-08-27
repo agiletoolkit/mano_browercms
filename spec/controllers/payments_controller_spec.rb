@@ -24,6 +24,12 @@ describe PaymentsController do
 
       assigns[:payment_authorizer].should == @payment_authorizer
     end
+    
+    it "should verify authenticity token" do
+      controller.should_receive(:verify_authenticity_token)
+      
+      get :new
+    end
   end
   
   describe "when confirming payment" do
@@ -84,6 +90,30 @@ describe PaymentsController do
       post :attempt, :payment_authorizer => {}, :donation_amount_in_dollars => 5000
 
       response.should render_template("new")
+    end
+  end
+  
+  describe "when given reciept from PayPal" do
+    it "should not verify authenticity token" do
+      controller.should_not_receive(:verify_authenticity_token)
+      
+      post :receipt
+    end
+    
+    it "should assign payment information" do
+      post :receipt, :mc_gross => "100", :payer_email => "test@testing.com", :first_name => "Test", :last_name => "Testerson", :custom => "First Cause, Second Cause, Third Cause"
+
+      assigns[:email].should == "test@testing.com"
+      assigns[:first_name].should == "Test"
+      assigns[:causes].should == "First Cause, Second Cause, Third Cause"
+    end
+  end
+  
+  describe "when notified by Paypal" do
+    it "should not verify authenticity token" do
+      controller.should_not_receive(:verify_authenticity_token)
+      
+      post :notify
     end
   end
 end
