@@ -1,2 +1,55 @@
-<h1>Welcome to iPhone Donations</h1>
-<%= link_to_external "Go to standard page", {:controller => "donations", :action => "view_full_site"} %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html manifest="OfflineApp.manifest">
+<head>
+  <title>Agile 09</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=320, width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="YES">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <link rel="apple-touch-icon" href="/images/iphone/WebClipIcon.png">
+  <link rel="stylesheet" href="/stylesheets/iphone/reset.css">
+  <link rel="stylesheet" href="/stylesheets/iphone/main.css">
+  <link rel="stylesheet" href="/stylesheets/iphone/forms.css">
+
+  <!-- <script type="application/x-javascript" src="http://172.20.33.54:1840/ibug.js"></script> -->
+
+</head>
+<body>
+<div id="container">
+
+  <div id="content">        
+    <div id="header">
+      <h1>Mano a Mano</h1>
+    </div>
+
+    <div id="stackLayout">
+      <div id="dollarAmounts">
+        <h3>Make a Donation</h3>
+        <div class="btn-holder">
+            <label class="btn dollars-5" for="fa-5">5</label><input type="checkbox" id="fa-5" name="fa" class="row-cost checkbox" value="5" />
+            <label class="btn dollars-25" for="fa-25">25</label><input type="checkbox" id="fa-25" name="fa" class="row-cost checkbox" value="25" />
+            <label class="btn dollars-50" for="fa-50">50</label><input type="checkbox" id="fa-50" name="fa" class="row-cost checkbox" value="50" />
+            <label class="btn dollars-100" for="fa-100">100</label><input type="checkbox" id="fa-100" name="fa" class="row-cost checkbox" value="100" />          
+            <label class="btn dollars-other" for="fa-other">Other</label><input type="text" class="row-cost" value="" id="fa-other" maxlength="4" />
+        </div>
+      </div>
+      <div id="listLevel">
+        <h3>Support a Cause</h3>
+        <ul id="list">
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="footer">
+  <form action="/cms/payments/confirm" method="post" name="donation-total">
+  <input type="hidden" name="causes" id="causes" value="" />
+  $<input type="text" name="donation_amount_in_dollars" id="total-donation" readonly />
+  <input type="image" src="/images/iphone/btn_donate.png" value="Donate" name="submit" class="btn btn-donate" />
+  </form>
+</div>
+<script type="text/javascript" src="/javascripts/jquery-min.js" charset="utf-8"></script>
+<script type="text/javascript" src="/javascripts/mam-agile09.js" charset="utf-8"></script>
+</body>
+</html>
