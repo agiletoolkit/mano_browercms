@@ -23,6 +23,6 @@ class ApplicationController < ActionController::Base
   protected ###############################################
   
   def iphone_user?
-    return request.user_agent.match(/Mobile.+Safari/)
+    return request.user_agent.match(/iPhone.+Mobile.+Safari/)
   end
 end
