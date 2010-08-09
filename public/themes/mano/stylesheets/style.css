@@ -103,6 +103,7 @@ body {
     background-image: url('/images/mountains_bkgrnd1000x800.jpg');
 }
 
+div.blog_post { background-color: #EEE; margin-top: 4px; margin-bottom: 4px; padding: 2px;}
 
 #search {
     margin-bottom:10px;
