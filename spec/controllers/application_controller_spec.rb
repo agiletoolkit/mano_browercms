@@ -69,5 +69,6 @@ describe ApplicationController do
     response.redirect_url.include?("/donations").should == true
   end
   
+  
 
 end
