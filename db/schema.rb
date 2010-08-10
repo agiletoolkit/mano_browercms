@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090415000002) do
+ActiveRecord::Schema.define(:version => 20091109175123) do
 
   create_table "attachment_versions", :force => true do |t|
     t.integer  "attachment_id"
@@ -577,6 +577,7 @@ ActiveRecord::Schema.define(:version => 20090415000002) do
     t.datetime "expires_at"
     t.string   "remember_token",            :limit => 40
     t.datetime "remember_token_expires_at"
+    t.string   "reset_token"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
