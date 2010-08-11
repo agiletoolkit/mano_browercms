@@ -1,33 +1,6 @@
-Script started on Thu Jun 11 18:57:19 2009
-bobpayne@bob-paynes-macbook-pro/bob/dev/mano_browercms$ ls
-Capfile		app		doc		log		server		vendor
-README		config		generate	public		test
-Rakefile	db		install.rb	script		tmp
-bobpayne@bob-paynes-macbook-pro/bob/dev/mano_browercms$ git push
-Counting objects: 8, done.
-Delta compression using 2 threads.
-Compressing objects:  25% (1/4)   Compressing objects:  50% (2/4)   Compressing objects:  75% (3/4)   Compressing objects: 100% (4/4)   Compressing objects: 100% (4/4), done.
-Writing objects:  16% (1/6)   Writing objects:  33% (2/6)   Writing objects:  50% (3/6)   Writing objects:  66% (4/6)   Writing objects:  83% (5/6)   Writing objects: 100% (6/6)   Writing objects: 100% (6/6), 550 bytes, done.
-Total 6 (delta 2), reused 2 (delta 0)
-To git@github.com:agiletoolkit/mano_browercms.git
-   31e8416..d359023  master -> master
-bobpayne@bob-paynes-macbook-pro/bob/dev/mano_browercms$ git pushhs[K[K[K[K[K[K[K[Kls
-Capfile		app		doc		log		server		vendor
-README		config		generate	public		test
-Rakefile	db		install.rb	script		tmp
-bobpayne@bob-paynes-macbook-pro/bob/dev/mano_browercms$ mate.[K .
-bobpayne@bob-paynes-macbook-pro/bob/dev/mano_browercms$ mat .github
-bash: mat: command not found
-bobpayne@bob-paynes-macbook-pro/bob/dev/mano_browercms$ mate .gitignore
-bobpayne@bob-paynes-macbook-pro/bob/dev/mano_browercms$ git pull
-remote: Counting objects: 7, done.[K
-remote: Compressing objects:  25% (1/4)   [Kremote: Compressing objects:  50% (2/4)   [Kremote: Compressing objects:  75% (3/4)   [Kremote: Compressing objects: 100% (4/4)   [Kremote: Compressing objects: 100% (4/4), done.[K
-remote: Total 4 (delta 3), reused 0 (delta 0)[K
-Unpacking objects:  25% (1/4)   Unpacking objects:  50% (2/4)   Unpacking objects:  75% (3/4)   Unpacking objects: 100% (4/4)   Unpacking objects: 100% (4/4), done.
-From git@github.com:agiletoolkit/mano_browercms
-   d359023..4d9c76c  master     -> origin/master
-Updating d359023..4d9c76c
-Fast forward
- db/development.sqlite3 |  Bin 153600 -> 160768 bytes
- 1 files changed, 0 insertions(+), 0 deletions(-)
-bobpayne@bob-paynes-macbook-pro/bob/dev/mano_browercms$ git ad
+Script started on Wed Aug 11 15:44:11 2010
+bobpayne@bob-paynes-macbook-pro-2/bob/dev/servers/mano/mano_browercms$ scriptser[K[K[K/[Ks[K/server 
+=> Booting Mongrel
+=> Rails 2.3.5 application starting on http://0.0.0.0:3000
+=> Call with -d to detach
+=> Ctrl-C to shutdown server
